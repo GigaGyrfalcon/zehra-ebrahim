@@ -16,3 +16,10 @@ body {
 .main {
     flex: 1 0 auto;
 }
+
+a {
+    &:link,
+    &:visited {
+        text-decoration: none;
+    }
+}
