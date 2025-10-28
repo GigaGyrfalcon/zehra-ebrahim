@@ -1,0 +1,79 @@
+:root {
+    --font-default: 'SF Pro Display', sans-serif;
+    --font-heading: 'Bricolage Grotesque', sans-serif;
+
+    --color-deep-clay:            rgb(76, 28, 14);
+    --color-warm-copper:          rgb(192, 126, 78);
+    --color-muted-terracotta:     rgb(249, 220, 180);
+    --color-soft-beige:           rgb(244, 238, 232);
+    --color-white:                rgb(255, 255, 255);
+    --color-black:                rgb(0, 0, 0);
+    --color-rich-charcoal:        rgb(13, 13, 13);
+    --color-rich-charcoal-alpha-70: rgb(from var(--color-rich-charcoal) r g b / .70);
+
+    --fs-base: 1.4rem;
+    --lh-base: 1.8rem;
+    --fs-subheading: 1.4rem;
+    --lh-subheading: 1.8rem;
+    --fs-h6: 1.6rem;
+    --lh-h6: 2rem;
+    --fs-h5: 1.6rem;
+    --lh-h5: 2rem;
+    --fs-h4: 1.6rem;
+    --lh-h4: 2rem;
+    --fs-h3: 2.2rem;
+    --lh-h3: 2.4rem;
+    --fs-h2: 2.6rem;
+    --lh-h2: 3.2rem;
+    --fs-h1: 3.2rem;
+    --lh-h1: 3.6rem;
+
+    @media (min-width: 768px) {
+        --fs-base: 1.6rem;
+        --lh-base: 2rem;
+        --fs-subheading: 1.6rem;
+        --lh-subheading: 2.2rem;
+        --fs-h6: 1.8rem;
+        --lh-h6: 2rem;
+        --fs-h5: 1.8rem;
+        --lh-h5: 2.2rem;
+        --fs-h4: 2rem;
+        --lh-h4: 2.4rem;
+        --fs-h3: 2.6rem;
+        --lh-h3: 3.2rem;
+        --fs-h2: 3.2rem;
+        --lh-h2: 3.8rem;
+        --fs-h1: 3.6rem;
+        --lh-h1: 4.4rem;
+    }
+
+    @media (min-width: 1200px) {
+        --fs-h1: 4.2rem;
+        --lh-h1: 4.6rem;
+    }
+
+    @media (min-width: 1440px) {
+        --fs-subheading: 2rem;
+        --lh-subheading: 2.6rem;
+        --fs-h6: 2.6rem;
+        --lh-h6: 3rem;
+        --fs-h5: 2.8rem;
+        --lh-h5: 3rem;
+        --fs-h4: 3.2rem;
+        --lh-h4: 3.8rem;
+        --fs-h3: 4rem;
+        --lh-h3: 4.6rem;
+        --fs-h2: 4.2rem;
+        --lh-h2: 5.8rem;
+        --fs-h1: 6.4rem;
+        --lh-h1: 7rem;
+    }
+
+}
+
+// $container-max-widths: (
+//   sm: 540px,
+//   md: 720px,
+//   lg: 960px,
+//   xl: 1260px
+// ) !default;
