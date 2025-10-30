@@ -17,6 +17,11 @@ body {
     flex: 1 0 auto;
 }
 
+.container, .container-fluid {
+    padding-inline-start: var(--bs-gutter-x);
+    padding-inline-end: var(--bs-gutter-x);
+}
+
 a {
     &:link,
     &:visited {

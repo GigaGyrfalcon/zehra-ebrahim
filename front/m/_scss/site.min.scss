@@ -18,11 +18,15 @@
 
 @import "components/buttons";
 @import "components/dropdown";
+@import "components/main-nav";
+@import "components/socials";
 
 //LAYOUT
 @import "layout/header";
 @import "layout/footer";
 @import "layout/form";
+@import "layout/hero";
+@import "layout/section";
 
 //PAGES
 @import "pages/home";

@@ -2,6 +2,9 @@
     --font-default: 'SF Pro Display', sans-serif;
     --font-heading: 'Bricolage Grotesque', sans-serif;
 
+    --fw-regular: 400;
+    --fw-medium: 500;
+
     --color-deep-clay:            rgb(76, 28, 14);
     --color-warm-copper:          rgb(192, 126, 78);
     --color-muted-terracotta:     rgb(249, 220, 180);
@@ -71,9 +74,16 @@
 
 }
 
-// $container-max-widths: (
-//   sm: 540px,
-//   md: 720px,
-//   lg: 960px,
-//   xl: 1260px
-// ) !default;
+// Override Bootstrap breakpoints - xl starts at 1470px
+$grid-breakpoints: (
+  xs: 0,
+  md: 768px,
+  lg: 992px,
+  xl: 1470px
+) !default;
+
+$container-max-widths: (
+  md: 720px,
+  lg: 960px,
+  xl: 1440px
+) !default;

@@ -15,3 +15,31 @@
         @content;
     }
 }
+
+@mixin hover-active {
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            @content;
+        }
+    }
+    
+    @media (hover: none) and (pointer: coarse) {
+        &:active {
+            @content;
+        }
+    }
+}
+
+@mixin hover-active-element($element) {
+    @media (hover: hover) and (pointer: fine) {
+        &:hover #{$element} {
+            @content;
+        }
+    }
+    
+    @media (hover: none) and (pointer: coarse) {
+        &:active #{$element} {
+            @content;
+        }
+    }
+}

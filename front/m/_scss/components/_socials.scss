@@ -1,0 +1,32 @@
+.socials {
+    .main-nav & {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 3rem;
+    }
+}
+
+.socials-icon {
+    .main-nav & {
+        fill: var(--color-deep-clay);
+    }
+    &--facebook {
+        .main-nav & {
+            width: 1rem;
+            height: 2rem;
+        }
+    }
+    &--instagram {
+        .main-nav & {
+            width: 1.9rem;
+            height: 2rem;
+        }
+    }
+    &--whatsapp {
+        .main-nav & {
+            width: 2.1rem;
+            height: 2rem;
+        }
+    }
+}

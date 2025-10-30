@@ -68,6 +68,10 @@ gulp.task('html', function () {
 				commentEnd: '#>'
 			}
 		}))
+		.on('error', function(err) {
+			log.error('Nunjucks error:', err);
+			this.emit('end');
+		})
 		.pipe(gulp.dest('./'));
 });
 gulp.task('js.pre', function () {

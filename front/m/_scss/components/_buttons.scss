@@ -1,3 +1,105 @@
 .button {
-    
+
+    --button-default-fs: 1.4rem;
+    --button-default-lh: 1.8rem;
+
+    @media (min-width: 768px) {
+        --button-default-fs: 1.6rem;
+        --button-default-lh: 2rem;
+    }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+
+    &--default {
+        padding-block: 1rem;
+        padding-inline: 3rem;
+        border-radius: .5rem;
+        @media (min-width: 1200px) {
+            padding-block: 1.4rem;
+        }
+    }
+
+    &--hoverable {
+        transition: background-color, border-color, 450ms ease;
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: calc(100% + 1rem);
+            left: 50%;
+            transform: translateX(-50%) translateY(0);
+            width: 3.3rem;
+            height: 3.3rem;
+            border-radius: 50%;
+            z-index: 1;
+            background-color: var(--button-hover-bg);
+            transition: all 600ms cubic-bezier(0, 0, 0, 1);
+        }
+        @include hover-active {
+            background-color: var(--button-hover-bg);
+            border-color: var(--button-hover-bg);
+            &::after {
+                width: calc(100% + 1.8rem);
+                height: 330%;
+                top: calc(50% - .6rem);
+                transform: translateX(-50%) translateY(-50%);
+            }
+        }
+    }
+
+    &--primary {
+        --button-bg: var(--color-muted-terracotta);
+        --button-border: var(--color-muted-terracotta);
+        --button-hover-bg: var(--color-deep-clay);
+
+        background-color: var(--button-bg);
+        border: 1px solid var(--button-border);
+
+        @include hover-active-element('.button-text') {
+            color: var(--color-white);
+        }
+    }
+
+    &--primary-on-bg {
+        --button-hover-bg: var(--color-white);
+        @include hover-active-element('.button-text') {
+            color: var(--color-rich-charcoal);
+        }
+    }
+
+    &--secondary {
+
+        --button-bg: transparent;
+        --button-border: var(--color-white);
+        --button-hover-bg: var(--color-muted-terracotta);
+
+        background-color: var(--button-bg);
+        border: 1px solid var(--button-border);
+
+        @include hover-active-element('.button-text') {
+            color: var(--color-rich-charcoal);
+        }
+    }
+}
+
+.button-text {
+    font-size: var(--button-default-fs);
+    line-height: var(--button-default-lh);
+    font-weight: var(--fw-medium);
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+    transition: color, 600ms ease;
+
+    .button--primary & {
+        color: var(--color-rich-charcoal);
+    }
+
+    .button--secondary & {
+        color: var(--color-white);
+    }
 }
