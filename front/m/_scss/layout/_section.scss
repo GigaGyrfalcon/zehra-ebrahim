@@ -2,20 +2,27 @@
 
     --section-padding-block-start: 8rem;
     --section-padding-block-end: 8rem;
+    --container-width: 100%;
 
     @media (min-width: 768px) {
         --section-padding-block-start: 9rem;
         --section-padding-block-end: 9rem;
+        --container-width: #{map-get($container-max-widths, md)};
+    }
+
+    @media (min-width: 992px) {
+        --container-width: #{map-get($container-max-widths, lg)};
     }
 
     @media (min-width: 1200px) {
         --section-padding-block-start: 10rem;
         --section-padding-block-end: 10rem;
     }
-
-    @media (min-width: 1440px) {
+    
+    @media (min-width: 1470px) {
         --section-padding-block-start: 15rem;
         --section-padding-block-end: 15rem;
+        --container-width: #{map-get($container-max-widths, xl)};
     }
 
     padding-block-start: var(--section-padding-block-start);
@@ -35,15 +42,6 @@
     }
 
     &--half-bleed {
-        padding-inline-start: var(--bs-gutter-x, 1.5rem);
-        @media (min-width: 768px) {
-            padding-inline-start: calc(((100vw - 720px) / 2) + var(--bs-gutter-x, 1.5rem));
-        }
-        @media (min-width: 992px) {
-            padding-inline-start: calc(((100vw - 960px) / 2) + var(--bs-gutter-x, 1.5rem));
-        }
-        @media (min-width: 1470px) {
-            padding-inline-start: calc(((100vw - 1440px) / 2) + var(--bs-gutter-x, 1.5rem));
-        }
+        padding-inline-start: calc(((100% - var(--container-width)) / 2) + calc(var(--bs-gutter-x, 1.5rem)));
     }
 }

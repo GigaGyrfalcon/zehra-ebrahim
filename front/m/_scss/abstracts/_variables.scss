@@ -55,7 +55,7 @@
         --lh-h1: 4.6rem;
     }
 
-    @media (min-width: 1440px) {
+    @media (min-width: 1470px) {
         --fs-subheading: 2rem;
         --lh-subheading: 2.6rem;
         --fs-h6: 2.6rem;
@@ -85,5 +85,5 @@ $grid-breakpoints: (
 $container-max-widths: (
   md: 720px,
   lg: 960px,
-  xl: 1440px
+  xl: 1470px
 ) !default;
