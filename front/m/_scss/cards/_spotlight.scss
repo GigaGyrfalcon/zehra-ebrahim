@@ -1,4 +1,4 @@
-.product-categories-slider {
+.spotlights-slider {
     .swiper-slide {
         width: 64%;
         @media (min-width: 768px) {
@@ -10,25 +10,28 @@
     }
 }
 
-.product-category-card {
+.spotlight-card {
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
     padding-block-end: .6rem;
+    @media (min-width: 768px) {
+        gap: 2.5rem;
+    }
     @media (min-width: 1200px) {
         padding-block-end: 1.1rem;
     }
     @media (min-width: 1470px) {
-        gap: 2rem;
+        gap: 4rem;
     }
 }
 
-.product-category-card-img {
+.spotlight-card-img {
     width: 100%;
     border-radius: .5rem;
 }
 
-.product-category-card-title {
+.spotlight-card-title {
     position: relative;
     font-size: var(--fs-h6);
     line-height: var(--lh-h6);

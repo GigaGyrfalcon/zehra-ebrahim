@@ -22,6 +22,7 @@
 @import "components/socials";
 @import "components/slider-controls";
 @import "components/moving-line";
+@import "components/two-column-images";
 
 //LAYOUT
 @import "layout/header";
@@ -33,6 +34,8 @@
 //CARDS
 @import "cards/product-category";
 @import "cards/spaces";
+@import "cards/spotlight";
+@import "cards/testimonial";
 
 //PAGES
 @import "pages/home";
