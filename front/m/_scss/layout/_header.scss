@@ -73,23 +73,6 @@
     }
 }
 
-.logo-link {
-    display: block;
-}
-
-.logo-media {
-    .header & {
-        width: var(--logo-w);
-        height: var(--logo-h);
-        fill: var(--header-content-color);
-    }
-    .main-nav & {
-        width: 15rem;
-        height: 1.7rem;
-        fill: var(--color-deep-clay);
-    }
-}
-
 .header-actions {
     display: flex;
     justify-content: flex-end;

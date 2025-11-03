@@ -11,6 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: .5rem;
     overflow: hidden;
     position: relative;
 
@@ -20,6 +21,15 @@
         border-radius: .5rem;
         @media (min-width: 1200px) {
             padding-block: 1.4rem;
+        }
+    }
+
+    &--large {
+        padding-block: 1.8rem;
+        padding-inline: 3rem;
+        border-radius: .5rem;
+        @media (min-width: 768px) {
+            padding-block: 2rem;
         }
     }
 
@@ -62,12 +72,18 @@
         @include hover-active-element('.button-text') {
             color: var(--color-white);
         }
+        @include hover-active-element('.button-icon') {
+            fill: var(--color-white);
+        }
     }
 
     &--primary-on-bg {
         --button-hover-bg: var(--color-white);
         @include hover-active-element('.button-text') {
             color: var(--color-rich-charcoal);
+        }
+        @include hover-active-element('.button-icon') {
+            fill: var(--color-rich-charcoal);
         }
     }
 
@@ -82,6 +98,25 @@
 
         @include hover-active-element('.button-text') {
             color: var(--color-rich-charcoal);
+        }
+        @include hover-active-element('.button-icon') {
+            fill: var(--color-rich-charcoal);
+        }
+    }
+
+    &--deep-clay {
+        --button-bg: var(--color-deep-clay);
+        --button-border: var(--color-deep-clay);
+        --button-hover-bg: var(--color-muted-terracotta);
+
+        background-color: var(--button-bg);
+        border: 1px solid var(--button-border);
+        
+        @include hover-active-element('.button-text') {
+            color: var(--color-rich-charcoal);
+        }
+        @include hover-active-element('.button-icon') {
+            fill: var(--color-deep-clay);
         }
     }
 }
@@ -101,5 +136,28 @@
 
     .button--secondary & {
         color: var(--color-white);
+    }
+
+    .button--deep-clay & {
+        color: var(--color-white);
+    }
+}
+
+.button-icon {
+    position: relative;
+    z-index: 2;
+    transition: fill, 600ms ease;
+    .button--primary & {
+        fill: var(--color-rich-charcoal);
+    }
+    .button--secondary & {
+        fill: var(--color-white);
+    }
+    .button--deep-clay & {
+        fill: var(--color-warm-copper);
+    }
+    &--instagram {
+        width: 1.6rem;
+        height: 1.6rem;
     }
 }
