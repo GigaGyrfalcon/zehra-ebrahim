@@ -1,0 +1,40 @@
+.slider-controls {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.6rem;
+    &--visible-desktop {
+        display: none;
+        @media (min-width: 1200px) {
+            display: flex;
+        }
+    }
+    &--visible-mobile {
+        display: flex;
+        @media (min-width: 1200px) {
+            display: none;
+        }
+    }
+    .section-body & {
+        margin-block-start: 3rem;
+    }
+}
+
+.slider-control {
+    width: 4rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    border: 1px solid var(--color-rich-charcoal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-control-icon {
+    width: 1.2rem;
+    height: 1rem;
+    stroke: var(--color-rich-charcoal);
+    .slider-control--next & {
+        transform: rotate(180deg);
+    }
+}

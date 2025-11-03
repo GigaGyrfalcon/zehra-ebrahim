@@ -1,0 +1,9 @@
+.moving-line-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    @media (min-width: 768px) {
+        gap: 3rem;
+    }
+}

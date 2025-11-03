@@ -20,6 +20,8 @@
 @import "components/dropdown";
 @import "components/main-nav";
 @import "components/socials";
+@import "components/slider-controls";
+@import "components/moving-line";
 
 //LAYOUT
 @import "layout/header";
@@ -27,6 +29,10 @@
 @import "layout/form";
 @import "layout/hero";
 @import "layout/section";
+
+//CARDS
+@import "cards/product-category";
+@import "cards/spaces";
 
 //PAGES
 @import "pages/home";

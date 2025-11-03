@@ -75,6 +75,7 @@ gulp.task('js.pre', function () {
 		'./node_modules/jquery/dist/jquery.min.js',
 		'./node_modules/bootstrap/dist/js/bootstrap.min.js',
 		'./node_modules/svg4everybody/dist/svg4everybody.min.js',
+		'./node_modules/swiper/swiper-bundle.min.js',
 
 		// './node_modules/@babel/polyfill/dist/polyfill.min.js',
         // './node_modules/axios/dist/axios.min.js',
@@ -115,6 +116,7 @@ gulp.task('js.post', function () {
 });
 gulp.task('styles', /*gulp.series('sprite',*/ function () {
 	return gulp.src([
+		'./node_modules/swiper/swiper-bundle.min.css',
 		'./m/_scss/**/*.scss'
 	])
 		.pipe(sass().on('error', sass.logError))
