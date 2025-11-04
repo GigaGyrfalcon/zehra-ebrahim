@@ -15,6 +15,7 @@
     place-items: center;
     isolation: isolate;
     position: relative;
+    border-top: 1px solid var(--color-deep-clay);
     @media (min-width: 768px) {
         padding-block: 24rem;
         --footer-social-gap: 1.3rem;

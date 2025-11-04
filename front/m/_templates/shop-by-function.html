@@ -1,0 +1,406 @@
+<% import "./shared/modules/product-card.html" as productCard %>
+<% extends "./shared/master.html" %>
+
+<% set pageTitle = "Shop by Function" %>
+<% set pageCssClass = "innerpage" %>
+<% set lang = "en" %>
+
+<% block content %>
+<section class="section section--pbs-0">
+    <div class="container">
+        <div class="section-content">
+            <div class="section-head">
+                <div class="page-head">
+                    <div class="breadcrumbs">
+                        <div class="breadcrumbs-content">
+                            <a href="" class="breadcrumbs-item">
+                                <span class="breadcrumbs-item-text">Home</span>
+                            </a>
+                            <a href="" class="breadcrumbs-item breadcrumbs-item--active">
+                                <span class="breadcrumbs-item-text">Lounge</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="page-head-info">
+                        <h2 class="page-title">Explore Colors & Materials Lounge</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="section-body">
+                <div class="subsection-slider" id="subsection-slider-1">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <% for i in range(1, 7) %>
+                            <div class="swiper-slide">
+                                <div class="subsection-card">
+                                    <img class="subsection-card-img" src="m/u/shop-by-function/<$ i $>.jpg" alt="">
+                                </div>
+                            </div>
+                            <% endfor %>
+                        </div>
+                        <div class="slider-controls">
+                            <div class="slider-control slider-control--prev">
+                                <svg class="slider-control-icon">
+                                    <use href="m/i/icons.svg#symbol-arrow"></use>
+                                </svg>
+                            </div>
+                            <div class="slider-control slider-control--next">
+                                <svg class="slider-control-icon">
+                                    <use href="m/i/icons.svg#symbol-arrow"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="subsection-section">
+                    <div class="subsection-section-content">
+                        <div class="subsection-section-head">
+                            <h3 class="subsection-section-title">Products in this look?</h3>
+                            <div class="subsection-section-description">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac nunc id elit vestibulum lobortis sit amet et velit. Nam ac ante urna. Curabitur interdum vitae dui eu hendrerit. Donec molestie velit orci, et semper ex faucibus ac. Maecenas sed rhoncus nulla, vel semper tortor.</p>
+                                <p>Mauris nisi purus, gravida et enim nec, consectetur pretium nisl. Sed vestibulum aliquet elit ac accumsan. Fusce venenatis dictum finibus. Nulla metus felis, sagittis vitae dolor pharetra, aliquam iaculis mauris. Sed luctus mi nec lorem eleifend, sed mollis dui malesuada.</p>
+                            </div>
+                        </div>
+                        <div class="subsection-section-body">
+                            <div class="subsection-products-slider" id="subsection-products-slider-1">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <% for i in range(1, 3) %>
+                                        <div class="swiper-slide">
+                                            <$ productCard.productCard("1", "Aztec - 2 Tiered Trolley (flat pack)", 4) $>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <$ productCard.productCard("2", "Piyasi Chirya - Chip n Dip", 3) $>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <$ productCard.productCard("3", "Zen Garden - Tray", 4) $>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <$ productCard.productCard("4", "Peetal ka Piyala - Chip n Dip", 3) $>
+                                        </div>
+                                        <% endfor %>
+                                    </div>
+                                    <div class="slider-controls">
+                                        <div class="slider-control slider-control--prev">
+                                            <svg class="slider-control-icon">
+                                                <use href="m/i/icons.svg#symbol-arrow"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="slider-control slider-control--next">
+                                            <svg class="slider-control-icon">
+                                                <use href="m/i/icons.svg#symbol-arrow"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section--solid-bg">
+    <div class="container">
+        <div class="section-content">
+            <div class="section-head">
+                <div class="page-head">
+                    <div class="page-head-info">
+                        <h2 class="page-title">Explore The bungalow element Lounge</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="section-body">
+                <div class="subsection-slider" id="subsection-slider-2">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <% for i in range(1, 7) %>
+                            <div class="swiper-slide">
+                                <div class="subsection-card">
+                                    <img class="subsection-card-img" src="m/u/shop-by-function/<$ i $>.jpg" alt="">
+                                </div>
+                            </div>
+                            <% endfor %>
+                        </div>
+                        <div class="slider-controls">
+                            <div class="slider-control slider-control--prev">
+                                <svg class="slider-control-icon">
+                                    <use href="m/i/icons.svg#symbol-arrow"></use>
+                                </svg>
+                            </div>
+                            <div class="slider-control slider-control--next">
+                                <svg class="slider-control-icon">
+                                    <use href="m/i/icons.svg#symbol-arrow"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="subsection-section">
+                    <div class="subsection-section-content">
+                        <div class="subsection-section-head">
+                            <h3 class="subsection-section-title">Products in this look?</h3>
+                            <div class="subsection-section-description">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac nunc id elit vestibulum lobortis sit amet et velit. Nam ac ante urna. Curabitur interdum vitae dui eu hendrerit. Donec molestie velit orci, et semper ex faucibus ac. Maecenas sed rhoncus nulla, vel semper tortor.</p>
+                                <p>Mauris nisi purus, gravida et enim nec, consectetur pretium nisl. Sed vestibulum aliquet elit ac accumsan. Fusce venenatis dictum finibus. Nulla metus felis, sagittis vitae dolor pharetra, aliquam iaculis mauris. Sed luctus mi nec lorem eleifend, sed mollis dui malesuada.</p>
+                            </div>
+                        </div>
+                        <div class="subsection-section-body">
+                            <div class="subsection-products-slider" id="subsection-products-slider-2">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <% for i in range(1, 3) %>
+                                        <div class="swiper-slide">
+                                            <$ productCard.productCard("1", "Aztec - 2 Tiered Trolley (flat pack)", 4) $>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <$ productCard.productCard("2", "Piyasi Chirya - Chip n Dip", 3) $>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <$ productCard.productCard("3", "Zen Garden - Tray", 4) $>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <$ productCard.productCard("4", "Peetal ka Piyala - Chip n Dip", 3) $>
+                                        </div>
+                                        <% endfor %>
+                                    </div>
+                                    <div class="slider-controls">
+                                        <div class="slider-control slider-control--prev">
+                                            <svg class="slider-control-icon">
+                                                <use href="m/i/icons.svg#symbol-arrow"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="slider-control slider-control--next">
+                                            <svg class="slider-control-icon">
+                                                <use href="m/i/icons.svg#symbol-arrow"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-content">
+            <div class="section-head">
+                <div class="page-head">
+                    <div class="page-head-info">
+                        <h2 class="page-title">Explore Majlis-e-Khaas Lounge</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="section-body">
+                <div class="subsection-slider" id="subsection-slider-3">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <% for i in range(1, 7) %>
+                            <div class="swiper-slide">
+                                <div class="subsection-card">
+                                    <img class="subsection-card-img" src="m/u/shop-by-function/<$ i $>.jpg" alt="">
+                                </div>
+                            </div>
+                            <% endfor %>
+                        </div>
+                        <div class="slider-controls">
+                            <div class="slider-control slider-control--prev">
+                                <svg class="slider-control-icon">
+                                    <use href="m/i/icons.svg#symbol-arrow"></use>
+                                </svg>
+                            </div>
+                            <div class="slider-control slider-control--next">
+                                <svg class="slider-control-icon">
+                                    <use href="m/i/icons.svg#symbol-arrow"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="subsection-section">
+                    <div class="subsection-section-content">
+                        <div class="subsection-section-head">
+                            <h3 class="subsection-section-title">Products in this look?</h3>
+                            <div class="subsection-section-description">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac nunc id elit vestibulum lobortis sit amet et velit. Nam ac ante urna. Curabitur interdum vitae dui eu hendrerit. Donec molestie velit orci, et semper ex faucibus ac. Maecenas sed rhoncus nulla, vel semper tortor.</p>
+                                <p>Mauris nisi purus, gravida et enim nec, consectetur pretium nisl. Sed vestibulum aliquet elit ac accumsan. Fusce venenatis dictum finibus. Nulla metus felis, sagittis vitae dolor pharetra, aliquam iaculis mauris. Sed luctus mi nec lorem eleifend, sed mollis dui malesuada.</p>
+                            </div>
+                        </div>
+                        <div class="subsection-section-body">
+                            <div class="subsection-products-slider" id="subsection-products-slider-3">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <% for i in range(1, 3) %>
+                                        <div class="swiper-slide">
+                                            <$ productCard.productCard("1", "Aztec - 2 Tiered Trolley (flat pack)", 4) $>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <$ productCard.productCard("2", "Piyasi Chirya - Chip n Dip", 3) $>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <$ productCard.productCard("3", "Zen Garden - Tray", 4) $>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <$ productCard.productCard("4", "Peetal ka Piyala - Chip n Dip", 3) $>
+                                        </div>
+                                        <% endfor %>
+                                    </div>
+                                    <div class="slider-controls">
+                                        <div class="slider-control slider-control--prev">
+                                            <svg class="slider-control-icon">
+                                                <use href="m/i/icons.svg#symbol-arrow"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="slider-control slider-control--next">
+                                            <svg class="slider-control-icon">
+                                                <use href="m/i/icons.svg#symbol-arrow"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const subsectionSlider1 = new Swiper('#subsection-slider-1 .swiper', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        navigation: {
+            nextEl: '#subsection-slider-1 .slider-control--next',
+            prevEl: '#subsection-slider-1 .slider-control--prev',
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: "auto",
+                spaceBetween: 10,
+            },
+            1470: {
+                slidesPerView: "auto",
+                spaceBetween: 16,
+            }
+        }
+    });
+
+    const subsectionProductsSlider1 = new Swiper('#subsection-products-slider-1 .swiper', {
+        slidesPerView: 2,
+        spaceBetween: 16,
+        navigation: {
+            nextEl: '#subsection-products-slider-1 .slider-control--next',
+            prevEl: '#subsection-products-slider-1 .slider-control--prev',
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 16,
+            },
+            1200: {
+                slidesPerView: 4,
+                spaceBetween: 10,
+            },
+            1470: {
+                slidesPerView: 4,
+                spaceBetween: 16,
+            }
+        }
+    });
+
+    const subsectionSlider2 = new Swiper('#subsection-slider-2 .swiper', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        navigation: {
+            nextEl: '#subsection-slider-2 .slider-control--next',
+            prevEl: '#subsection-slider-2 .slider-control--prev',
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: "auto",
+                spaceBetween: 10,
+            },
+            1470: {
+                slidesPerView: "auto",
+                spaceBetween: 16,
+            }
+        }
+    });
+
+    const subsectionProductsSlider2 = new Swiper('#subsection-products-slider-2 .swiper', {
+        slidesPerView: 2,
+        spaceBetween: 16,
+        navigation: {
+            nextEl: '#subsection-products-slider-2 .slider-control--next',
+            prevEl: '#subsection-products-slider-2 .slider-control--prev',
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 16,
+            },
+            1200: {
+                slidesPerView: 4,
+                spaceBetween: 10,
+            },
+            1470: {
+                slidesPerView: 4,
+                spaceBetween: 16,
+            }
+        }
+    });
+
+    const subsectionSlider3 = new Swiper('#subsection-slider-3 .swiper', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        navigation: {
+            nextEl: '#subsection-slider-3 .slider-control--next',
+            prevEl: '#subsection-slider-3 .slider-control--prev',
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: "auto",
+                spaceBetween: 10,
+            },
+            1470: {
+                slidesPerView: "auto",
+                spaceBetween: 16,
+            }
+        }
+    });
+
+    const subsectionProductsSlider3 = new Swiper('#subsection-products-slider-3 .swiper', {
+        slidesPerView: 2,
+        spaceBetween: 16,
+        navigation: {
+            nextEl: '#subsection-products-slider-3 .slider-control--next',
+            prevEl: '#subsection-products-slider-3 .slider-control--prev',
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 16,
+            },
+            1200: {
+                slidesPerView: 4,
+                spaceBetween: 10,
+            },
+            1470: {
+                slidesPerView: 4,
+                spaceBetween: 16,
+            }
+        }
+    });
+
+</script>
+
+<% endblock %>

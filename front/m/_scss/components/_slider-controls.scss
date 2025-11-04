@@ -18,6 +18,9 @@
     .section-body & {
         margin-block-start: 3rem;
     }
+    .subsection-slider &, .subsection-products-slider & {
+        justify-content: center;
+    }
 }
 
 .slider-control {
@@ -28,6 +31,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .slider-control-icon {

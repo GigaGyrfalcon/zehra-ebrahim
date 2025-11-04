@@ -1,0 +1,53 @@
+<% extends "./shared/master.html" %>
+
+<% set pageTitle = "Individual Spotlight" %>
+<% set pageCssClass = "innerpage" %>
+<% set lang = "en" %>
+
+<% block content %>
+<section class="section section--pb-0">
+    <div class="container">
+        <div class="section-content">
+            <div class="section-head">
+                <div class="page-head">
+                    <div class="breadcrumbs">
+                        <div class="breadcrumbs-content">
+                            <a href="" class="breadcrumbs-item">
+                                <span class="breadcrumbs-item-text">Home</span>
+                            </a>
+                            <a href="" class="breadcrumbs-item">
+                                <span class="breadcrumbs-item-text">Spotlight</span>
+                            </a>
+                            <a href="" class="breadcrumbs-item breadcrumbs-item--active">
+                                <span class="breadcrumbs-item-text">CIP Lounge, ISB Airport</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="page-head-info">
+                        <h2 class="page-title">CIP Lounge, ISB Airport</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="section-body">
+                <div class="spotlight-hero">
+                    <div class="spotlight-hero-media">
+                        <img class="spotlight-hero-media-img" src="m/u/spotlights/hero/1.jpg" alt="Spotlight" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const spotlightsSlider = new Swiper('#spotlights .swiper', {
+        slidesPerView: "auto",
+        spaceBetween: 16,
+        navigation: {
+            nextEl: '#spotlights .slider-control--next',
+            prevEl: '#spotlights .slider-control--prev',
+        },
+    });
+</script>
+
+<% endblock %>
