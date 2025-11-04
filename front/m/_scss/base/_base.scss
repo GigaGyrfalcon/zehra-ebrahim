@@ -28,3 +28,16 @@ a {
         text-decoration: none;
     }
 }
+
+.innerpage {
+    padding-block-start: 12.2rem;
+    @media (min-width: 768px) {
+        padding-block-start: 14.2rem;
+    }
+    @media (min-width: 1200px) {
+        padding-block-start: 16.2rem;
+    }
+    @media (min-width: 1470px) {
+        padding-block-start: 21.5rem;
+    }
+}

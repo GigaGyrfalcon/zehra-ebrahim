@@ -33,8 +33,15 @@
 .slider-control-icon {
     width: 1.2rem;
     height: 1rem;
-    stroke: var(--color-rich-charcoal);
+    fill: var(--color-rich-charcoal);
     .slider-control--next & {
         transform: rotate(180deg);
     }
+}
+
+.swiper-pagination {
+    position: static;
+    margin-block-start: 2rem;
+    font-family: var(--font-default);
+    font-size: 1.4rem;
 }

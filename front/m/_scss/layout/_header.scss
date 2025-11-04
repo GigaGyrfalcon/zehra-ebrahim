@@ -31,7 +31,7 @@
         --logo-w: 22.2rem;
         --logo-h: 2.5rem;
     }
-    &.scrolled {
+    &.scrolled, .innerpage & {
         --header-content-color: var(--color-deep-clay);
         background-color: rgb(from var(--color-white) r g b / .80);
         box-shadow: 0 .4rem 2.4rem 0 rgb(from var(--color-black) r g b / .05);

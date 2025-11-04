@@ -1,0 +1,205 @@
+<% import "./shared/modules/product-card.html" as productCard %>
+<% extends "./shared/master.html" %>
+
+<% set pageTitle = "Product Detail" %>
+<% set pageCssClass = "innerpage" %>
+<% set lang = "en" %>
+
+<% block content %>
+<section class="page-head-wrap">
+    <div class="container">
+        <div class="page-head page-head--align-start">
+            <div class="breadcrumbs">
+                <div class="breadcrumbs-content">
+                    <a href="" class="breadcrumbs-item">
+                        <span class="breadcrumbs-item-text">Home</span>
+                    </a>
+                    <a href="" class="breadcrumbs-item">
+                        <span class="breadcrumbs-item-text">Shop by furniture</span>
+                    </a>
+                    <a href="" class="breadcrumbs-item breadcrumbs-item--active">
+                        <span class="breadcrumbs-item-text">Aztec - 2 Tiered Trolley (flat pack)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="product-detail">
+    <div class="container">
+        <div class="product-detail-content">
+            <div class="product-detail-media">
+                <div class="product-detail-slider">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <% for i in range(1, 8) %>
+                            <div class="swiper-slide">
+                                <div class="product-detail-media-item">
+                                    <img src="m/u/product-detail/<$ i $>.jpg" alt="Product Detail" class="product-detail-media-img">
+                                </div>
+                            </div>
+                            <% endfor %>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="product-detail-media-list">
+                    <% for i in range(1, 8) %>
+                    <div class="product-detail-media-item">
+                        <img src="m/u/product-detail/<$ i $>.jpg" alt="Product Detail" class="product-detail-media-img">
+                    </div>
+                    <% endfor %>
+                </div>
+            </div>
+            <div class="product-detail-info-wrap">
+                <div class="product-detail-info">
+                    <div class="product-detail-info-head">
+                        <div class="product-availability">
+                            <div class="product-availability-icon-wrap">
+                                <span class="product-availability-icon"></span>
+                            </div>
+                            <p class="product-availability-text">Available in Stock</p>
+                        </div>
+                        <h1 class="product-detail-title">Aztec - 2 Tiered Trolley (flat pack)</h1>
+                        <div class="product-detail-price-rating">
+                            <div class="product-detail-price">
+                                <span class="product-detail-price-value">PKR 73,750</span>
+                            </div>
+                            <div class="product-detail-rating-wrap">
+                                <div class="product-detail-rating product-detail-rating--4-stars">
+                                    <% for i in range(1, 6) %>
+                                    <svg class="product-detail-rating-star">
+                                        <use href="m/i/icons.svg#symbol-star"></use>
+                                    </svg>
+                                    <% endfor %>
+                                </div>
+                                <span class="product-detail-rating-text">4.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-detail-info-body">
+                        <div class="product-detail-info-item">
+                            <a href="" class="product-detail-info-item-trigger js-faq-trigger">
+                                <span class="product-detail-info-item-trigger-text">Description:</span>
+                                <svg class="product-detail-info-item-trigger-icon">
+                                    <use href="m/i/icons.svg#symbol-caret"></use>
+                                </svg>
+                            </a>
+                            <div class="product-detail-info-item-results">
+                                <div class="product-detail-info-item-results-content">
+                                    <div class="product-detail-info-item-results-text">
+                                        <p>A gorgeous hand-made filigree pattern in Sheesham wood framed in a copper plated frame is the focal point of our 2 tiered Aztec trolley.</p>
+                                        <p>This Trolley can be dismantled and then put back together by screwing the components. All you need is really just a screwdriver! Ideal for taking on as checked in baggage for our customers abroad who don't want to deal with the hassleof shipping.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-detail-info-item">
+                            <a href="" class="product-detail-info-item-trigger js-faq-trigger">
+                                <span class="product-detail-info-item-trigger-text">Care:</span>
+                                <svg class="product-detail-info-item-trigger-icon">
+                                    <use href="m/i/icons.svg#symbol-caret"></use>
+                                </svg>
+                            </a>
+                            <div class="product-detail-info-item-results">
+                                <div class="product-detail-info-item-results-content">
+                                    <div class="product-detail-info-item-results-text">
+                                        <p>Clean with a soft damp cloth. Use Clear Furniture Polish occasionally to maintain the wood's natural finish.</p>
+                                        <p>A water-based coating makes the surface resistant to scratches, abrasions and chemical agents making this tray easy to maintain.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-detail-info-item">
+                            <a href="" class="product-detail-info-item-trigger js-faq-trigger">
+                                <span class="product-detail-info-item-trigger-text">Technical Details:</span>
+                                <svg class="product-detail-info-item-trigger-icon">
+                                    <use href="m/i/icons.svg#symbol-caret"></use>
+                                </svg>
+                            </a>
+                            <div class="product-detail-info-item-results">
+                                <div class="product-detail-info-item-results-content">
+                                    <div class="product-detail-technical-details">
+                                        <div class="product-detail-technical-details-item">
+                                            <h5 class="product-detail-technical-details-item-title">Size:</h5>
+                                            <div class="product-detail-technical-details-list">
+                                                <span class="product-detail-technical-details-item-value">Length 29''</span>
+                                                <span class="product-detail-technical-details-item-value">Width 18''</span>
+                                                <span class="product-detail-technical-details-item-value">Height 30''</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail-technical-details-item">
+                                            <h5 class="product-detail-technical-details-item-title">Weight:</h5>
+                                            <div class="product-detail-technical-details-list">
+                                                <span class="product-detail-technical-details-item-value">Pounds: Approx. 44 lbs</span>
+                                                <span class="product-detail-technical-details-item-value">Kilogram: Approx. 20 kg</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail-technical-details-item">
+                                            <h5 class="product-detail-technical-details-item-title">Material:</h5>
+                                            <div class="product-detail-technical-details-list">
+                                                <span class="product-detail-technical-details-item-value">Sheesham Wood</span>
+                                                <span class="product-detail-technical-details-item-value">Filigree in Sheesham Wood</span>
+                                                <span class="product-detail-technical-details-item-value">Copper Plated Stainless Steel</span>
+                                                <span class="product-detail-technical-details-item-value">Wheels 4x</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-detail-info-action">
+                        <a href="" class="button button--primary button--default button--hoverable">
+                            <span class="button-text">Add to Cart</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section--pbe-0">
+    <div class="container">
+        <div class="section-content">
+            <div class="section-head">
+                <h2 class="section-title">Reviews</h2>
+            </div>
+            <div class="section-body">
+                Reviews Plugin goes here
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-content">
+            <div class="section-head">
+                <h2 class="section-title">Explore Other Serving Trolleys</h2>
+            </div>
+            <div class="section-body">
+                <div class="similar-products">
+                    <$ productCard.productCard("1", "Aztec - 2 Tiered Trolley (flat pack)", 4) $>
+                    <$ productCard.productCard("2", "Piyasi Chirya - Chip n Dip", 3) $>
+                    <$ productCard.productCard("3", "Zen Garden - Tray", 4) $>
+                    <$ productCard.productCard("4", "Peetal ka Piyala - Chip n Dip", 3) $>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const productDetailSlider = new Swiper('.product-detail-slider .swiper', {
+        slidesPerView: 1,
+        pagination: {
+            el: ".product-detail-slider .swiper-pagination",
+            type: "fraction",
+        },
+    });
+</script>
+
+<% endblock %>

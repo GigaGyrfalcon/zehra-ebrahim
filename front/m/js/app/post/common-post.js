@@ -40,9 +40,23 @@ if (header && hero) {
     });
 };
 
+$('.js-dropdown-trigger').on('click', function () {
+    var _trigger = $(this);
+    _trigger.parent().toggleClass('open');
+    $('.js-dropdown-trigger').not(_trigger).parent().removeClass('open');
+    return false;
+});
+
 $('.js-faq-trigger').on('click', function () {
     var _trigger = $(this);
     _trigger.parent().toggleClass('open');
     $('.js-faq-trigger').not(_trigger).parent().removeClass('open');
+    return false;
+});
+
+$('.js-products-filters-trigger').on('click', function () {
+    var _trigger = $(this);
+    _trigger.parent().toggleClass('open');
+    $('.js-products-filters-trigger').not(_trigger).parent().removeClass('open');
     return false;
 });

@@ -1,0 +1,94 @@
+.products-filters-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.products-filters-item {
+    padding-block: 1.5rem;
+    border-bottom: 1px solid rgb(from var(--color-warm-copper) r g b / .5);
+    &:first-child {
+        padding-block-start: 0;
+    }
+    &:last-child {
+        padding-block-end: 0;
+        border-bottom: none;
+    }
+}
+
+.products-filters-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    @include hover-active-element('.products-filters-trigger-text') {
+        color: var(--color-rich-charcoal);
+    }
+}
+
+.products-filters-trigger-text {
+    font-size: var(--fs-base);
+    line-height: var(--lh-base);
+    color: rgb(from var(--color-rich-charcoal) r g b / .50);
+    transition: color 300ms ease;
+
+    &:has(+ .products-filters-trigger-icon) {
+        width: calc(100% - 2.4rem);
+    }
+    .products-filters-item.open & {
+        color: var(--color-rich-charcoal);
+    }
+}
+
+.products-filters-trigger-icon {
+    width: 1.4rem;
+    height: .8rem;
+    fill: var(--color-deep-clay);
+    transition: transform 300ms ease;
+    .products-filters-item.open & {
+        transform: rotate(180deg);
+    }
+}
+
+.products-filters-results {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows, 300ms ease;
+    .products-filters-item.open & {
+        grid-template-rows: 1fr;
+    }
+}
+
+.products-filters-results-content {
+    overflow: hidden;
+    padding-block-start: 0;
+    padding-inline-start: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: padding-block-start, 300ms ease;
+    .products-filters-item.open & {
+        padding-block-start: 1.5rem;
+    }
+}
+
+.products-filters-results-item {
+    padding-block: 1rem;
+    border-bottom: 1px solid rgb(from var(--color-warm-copper) r g b / .5);
+    @include hover-active-element('.products-filters-results-item-text') {
+        color: var(--color-rich-charcoal);
+    }
+    &:first-child {
+        padding-block-start: 0;
+    }
+    &:last-child {
+        padding-block-end: 0;
+        border-bottom: none;
+    }
+}
+
+.products-filters-results-item-text {
+    font-size: var(--fs-base);
+    line-height: var(--lh-base);
+    color: rgb(from var(--color-rich-charcoal) r g b / .50);
+    transition: color 300ms ease;
+}

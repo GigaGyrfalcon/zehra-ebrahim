@@ -1,0 +1,122 @@
+<% import "./shared/modules/product-card.html" as productCard %>
+<% extends "./shared/master.html" %>
+
+<% set pageTitle = "Products" %>
+<% set pageCssClass = "innerpage" %>
+<% set lang = "en" %>
+
+<% block content %>
+<section class="products-hero">
+    <div class="container">
+        <div class="products-hero-content">
+            <div class="page-head page-head--align-start">
+                <div class="breadcrumbs">
+                    <div class="breadcrumbs-content">
+                        <a href="" class="breadcrumbs-item">
+                            <span class="breadcrumbs-item-text">Home</span>
+                        </a>
+                        <a href="" class="breadcrumbs-item breadcrumbs-item--active">
+                            <span class="breadcrumbs-item-text">Shop by furniture</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="page-head-info">
+                    <h1 class="page-title">Shop by Furniture</h1>
+                    <div class="page-head-text">
+                        <p>From Gatherings to Quiet Moments, Explore Possibilities for Everyday Luxury</p>
+                    </div>
+                </div>
+            </div>
+            <div class="shopping-options">
+                <a href="" class="shopping-option">
+                    <div class="shopping-option-media">
+                        <img src="m/u/shopping-options/1.jpg" alt="Shop by Function" class="shopping-option-img">
+                    </div>
+                    <div class="shopping-option-info">
+                        <h4 class="shopping-option-title">Shop by Function</h4>
+                    </div>
+                </a>
+                <a href="" class="shopping-option">
+                    <div class="shopping-option-media">
+                        <img src="m/u/shopping-options/2.jpg" alt="Spotlight" class="shopping-option-img">
+                    </div>
+                    <div class="shopping-option-info">
+                        <h4 class="shopping-option-title">Spotlight</h4>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="products">
+    <div class="container">
+        <div class="products-content">
+            <aside class="products-filters">
+                <div class="products-filters-content">
+                    <% include "./shared/modules/products-filters.html" %>
+                </div>
+            </aside>
+            <div class="products-list-wrapper">
+                <div class="products-list-head">
+                    <h2 class="products-list-title">Serve-Ware</h2>
+                    <div class="products-list-actions">
+                        <a href="" class="products-list-fitler-trigger button button--primary button--hoverable button--default">
+                            <span class="button-text">Filter</span>
+                            <svg class="button-icon button-icon--filter">
+                                <use href="m/i/icons.svg#symbol-filter"></use>
+                            </svg>
+                        </a>
+                        <div class="products-list-sorting">
+                            <a href="" class="products-list-sorting-trigger js-dropdown-trigger">
+                                <span class="products-list-sorting-trigger-text">Sort by</span>
+                                <svg class="products-list-sorting-trigger-icon">
+                                    <use href="m/i/icons.svg#symbol-caret"></use>
+                                </svg>
+                            </a>
+                            <div class="products-list-sorting-results">
+                                <div class="products-list-sorting-results-content">
+                                    <a href="" class="products-list-sorting-results-item">
+                                        <span class="products-list-sorting-results-item-text">In-Stock</span>
+                                    </a>
+                                    <a href="" class="products-list-sorting-results-item">
+                                        <span class="products-list-sorting-results-item-text">Out of Stock</span>
+                                    </a>
+                                    <a href="" class="products-list-sorting-results-item">
+                                        <span class="products-list-sorting-results-item-text">Alphabetically, A-Z</span>
+                                    </a>
+                                    <a href="" class="products-list-sorting-results-item">
+                                        <span class="products-list-sorting-results-item-text">Alphabetically, Z-A</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="products-list-body">
+                    <div class="products-list">
+                        <$ productCard.productCard("1", "Aztec - 2 Tiered Trolley (flat pack)", 4) $>
+                        <$ productCard.productCard("2", "Piyasi Chirya - Chip n Dip", 3) $>
+                        <$ productCard.productCard("3", "Zen Garden - Tray", 4) $>
+                        <$ productCard.productCard("4", "Peetal ka Piyala - Chip n Dip", 3) $>
+                        <$ productCard.productCard("5", "Retro Vibes - tray", 5) $>
+                        <$ productCard.productCard("6", "Mashrabiya - 2 tiered trolley", 3) $>
+                        <div class="products-banner">
+                            <img src="m/u/products/banner.jpg" alt="Products Banner">
+                        </div>
+                        <$ productCard.productCard("7", "Karre Natural - 2 tiered trolley", 4) $>
+                        <$ productCard.productCard("8", "Gulmohar (Mussaweri) - Tray", 5) $>
+                        <$ productCard.productCard("9", "Bajri Greys - Tray", 4) $>
+                    </div>
+                    <div class="load-more">
+                        <a href="" class="button button--primary button--hoverable button--default">
+                            <span class="button-text">Load More</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<% endblock %>

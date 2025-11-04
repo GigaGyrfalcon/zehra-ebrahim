@@ -45,7 +45,7 @@
     line-height: var(--lh-h6);
     font-family: var(--font-heading);
     color: var(--color-deep-clay);
-    width: calc(100% - 2.2rem);
+    width: calc(100% - 2.4rem);
     @media (min-width: 768px) {
         font-size: var(--fs-subheading);
         line-height: var(--lh-subheading);
@@ -53,8 +53,8 @@
 }
 
 .faq-trigger-icon {
-    width: 1.2rem;
-    height: .6rem;
+    width: 1.4rem;
+    height: .8rem;
     fill: var(--color-warm-copper);
     transition: fill, transform, 300ms ease;
     .faq-item.open & {

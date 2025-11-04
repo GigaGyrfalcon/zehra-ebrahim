@@ -1,0 +1,34 @@
+<% macro productCard(productImageUrl, productTitle, productReviewStarNumber) %>
+<a href="" class="product-card">
+    <div class="product-card-media">
+        <img class="product-card-img" src="m/u/products/<$ productImageUrl $>.jpg" alt="<$ productTitle $>" />
+        <div class="product-card-actions">
+            <div class="product-card-action">
+                <svg class="product-card-action-icon product-card-action-icon--heart">
+                    <use href="m/i/icons.svg#symbol-heart"></use>
+                </svg>
+            </div>
+            <div class="product-card-action">
+                <svg class="product-card-action-icon product-card-action-icon--magnifier">
+                    <use href="m/i/icons.svg#symbol-magnifier"></use>
+                </svg>
+            </div>
+            <div class="product-card-action">
+                <svg class="product-card-action-icon product-card-action-icon--cart">
+                    <use href="m/i/icons.svg#symbol-cart"></use>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="product-card-info">
+        <div class="product-card-rating product-card-rating--<$ productReviewStarNumber $>-stars">
+            <% for i in range(1, 6) %>
+            <svg class="product-card-rating-star">
+                <use href="m/i/icons.svg#symbol-star"></use>
+            </svg>
+            <% endfor %>
+        </div>
+        <h3 class="product-card-title"><$ productTitle $></h3>
+    </div>
+</a>
+<% endmacro %>

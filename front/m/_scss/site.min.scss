@@ -25,6 +25,10 @@
 @import "components/moving-line";
 @import "components/two-column-images";
 @import "components/faq";
+@import "components/shopping-options";
+@import "components/breadcrumbs";
+@import "components/products-filters";
+@import "components/load-more";
 
 //LAYOUT
 @import "layout/header";
@@ -32,14 +36,18 @@
 @import "layout/form";
 @import "layout/hero";
 @import "layout/section";
+@import "layout/page";
 
 //CARDS
 @import "cards/product-category";
 @import "cards/spaces";
 @import "cards/spotlight";
 @import "cards/testimonial";
+@import "cards/product";
 
 //PAGES
 @import "pages/home";
+@import "pages/products";
+@import "pages/product-detail";
 
 @import "essentials";
