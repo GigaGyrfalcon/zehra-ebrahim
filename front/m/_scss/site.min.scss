@@ -24,11 +24,12 @@
 @import "components/slider-controls";
 @import "components/moving-line";
 @import "components/two-column-images";
-@import "components/faq";
+@import "components/faq-accordion";
 @import "components/shopping-options";
 @import "components/breadcrumbs";
 @import "components/products-filters";
 @import "components/load-more";
+@import "components/custom-modal";
 
 //LAYOUT
 @import "layout/header";
@@ -45,11 +46,17 @@
 @import "cards/spotlight";
 @import "cards/testimonial";
 @import "cards/product";
+@import "cards/team";
 
 //PAGES
 @import "pages/home";
 @import "pages/products";
 @import "pages/product-detail";
 @import "pages/spotlight";
+@import "pages/about-us";
+@import "pages/terms";
+@import "pages/faq";
+@import "pages/contact";
+@import "pages/request";
 
 @import "essentials";

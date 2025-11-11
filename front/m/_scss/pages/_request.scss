@@ -1,0 +1,40 @@
+.request-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    @media (min-width: 768px) {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 2.5rem;
+    }
+    @media (min-width: 1200px) {
+        gap: 7rem;
+    }
+    @media (min-width: 1470px) {
+        gap: 12rem;
+    }
+}
+
+.request-form {
+    order: 2;
+    @media (min-width: 768px) {
+        order: 1;
+        flex: 1;
+    }
+}
+
+.request-media {
+    order: 1;
+    @media (min-width: 768px) {
+        order: 2;
+        width: 48%;
+    }
+    @media (min-width: 1200px) {
+        width: 42%;
+    }
+}
+
+.request-media-img {
+    width: 100%;
+    border-radius: .5rem;
+}

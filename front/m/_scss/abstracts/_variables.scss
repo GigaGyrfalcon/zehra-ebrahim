@@ -2,6 +2,7 @@
     --font-default: 'SF Pro Display', sans-serif;
     --font-heading: 'Bricolage Grotesque', sans-serif;
 
+    --fw-light: 300;
     --fw-regular: 400;
     --fw-medium: 500;
 
@@ -13,6 +14,7 @@
     --color-black:                rgb(0, 0, 0);
     --color-rich-charcoal:        rgb(13, 13, 13);
     --color-rich-charcoal-alpha-70: rgb(from var(--color-rich-charcoal) r g b / .70);
+    --color-error:               rgb(255, 112, 112);
 
     --fs-base: 1.4rem;
     --lh-base: 1.8rem;

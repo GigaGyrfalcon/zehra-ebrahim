@@ -47,10 +47,10 @@ $('.js-dropdown-trigger').on('click', function () {
     return false;
 });
 
-$('.js-faq-trigger').on('click', function () {
+$('.js-faq-accordion-trigger').on('click', function () {
     var _trigger = $(this);
     _trigger.parent().toggleClass('open');
-    $('.js-faq-trigger').not(_trigger).parent().removeClass('open');
+    $('.js-faq-accordion-trigger').not(_trigger).parent().removeClass('open');
     return false;
 });
 
@@ -60,3 +60,36 @@ $('.js-products-filters-trigger').on('click', function () {
     $('.js-products-filters-trigger').not(_trigger).parent().removeClass('open');
     return false;
 });
+
+// Section background video loading behavior
+const sectionBg = document.querySelector('.section-bg');
+
+if (sectionBg) {
+    const sectionBgMedia = sectionBg.querySelector('.section-bg-media');
+    const sectionBgVideo = sectionBg.querySelector('.section-bg-video');
+    
+    // Only execute if both image and video exist
+    if (sectionBgMedia && sectionBgVideo) {
+        let videoLoaded = false;
+        let minDelayPassed = false;
+        
+        // Check if video is fully loaded
+        sectionBgVideo.addEventListener('canplaythrough', function() {
+            videoLoaded = true;
+            transitionIfReady();
+        }, { once: true });
+        
+        // Enforce minimum 3 second delay
+        setTimeout(function() {
+            minDelayPassed = true;
+            transitionIfReady();
+        }, 2000);
+        
+        // Only transition when both conditions are met
+        function transitionIfReady() {
+            if (videoLoaded && minDelayPassed) {
+                sectionBg.classList.add('video-loaded');
+            }
+        }
+    }
+}

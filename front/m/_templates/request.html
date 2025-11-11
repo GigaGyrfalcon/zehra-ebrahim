@@ -1,0 +1,95 @@
+<% extends "./shared/master.html" %>
+
+<% set pageTitle = "Exclusively on Request" %>
+<% set pageCssClass = "innerpage" %>
+<% set lang = "en" %>
+
+<% block content %>
+<section class="section section--pbs-0">
+    <div class="container">
+        <div class="section-content">
+            <div class="section-head">
+                <div class="page-head page-head--align-start">
+                    <div class="breadcrumbs">
+                        <div class="breadcrumbs-content">
+                            <a href="" class="breadcrumbs-item">
+                                <span class="breadcrumbs-item-text">Home</span>
+                            </a>
+                            <a href="" class="breadcrumbs-item">
+                                <span class="breadcrumbs-item-text">Shop by furniture</span>
+                            </a>
+                            <a href="" class="breadcrumbs-item">
+                                <span class="breadcrumbs-item-text">Aztec - 2 Tiered Trolley (flat pack)</span>
+                            </a>
+                            <a href="" class="breadcrumbs-item breadcrumbs-item--active">
+                                <span class="breadcrumbs-item-text">Exclusively on Request</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="page-head-info">
+                        <h2 class="page-title">Exclusively on Request</h2>
+                        <div class="page-head-text">
+                            <p>This exclusive piece is available on request. Kindly share your details and our team will assist you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-body">
+                <div class="request">
+                    <div class="request-content">
+                        <div class="request-form">
+                            <form class="form">
+                                <div class="form-content">
+                                    <div class="form-group">
+                                        <label class="form-label">Full Name <span class="form-label-required">*</span></label>
+                                        <div class="form-group-content">
+                                            <input type="text" class="form-field" placeholder="Full Name" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Product Reference <span class="form-label-required">*</span></label>
+                                        <div class="form-group-content">
+                                            <input type="text" class="form-field" placeholder="Product Reference" value="Aztec - 2 Tiered Trolley (flat pack)" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Email Address <span class="form-label-required">*</span></label>
+                                        <div class="form-group-content">
+                                            <input type="text" class="form-field" placeholder="Email Address" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Phone Number <span class="form-label-required">*</span></label>
+                                        <div class="form-group-content">
+                                            <input type="text" class="form-field" placeholder="Phone Number" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Additional Information <span class="form-label-required">*</span></label>
+                                        <div class="form-group-content">
+                                            <textarea name="" id="" class="form-field form-field--textarea" placeholder="Write here..."></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-actions">
+                                            <a href="" class="button button--primary button--hoverable button--default">
+                                                <span class="button-text">Submit</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="request-media">
+                            <img src="m/u/request/1.jpg" class="request-media-img" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<% include "./shared/components/form-message.html" %>
+
+<% endblock %>

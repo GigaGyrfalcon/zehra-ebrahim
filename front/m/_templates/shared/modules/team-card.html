@@ -1,0 +1,14 @@
+<% macro teamCard(teamCardImageUrl, teamCardTitle, teamCardPosition) %>
+<div class="team-card">
+    <div class="team-card-media">
+        <img class="team-card-img" src="m/u/team/<$ teamCardImageUrl $>.jpg" alt="<$ teamCardTitle $>" />
+    </div>
+    <div class="team-card-info">
+        <h3 class="team-card-title"><$ teamCardTitle $></h3>
+        <h6 class="team-card-subtitle"><$ teamCardPosition $></h6>
+        <div class="team-card-text">
+            <p>If you've stopped by our workshop, you've probably met Munir! He joined our polish team in 2008 and is now a supervisor. Munir admits that he finds polish-work easy, but managing people is <strong>"the real hard work"!</strong></p>
+        </div>
+    </div>
+</div>
+<% endmacro %>
