@@ -32,12 +32,21 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: background-color, border-color, 300ms ease;
+    @include hover-active {
+        background-color: var(--color-deep-clay);
+        border-color: var(--color-deep-clay);
+    }
+    @include hover-active-element('.slider-control-icon') {
+        fill: var(--color-white);
+    }
 }
 
 .slider-control-icon {
     width: 1.2rem;
     height: 1rem;
     fill: var(--color-rich-charcoal);
+    transition: fill, 300ms ease;
     .slider-control--next & {
         transform: rotate(180deg);
     }

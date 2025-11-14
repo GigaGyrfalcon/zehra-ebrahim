@@ -43,3 +43,41 @@
         }
     }
 }
+
+@mixin custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(from var(--color-deep-clay) r g b / 1) rgb(from var(--color-rich-charcoal) r g b / .1);
+
+    &::-webkit-scrollbar {
+        height: .4rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgb(from var(--color-rich-charcoal) r g b / .1);
+        border-radius: 2px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgb(from var(--color-deep-clay) r g b / 1);
+        border-radius: 2px;
+    }
+}
+
+@mixin shimmer {
+    position: relative;
+    overflow: hidden;
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        pointer-events: none;
+        top: calc(100% + 4rem);
+        left: 50%;
+        transform: translateX(-50%) skew(-15deg) rotate(-10deg);
+        width: 100%;
+        height: 4rem;
+        filter: blur(5rem);
+        background-color: rgba(from var(--color-white) r g b / .40);
+        transition: top 400ms ease;
+    }
+}

@@ -18,6 +18,8 @@
 
     --fs-base: 1.4rem;
     --lh-base: 1.8rem;
+    --fs-base-large: 1.6rem;
+    --lh-base-large: 2rem;
     --fs-subheading: 1.4rem;
     --lh-subheading: 1.8rem;
     --fs-h6: 1.6rem;
@@ -58,6 +60,8 @@
     }
 
     @media (min-width: 1470px) {
+        --fs-base-large: 1.8rem;
+        --lh-base-large: 2.2rem;
         --fs-subheading: 2rem;
         --lh-subheading: 2.6rem;
         --fs-h6: 2.6rem;

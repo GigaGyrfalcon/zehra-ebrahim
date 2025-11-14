@@ -82,6 +82,9 @@
     @media (min-width: 1470px) {
         right: 2rem;
     }
+    .search-recommendations & {
+        display: none;
+    }
 }
 
 .product-card-action {

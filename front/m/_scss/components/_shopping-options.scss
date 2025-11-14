@@ -20,9 +20,16 @@
     @media (min-width: 1470px) {
         gap: 2rem;
     }
+    @include hover-active-element('.shopping-option-media::after') {
+        top: -4rem;
+    }
     @include hover-active-element('.shopping-option-title::after') {
         width: var(--shopping-option-hover-underline-w);
     }
+}
+
+.shopping-option-media {
+    @include shimmer;
 }
 
 .shopping-option-img {

@@ -104,6 +104,7 @@
     fill: var(--header-content-color);
     @media (max-width: 1199px) {
         fill: var(--color-deep-clay);
+        rotate: -90deg;
     }
 }
 

@@ -11,6 +11,8 @@
     overflow: hidden;
     width: 100%;
     opacity: .3;
+    pointer-events: none;
+    user-select: none;
 }
 
 .moving-line-track {
@@ -24,7 +26,7 @@
     align-items: center;
     gap: 2rem;
     white-space: nowrap;
-    animation: moveLineScroll 30s linear infinite alternate;
+    animation: moveLineScroll 20s linear infinite alternate;
     @media (min-width: 768px) {
         gap: 3rem;
         animation-duration: 40s;

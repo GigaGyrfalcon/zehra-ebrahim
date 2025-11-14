@@ -11,6 +11,13 @@
 }
 
 .spotlight-card {
+    --spotlight-card-title-underline-w: 3rem;
+    @media (min-width: 768px) {
+        --spotlight-card-title-underline-w: 7rem;
+    }
+    @media (min-width: 1470px) {
+        --spotlight-card-title-underline-w: 10rem;
+    }
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
@@ -23,6 +30,9 @@
     }
     @media (min-width: 1470px) {
         gap: 4rem;
+    }
+    @include hover-active-element('.spotlight-card-title::after') {
+        width: var(--spotlight-card-title-underline-w);
     }
 }
 
@@ -44,18 +54,13 @@
         position: absolute;
         top: calc(100% + .5rem);
         left: 0;
-        width: 3rem;
+        width: 0;
         height: 1px;
         border-radius: 2px;
         background-color: var(--color-warm-copper);
-        @media (min-width: 768px) {
-            width: 7rem;
-        }
+        transition: width 300ms ease;
         @media (min-width: 1200px) {
             top: calc(100% + 1rem);
-        }
-        @media (min-width: 1470px) {
-            width: 10rem;
         }
     }
 }

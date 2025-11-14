@@ -8,6 +8,16 @@
     width: fit-content;
 }
 
+.space-card {
+    @include hover-active-element('.space-card-media::after') {
+        top: -4rem;
+    }
+}
+
+.space-card-media {
+    @include shimmer;
+}
+
 .space-card-img {
     width: 100%;
     border-radius: .5rem;
