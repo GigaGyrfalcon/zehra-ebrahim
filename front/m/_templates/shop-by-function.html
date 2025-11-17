@@ -276,19 +276,14 @@
 
 <script>
     const subsectionSlider1 = new Swiper('#subsection-slider-1 .swiper', {
-        slidesPerView: 1,
-        spaceBetween: 0,
+        slidesPerView: "auto",
+        spaceBetween: 10,
         navigation: {
             nextEl: '#subsection-slider-1 .slider-control--next',
             prevEl: '#subsection-slider-1 .slider-control--prev',
         },
         breakpoints: {
-            768: {
-                slidesPerView: "auto",
-                spaceBetween: 10,
-            },
             1470: {
-                slidesPerView: "auto",
                 spaceBetween: 16,
             }
         }
@@ -318,7 +313,7 @@
     });
 
     const subsectionSlider2 = new Swiper('#subsection-slider-2 .swiper', {
-        slidesPerView: 1,
+        slidesPerView: "auto",
         spaceBetween: 0,
         navigation: {
             nextEl: '#subsection-slider-2 .slider-control--next',
@@ -326,11 +321,9 @@
         },
         breakpoints: {
             768: {
-                slidesPerView: "auto",
                 spaceBetween: 10,
             },
             1470: {
-                slidesPerView: "auto",
                 spaceBetween: 16,
             }
         }
@@ -360,19 +353,14 @@
     });
 
     const subsectionSlider3 = new Swiper('#subsection-slider-3 .swiper', {
-        slidesPerView: 1,
+        slidesPerView: "auto",
         spaceBetween: 0,
         navigation: {
             nextEl: '#subsection-slider-3 .slider-control--next',
             prevEl: '#subsection-slider-3 .slider-control--prev',
         },
         breakpoints: {
-            768: {
-                slidesPerView: "auto",
-                spaceBetween: 10,
-            },
             1470: {
-                slidesPerView: "auto",
                 spaceBetween: 16,
             }
         }

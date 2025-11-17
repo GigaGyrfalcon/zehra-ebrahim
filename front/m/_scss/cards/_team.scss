@@ -22,8 +22,8 @@
 }
 
 .team-card-title {
-    font-size: var(--fs-h6);
-    line-height: var(--lh-h6);
+    font-size: 1.8rem;
+    line-height: 2.2rem;
     font-family: var(--font-heading);
     color: var(--color-deep-clay);
     margin: 0;
@@ -37,6 +37,10 @@
         width: 3rem;
         height: 1px;
         background-color: var(--color-warm-copper);
+    }
+    @media (min-width: 768px) {
+        font-size: var(--fs-h6);
+        line-height: var(--lh-h6);
     }
 }
 

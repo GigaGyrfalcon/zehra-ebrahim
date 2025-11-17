@@ -85,8 +85,12 @@
 }
 
 .faq-accordion-result-content p {
-    font-size: var(--fs-base);
-    line-height: var(--lh-base);
+    font-size: 1.4rem;
+    line-height: 1.8rem;
     color: var(--color-rich-charcoal-alpha-70);
     margin: 0;
+    @media (min-width: 1470px) {
+        font-size: 1.6rem;
+        line-height: 2rem;
+    }
 }

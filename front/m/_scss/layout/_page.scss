@@ -5,8 +5,13 @@
     align-items: center;
     gap: 1.6rem;
     margin-block-end: 3.2rem;
+    @media (min-width: 768px) {
+        width: 82%;
+        margin-inline: auto;
+    }
     @media (min-width: 1200px) {
         margin-block-end: 4rem;
+        width: 58%;
     }
     @media (min-width: 1470px) {
         margin-block-end: 6rem;
@@ -15,6 +20,8 @@
     &--align-start {
         justify-content: flex-start;
         align-items: flex-start;
+        margin-inline: initial;
+        width: 100%;
     }
     .products-hero & {
         width: 100%;

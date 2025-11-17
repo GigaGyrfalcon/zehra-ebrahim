@@ -2,7 +2,7 @@
     --header-content-pb: 2.4rem;
     --header-content-pi: 1.6rem;
     --header-content-color: var(--color-white);
-    --header-actions-gap: .7rem;
+    --header-actions-gap: 1rem;
     --logo-w: 15rem;
     --logo-h: 1.7rem;
     z-index: 10;
@@ -14,7 +14,6 @@
     @media (min-width: 768px) {
         --header-content-pb: 2.5rem;
         --header-content-pi: 3.2rem;
-        --header-actions-gap: 1rem;
         --logo-w: 19.7rem;
         --logo-h: 2.2rem;
     }

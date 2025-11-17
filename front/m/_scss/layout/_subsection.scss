@@ -1,7 +1,7 @@
 .subsection-slider {
     .swiper-slide {
+        width: 66.25%;
         @media (min-width: 768px) {
-            width: 66.25%;
         }
     }
 }
@@ -80,7 +80,7 @@
         }
     }
     @media (min-width: 1200px) {
-        width: 19.5rem;
+        width: 21rem;
         flex-shrink: 0;
         &::after {
             width: 8rem;

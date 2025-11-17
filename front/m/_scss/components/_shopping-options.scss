@@ -8,6 +8,9 @@
     @media (min-width: 768px) {
         --shopping-option-hover-underline-w: 7rem;
     }
+    @media (768px <= width < 1200px) {
+        width: 70%;
+    }
 }
 
 .shopping-option {

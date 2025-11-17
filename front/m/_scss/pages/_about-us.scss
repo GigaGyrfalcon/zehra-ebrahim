@@ -1,6 +1,6 @@
 .about-us-gallery {
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: repeat(2, 1fr);
     column-gap: 1.6rem;
     row-gap: 3rem;
     @media (min-width: 768px) {
@@ -32,8 +32,8 @@
 }
 
 .about-us-gallery-title {
-    font-size: var(--fs-h6);
-    line-height: var(--lh-h6);
+    font-size: 1.8rem;
+    line-height: 2.2rem;
     font-family: var(--font-heading);
     color: var(--color-deep-clay);
     margin: 0;
@@ -49,12 +49,16 @@
         border-radius: 2px;
         background-color: var(--color-warm-copper);
     }
+    @media (min-width: 768px) {
+        font-size: var(--fs-h6);
+        line-height: var(--lh-h6);
+    }
 }
 
 .about-us-highlights {
     display: flex;
     flex-direction: column;
-    gap: 8rem;
+    gap: 6rem;
     @media (min-width: 768px) {
         gap: 7rem;
     }
@@ -65,7 +69,7 @@
 
 .about-us-highlight {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     gap: 3rem;
     
     @media (min-width: 768px) {
@@ -162,8 +166,9 @@
 
 .team {
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: repeat(2, 1fr);
     row-gap: 3.2rem;
+    column-gap: 1.6rem;
     @media (min-width: 768px) {
         grid-template-columns: repeat(3, 1fr);
         column-gap: 1.6rem;

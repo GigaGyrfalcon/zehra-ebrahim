@@ -29,6 +29,9 @@
     @media (min-width: 768px) {
         display: none;
     }
+    .swiper-slide {
+        width: 66.25%;
+    }
 }
 
 .product-detail-media-list {
@@ -120,8 +123,8 @@
 }
 
 .product-availability-text {
-    font-size: var(--fs-h6);
-    line-height: var(--lh-h6);
+    font-size: var(--fs-subheading);
+    line-height: var(--lh-subheading);
     font-weight: var(--fw-medium);
     color: var(--color-rich-charcoal);
     margin: 0;

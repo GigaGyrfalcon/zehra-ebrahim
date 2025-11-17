@@ -80,7 +80,7 @@
                     </div>
                     <div class="product-detail-info-body">
                         <div class="product-detail-info-item">
-                            <a href="" class="product-detail-info-item-trigger js-faq-trigger">
+                            <a href="" class="product-detail-info-item-trigger js-faq-accordion-trigger">
                                 <span class="product-detail-info-item-trigger-text">Description:</span>
                                 <svg class="product-detail-info-item-trigger-icon">
                                     <use href="m/i/icons.svg#symbol-caret"></use>
@@ -96,7 +96,7 @@
                             </div>
                         </div>
                         <div class="product-detail-info-item">
-                            <a href="" class="product-detail-info-item-trigger js-faq-trigger">
+                            <a href="" class="product-detail-info-item-trigger js-faq-accordion-trigger">
                                 <span class="product-detail-info-item-trigger-text">Care:</span>
                                 <svg class="product-detail-info-item-trigger-icon">
                                     <use href="m/i/icons.svg#symbol-caret"></use>
@@ -112,7 +112,7 @@
                             </div>
                         </div>
                         <div class="product-detail-info-item">
-                            <a href="" class="product-detail-info-item-trigger js-faq-trigger">
+                            <a href="" class="product-detail-info-item-trigger js-faq-accordion-trigger">
                                 <span class="product-detail-info-item-trigger-text">Technical Details:</span>
                                 <svg class="product-detail-info-item-trigger-icon">
                                     <use href="m/i/icons.svg#symbol-caret"></use>
@@ -194,7 +194,8 @@
 
 <script>
     const productDetailSlider = new Swiper('.product-detail-slider .swiper', {
-        slidesPerView: 1,
+        slidesPerView: "auto",
+        spaceBetween: 10,
         pagination: {
             el: ".product-detail-slider .swiper-pagination",
             type: "fraction",
