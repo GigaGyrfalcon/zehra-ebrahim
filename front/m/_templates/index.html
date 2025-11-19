@@ -6,6 +6,47 @@
 
 <% block content %>
 
+<section class="client-feedback" id="client-feedback">
+    <div class="container">
+        <div class="client-feedback-slider">
+            <a href="" class="client-feedback-slider-control client-feedback-slider-control--prev">
+                <svg class="client-feedback-slider-control-icon">
+                    <use href="m/i/icons.svg#symbol-caret"></use>
+                </svg>
+            </a>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="client-feedback-item">
+                            <p>"In our homes, as in our lives we are happiest when we make room for the things that speak to our souls." — Sibella Court</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="client-feedback-item">
+                            <p>Luxury to me is not about buying expensive things; it is about living in a way where you appreciate things." — Oscar de la Renta</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="client-feedback-item">
+                            <p>"A room should never allow the eye to settle in one place. It should smile at you and create fantasy." — Juan Montoya</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="client-feedback-item">
+                            <p>"The best rooms have something to say about the people who live in them." — David Hicks</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="" class="client-feedback-slider-control client-feedback-slider-control--next">
+                <svg class="client-feedback-slider-control-icon">
+                    <use href="m/i/icons.svg#symbol-caret"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
 <section class="hero">
     <div class="hero-media">
         <picture class="hero-media-picture">
@@ -13,6 +54,7 @@
             <source srcset="m/u/hero/hero-tablet.jpg" media="(min-width: 768px)">
             <img src="m/u/hero/hero-mobile.jpg" alt="Hero media picture" class="hero-media-img">
         </picture>
+        <video src="m/u/hero/video.mp4" class="hero-media-video" autoplay muted loop playsinline></video>
     </div>
     <div class="hero-content">
         <div class="hero-content-text">
@@ -162,7 +204,7 @@
     </div>
     <div class="section-bg">
         <picture class="section-bg-media">
-            <source srcset="m/u/section-bg/1-desktop.jpg" media="(min-width: 768px)">
+            <source srcset="m/u/section-bg/1-desktop.jpg" media="(min-width: 992px)">
             <img src="m/u/section-bg/1-mobile.jpg" alt="Section background media" class="section-bg-img">
         </picture>
     </div>
@@ -254,7 +296,7 @@
     </div>
     <div class="section-bg">
         <picture class="section-bg-media">
-            <source srcset="m/u/section-bg/2-desktop.jpg" media="(min-width: 768px)">
+            <source srcset="m/u/section-bg/2-desktop.jpg" media="(min-width: 992px)">
             <img src="m/u/section-bg/2-mobile.jpg" alt="Section background media" class="section-bg-img">
         </picture>
     </div>
@@ -323,6 +365,20 @@
 
 
 <script>
+
+    const clientFeedbackSlider = new Swiper('#client-feedback .swiper', {
+        slidesPerView: 1,
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: '#client-feedback .client-feedback-slider-control--next',
+            prevEl: '#client-feedback .client-feedback-slider-control--prev',
+        },
+    });
+
     const productCategoriesSlider = new Swiper('#product-categories .swiper', {
         slidesPerView: "auto",
         spaceBetween: 16,

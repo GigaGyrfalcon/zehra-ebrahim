@@ -26,14 +26,7 @@
     align-items: center;
     gap: 2rem;
     white-space: nowrap;
-    animation: moveLineScroll 20s linear infinite alternate;
-    @media (min-width: 768px) {
-        gap: 3rem;
-        animation-duration: 40s;
-    }
-    @media (min-width: 1470px) {
-        animation-duration: 50s;
-    }
+    animation: moveLineScroll 40s linear infinite;
 }
 
 .moving-line-item {

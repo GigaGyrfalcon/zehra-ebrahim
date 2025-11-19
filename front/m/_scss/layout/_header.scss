@@ -10,7 +10,7 @@
     top: 0;
     width: 100%;
     left: 0;
-    transition: background-color, box-shadow, backdrop-filter, .3s ease;
+    transition: background-color, box-shadow, backdrop-filter, top, .3s ease;
     @media (min-width: 768px) {
         --header-content-pb: 2.5rem;
         --header-content-pi: 3.2rem;

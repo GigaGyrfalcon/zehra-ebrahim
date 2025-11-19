@@ -328,11 +328,30 @@
     width: 100%;
 }
 
+.section-bg:has(.section-bg-video) .section-bg-img {
+    aspect-ratio: .6;
+    object-fit: cover;
+    @media (min-width: 768px) {
+        aspect-ratio: .85;
+    }
+    @media (min-width: 992px) {
+        aspect-ratio: 16/9;
+    }
+}
+
 .section-bg-video {
     width: 100%;
     opacity: 0;
+    aspect-ratio: .6;
+    object-fit: cover;
     transition: opacity 0.5s ease-in-out;
     .section-bg.video-loaded & {
         opacity: 1;
+    }
+    @media (min-width: 768px) {
+        aspect-ratio: .85;
+    }
+    @media (min-width: 992px) {
+        aspect-ratio: 16/9;
     }
 }

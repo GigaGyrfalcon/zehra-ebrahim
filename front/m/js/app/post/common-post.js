@@ -61,6 +61,42 @@ if (header && hero) {
     });
 };
 
+// Header positioning with client-feedback section
+const clientFeedback = document.querySelector('.client-feedback');
+
+if (header && clientFeedback) {
+    // Check if client-feedback is actually visible (not display: none)
+    function isClientFeedbackVisible() {
+        return window.getComputedStyle(clientFeedback).display !== 'none';
+    }
+
+    function updateHeaderPosition() {
+        if (!isClientFeedbackVisible()) {
+            header.style.top = '';
+            return;
+        }
+
+        const clientFeedbackHeight = clientFeedback.offsetHeight;
+        const scrollPosition = window.scrollY || window.pageYOffset;
+        
+        // Calculate header top position
+        // When scrollY = 0, top = clientFeedbackHeight
+        // When scrollY >= clientFeedbackHeight, top = 0
+        const headerTop = Math.max(0, clientFeedbackHeight - scrollPosition);
+        
+        header.style.top = headerTop + 'px';
+    }
+
+    // Initial position
+    updateHeaderPosition();
+
+    // Update on scroll
+    window.addEventListener('scroll', updateHeaderPosition);
+
+    // Update on resize
+    window.addEventListener('resize', updateHeaderPosition);
+}
+
 $('.js-dropdown-trigger').on('click', function () {
     var _trigger = $(this);
     _trigger.parent().toggleClass('open');
@@ -186,6 +222,37 @@ if (searchClose && searchOverlay) {
         e.preventDefault();
         searchOverlay.classList.remove('open');
     });
+}
+
+// Hero video loading behavior
+if (hero) {
+    const heroMediaPicture = hero.querySelector('.hero-media-picture');
+    const heroMediaVideo = hero.querySelector('.hero-media-video');
+    
+    // Only execute if both image and video exist
+    if (heroMediaPicture && heroMediaVideo) {
+        let videoLoaded = false;
+        let minDelayPassed = false;
+        
+        // Check if video is fully loaded
+        heroMediaVideo.addEventListener('canplaythrough', function() {
+            videoLoaded = true;
+            transitionIfReady();
+        }, { once: true });
+        
+        // Enforce minimum 3 second delay
+        setTimeout(function() {
+            minDelayPassed = true;
+            transitionIfReady();
+        }, 2000);
+        
+        // Only transition when both conditions are met
+        function transitionIfReady() {
+            if (videoLoaded && minDelayPassed) {
+                hero.classList.add('video-loaded');
+            }
+        }
+    }
 }
 
 // Section background video loading behavior
