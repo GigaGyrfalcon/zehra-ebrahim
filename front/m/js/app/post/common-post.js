@@ -287,3 +287,32 @@ if (sectionBg) {
         }
     }
 }
+
+// Animate on scroll functionality
+function initAnimateOnScroll() {
+    const animateOnScrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('animate-on-scroll-in')) {
+                entry.target.classList.add('animate-on-scroll-in');
+                // Stop observing once animation is triggered (one-time only)
+                animateOnScrollObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5, // Trigger when 50% of the element is visible
+        rootMargin: '0px'
+    });
+
+    // Observe all elements with animate-on-scroll class
+    document.querySelectorAll('.animate-on-scroll').forEach(element => {
+        animateOnScrollObserver.observe(element);
+    });
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAnimateOnScroll);
+} else {
+    // DOM is already loaded
+    initAnimateOnScroll();
+}
