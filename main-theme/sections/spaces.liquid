@@ -1,0 +1,106 @@
+<section class="section" id="spaces">
+  <div class="container">
+    <div class="section-content section-content--horizontal">
+      <div class="section-body">
+        <div class="spaces-slider-media">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="space-card">
+                  <div class="space-card-media">
+                    <img
+                      class="space-card-img"
+                      src="{{ 'u/spaces/1.jpg' | asset_url }}"
+                      alt="Lounge"
+                      width=""
+                      height=""
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="space-card">
+                  <div class="space-card-media">
+                    <img
+                      class="space-card-img"
+                      src="{{ 'u/spaces/1.jpg' | asset_url }}"
+                      alt="Dining Room"
+                      width=""
+                      height=""
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section-head">
+        <h2 class="section-title">Create Spaces That Celebrate How You Live</h2>
+        <div class="spaces-slider">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="space-card">
+                  <div class="space-card-info">
+                    <h3 class="space-card-title">Lounge</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="space-card">
+                  <div class="space-card-info">
+                    <h3 class="space-card-title">Dining Room</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="spaces-action">
+          <a
+            href=""
+            class="button button--primary button--default button--hoverable"
+          >
+            <span class="button-text">Shop Now</span>
+          </a>
+        </div>
+        <div class="section-actions">
+          <div class="slider-controls">
+            <a href="" class="slider-control slider-control--prev">
+              <svg class="slider-control-icon">
+                <use href="{{ 'i/icons.svg' | asset_url }}#symbol-arrow"></use>
+              </svg>
+            </a>
+            <a href="" class="slider-control slider-control--next">
+              <svg class="slider-control-icon">
+                <use href="{{ 'i/icons.svg' | asset_url }}#symbol-arrow"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  new Swiper('#spaces .spaces-slider .swiper', {
+    slidesPerView: 1,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true,
+    },
+  });
+
+  new Swiper('#spaces .spaces-slider-media .swiper', {
+    slidesPerView: 1,
+    navigation: {
+      nextEl: '#spaces .slider-control--next',
+      prevEl: '#spaces .slider-control--prev',
+    },
+    thumbs: {
+      swiper: spacesSlider,
+    },
+  });
+</script>

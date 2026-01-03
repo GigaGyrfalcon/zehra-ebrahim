@@ -1,0 +1,45 @@
+<section class="hero animate-on-scroll">
+  <div class="hero-media">
+    <picture class="hero-media-picture">
+      <source srcset="{{ '/u/hero/hero-desktop.jpg' | asset_url }}" media="(min-width: 1200px)">
+      <source srcset="{{ '/u/hero/hero-tablet.jpg' | asset_url }}" media="(min-width: 768px)">
+      <img
+        src="{{ '/u/hero/hero-mobile.jpg' | asset_url }}"
+        alt="Hero media picture"
+        class="hero-media-img"
+        width=""
+        height=""
+      >
+    </picture>
+    <video
+      src="{{ '/u/hero/video.mp4' | asset_url }}"
+      class="hero-media-video"
+      autoplay
+      muted
+      loop
+      playsinline
+    ></video>
+  </div>
+  <div class="hero-content animatable-part">
+    <div class="hero-content-text">
+      <h1 class="hero-content-title">Crafting Contemporary Heirlooms</h1>
+      <p class="hero-content-description">
+        Rooted in storytelling, Zahra Ebrahim is a celebration of craftsmanship and timeless design.
+      </p>
+    </div>
+    <div class="hero-content-actions">
+      <a
+        href=""
+        class="button button--hoverable button--primary button--primary-on-bg button--default"
+      >
+        <span class="button-text">About Us</span>
+      </a>
+      <a
+        href=""
+        class="button button--hoverable button--secondary button--default"
+      >
+        <span class="button-text">Spotlight</span>
+      </a>
+    </div>
+  </div>
+</section>

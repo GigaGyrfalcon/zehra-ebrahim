@@ -1,0 +1,170 @@
+<section class="section section--solid-bg section--half-bleed" id="spotlights">
+  <div class="section-content">
+    <div class="section-head section-head--fw">
+      <h2 class="section-title">Spotlight</h2>
+      <div class="section-actions">
+        <div class="slider-controls slider-controls--visible-desktop">
+          <a href="" class="slider-control slider-control--prev">
+            <svg class="slider-control-icon">
+              <use href="{{ 'i/icons.svg' | asset_url }}#symbol-arrow"></use>
+            </svg>
+          </a>
+          <a href="" class="slider-control slider-control--next">
+            <svg class="slider-control-icon">
+              <use href="{{ 'i/icons.svg' | asset_url }}#symbol-arrow"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="spotlights-slider">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="" class="spotlight-card">
+                <div class="spotlight-card-media">
+                  <img
+                    class="spotlight-card-img"
+                    src="{{ 'u/spotlights/1.jpg' | asset_url }}"
+                    alt="INGRAINED: Wood in a Cross-Section of Time, Koel Gallery"
+                    height=""
+                    width=""
+                  >
+                </div>
+                <div class="spotlight-card-info">
+                  <h3 class="spotlight-card-title">INGRAINED: Wood in a Cross-Section of Time, Koel Gallery</h3>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="" class="spotlight-card">
+                <div class="spotlight-card-media">
+                  <img
+                    class="spotlight-card-img"
+                    src="{{ 'u/spotlights/2.jpg' | asset_url }}"
+                    alt="Shatranj Kay Khiladi: Chessboard Table, Jhuley Lal—Crafting the Contemporary at The Mohatta Palace Museum, Karachi"
+                    height=""
+                    width=""
+                  >
+                </div>
+                <div class="spotlight-card-info">
+                  <h3 class="spotlight-card-title">
+                    Shatranj Kay Khiladi: Chessboard Table, Jhuley Lal—Crafting the Contemporary at The Mohatta Palace
+                    Museum, Karachi
+                  </h3>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="" class="spotlight-card">
+                <div class="spotlight-card-media">
+                  <img
+                    class="spotlight-card-img"
+                    src="{{ 'u/spotlights/3.jpg' | asset_url }}"
+                    alt="Rotunda—Aiwan e Sadar (Presidential Palace), Islamabad"
+                    height=""
+                    width=""
+                  >
+                </div>
+                <div class="spotlight-card-info">
+                  <h3 class="spotlight-card-title">Rotunda—Aiwan e Sadar (Presidential Palace), Islamabad</h3>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="" class="spotlight-card">
+                <div class="spotlight-card-media">
+                  <img
+                    class="spotlight-card-img"
+                    src="{{ 'u/spotlights/4.jpg' | asset_url }}"
+                    alt="Pakistan Pavillion, Dubai Expo 2020"
+                    height=""
+                    width=""
+                  >
+                </div>
+                <div class="spotlight-card-info">
+                  <h3 class="spotlight-card-title">Pakistan Pavillion, Dubai Expo 2020</h3>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="" class="spotlight-card">
+                <div class="spotlight-card-media">
+                  <img
+                    class="spotlight-card-img"
+                    src="{{ 'u/spotlights/1.jpg' | asset_url }}"
+                    alt="State Lounge and CIP Lounge, Islamabad International Airport"
+                    height=""
+                    width=""
+                  >
+                </div>
+                <div class="spotlight-card-info">
+                  <h3 class="spotlight-card-title">State Lounge and CIP Lounge, Islamabad International Airport</h3>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="" class="spotlight-card">
+                <div class="spotlight-card-media">
+                  <img
+                    class="spotlight-card-img"
+                    src="{{ 'u/spotlights/2.jpg' | asset_url }}"
+                    alt="Shatranj Kay Khiladi: Chessboard Table, Jhuley Lal—Crafting the Contemporary at The Mohatta Palace Museum, Karachi"
+                    height=""
+                    width=""
+                  >
+                </div>
+                <div class="spotlight-card-info">
+                  <h3 class="spotlight-card-title">
+                    Shatranj Kay Khiladi: Chessboard Table, Jhuley Lal—Crafting the Contemporary at The Mohatta Palace
+                    Museum, Karachi
+                  </h3>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="" class="spotlight-card">
+                <div class="spotlight-card-media">
+                  <img
+                    class="spotlight-card-img"
+                    src="{{ 'u/spotlights/3.jpg' | asset_url }}"
+                    alt="Rotunda—Aiwan e Sadar (Presidential Palace), Islamabad"
+                    height=""
+                    width=""
+                  >
+                </div>
+                <div class="spotlight-card-info">
+                  <h3 class="spotlight-card-title">Rotunda—Aiwan e Sadar (Presidential Palace), Islamabad</h3>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-controls slider-controls--visible-mobile">
+        <div class="slider-control slider-control--prev">
+          <svg class="slider-control-icon">
+            <use href="{{ 'i/icons.svg' | asset_url }}#symbol-arrow"></use>
+          </svg>
+        </div>
+        <div class="slider-control slider-control--next">
+          <svg class="slider-control-icon">
+            <use href="{{ 'i/icons.svg' | asset_url }}#symbol-arrow"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  new Swiper('#spotlights .swiper', {
+    slidesPerView: 'auto',
+    spaceBetween: 16,
+    navigation: {
+      nextEl: '#spotlights .slider-control--next',
+      prevEl: '#spotlights .slider-control--prev',
+    },
+  });
+</script>
