@@ -1,16 +1,16 @@
-$fonts:
-    'Bricolage Grotesque' '../f/BricolageGrotesque-Light.ttf' 300 normal 'truetype',
-    'Bricolage Grotesque' '../f/BricolageGrotesque-Regular.ttf' 400 normal 'truetype',
-    'Bricolage Grotesque' '../f/BricolageGrotesque-Medium.ttf' 500 normal 'truetype',
-    'SF Pro Display' '../f/SFPRODISPLAYREGULAR.OTF' 400 normal 'opentype',
-    'SF Pro Display' '../f/SFPRODISPLAYMEDIUM.OTF' 500 normal 'opentype';
+$fonts: 'Bricolage Grotesque' 'BricolageGrotesque-Light.ttf' 300 normal
+    'truetype',
+  'Bricolage Grotesque' 'BricolageGrotesque-Regular.ttf' 400 normal 'truetype',
+  'Bricolage Grotesque' 'BricolageGrotesque-Medium.ttf' 500 normal 'truetype',
+  'SF Pro Display' 'SFPRODISPLAYREGULAR.OTF' 400 normal 'opentype',
+  'SF Pro Display' 'SFPRODISPLAYMEDIUM.OTF' 500 normal 'opentype';
 
 @each $font in $fonts {
-    @font-face {
-        font-family: nth($font, 1);
-        src: url(nth($font, 2)) format(nth($font, 5));
-        font-weight: nth($font, 3);
-        font-style: nth($font, 4);
-        font-display: swap;
-    }
+  @font-face {
+    font-family: nth($font, 1);
+    src: url(nth($font, 2)) format(nth($font, 5));
+    font-weight: nth($font, 3);
+    font-style: nth($font, 4);
+    font-display: swap;
+  }
 }
