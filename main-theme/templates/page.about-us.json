@@ -1,0 +1,9 @@
+{
+  "layout": "about-us",
+  "sections": {
+    "placeholder": {
+      "type": "placeholder"
+    }
+  },
+  "order": ["placeholder"]
+}
