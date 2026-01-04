@@ -1,1 +1,0 @@
-//script file will be icluded before BODY tag closes
