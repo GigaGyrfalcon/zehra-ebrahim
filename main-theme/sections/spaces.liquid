@@ -85,22 +85,28 @@
 </section>
 
 <script>
-  new Swiper('#spaces .spaces-slider .swiper', {
-    slidesPerView: 1,
-    effect: 'fade',
-    fadeEffect: {
-      crossFade: true,
-    },
-  });
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof Swiper !== 'undefined') {
+      const spacesSlider = new Swiper('#spaces .spaces-slider .swiper', {
+        slidesPerView: 1,
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true,
+        },
+      });
 
-  new Swiper('#spaces .spaces-slider-media .swiper', {
-    slidesPerView: 1,
-    navigation: {
-      nextEl: '#spaces .slider-control--next',
-      prevEl: '#spaces .slider-control--prev',
-    },
-    thumbs: {
-      swiper: spacesSlider,
-    },
+      new Swiper('#spaces .spaces-slider-media .swiper', {
+        slidesPerView: 1,
+        navigation: {
+          nextEl: '#spaces .slider-control--next',
+          prevEl: '#spaces .slider-control--prev',
+        },
+        thumbs: {
+          swiper: spacesSlider,
+        },
+      });
+    } else {
+      console.error('Swiper library is not loaded');
+    }
   });
 </script>

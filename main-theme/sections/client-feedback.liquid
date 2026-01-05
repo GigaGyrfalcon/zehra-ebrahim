@@ -55,16 +55,22 @@
 </section>
 
 <script>
-  new Swiper('#client-feedback .swiper', {
-    slidesPerView: 1,
-    loop: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    navigation: {
-      nextEl: '#client-feedback .client-feedback-slider-control--next',
-      prevEl: '#client-feedback .client-feedback-slider-control--prev',
-    },
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof Swiper !== 'undefined') {
+      new Swiper('#client-feedback .swiper', {
+        slidesPerView: 1,
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: '#client-feedback .client-feedback-slider-control--next',
+          prevEl: '#client-feedback .client-feedback-slider-control--prev',
+        },
+      });
+    } else {
+      console.error('Swiper library is not loaded');
+    }
   });
 </script>

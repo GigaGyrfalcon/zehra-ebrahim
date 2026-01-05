@@ -176,12 +176,18 @@
 </section>
 
 <script>
-  new Swiper('#testimonials .swiper', {
-    slidesPerView: 'auto',
-    spaceBetween: 16,
-    navigation: {
-      nextEl: '#testimonials .slider-control--next',
-      prevEl: '#testimonials .slider-control--prev',
-    },
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof Swiper !== 'undefined') {
+      new Swiper('#testimonials .swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+        navigation: {
+          nextEl: '#testimonials .slider-control--next',
+          prevEl: '#testimonials .slider-control--prev',
+        },
+      });
+    } else {
+      console.error('Swiper library is not loaded');
+    }
   });
 </script>

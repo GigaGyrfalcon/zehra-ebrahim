@@ -212,12 +212,18 @@
 </section>
 
 <script>
-  new Swiper('#product-categories .swiper', {
-    slidesPerView: 'auto',
-    spaceBetween: 16,
-    navigation: {
-      nextEl: '#product-categories .slider-control--next',
-      prevEl: '#product-categories .slider-control--prev',
-    },
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof Swiper !== 'undefined') {
+      new Swiper('#product-categories .swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+        navigation: {
+          nextEl: '#product-categories .slider-control--next',
+          prevEl: '#product-categories .slider-control--prev',
+        },
+      });
+    } else {
+      console.error('Swiper library is not loaded');
+    }
   });
 </script>

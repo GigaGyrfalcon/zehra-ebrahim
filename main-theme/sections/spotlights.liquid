@@ -159,12 +159,18 @@
 </section>
 
 <script>
-  new Swiper('#spotlights .swiper', {
-    slidesPerView: 'auto',
-    spaceBetween: 16,
-    navigation: {
-      nextEl: '#spotlights .slider-control--next',
-      prevEl: '#spotlights .slider-control--prev',
-    },
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof Swiper !== 'undefined') {
+      new Swiper('#spotlights .swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+        navigation: {
+          nextEl: '#spotlights .slider-control--next',
+          prevEl: '#spotlights .slider-control--prev',
+        },
+      });
+    } else {
+      console.error('Swiper library is not loaded');
+    }
   });
 </script>
