@@ -32,7 +32,7 @@
 
     {{ 'site.min.css' | asset_url | stylesheet_tag }}
 
-    <script src="{{ 'pre.min.js' | asset_url }}" async></script>
+    <script src="{{ 'pre.min.js' | asset_url }}" defer></script>
   </head>
 
   <body class="{% if template == 'index' %}homepage{% else %}innerpage{% endif %}">
@@ -44,6 +44,6 @@
 
     {% section 'custom-footer' %}
 
-    <script src="{{ 'post.min.js' | asset_url }}" async></script>
+    <script src="{{ 'post.min.js' | asset_url }}" defer></script>
   </body>
 </html>
