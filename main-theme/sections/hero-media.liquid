@@ -1,10 +1,10 @@
 <section class="hero animate-on-scroll">
   <div class="hero-media">
     <picture class="hero-media-picture">
-      <source srcset="{{ '/hero-desktop.jpg' | asset_url }}" media="(min-width: 1200px)">
-      <source srcset="{{ '/hero-tablet.jpg' | asset_url }}" media="(min-width: 768px)">
+      <source srcset="{{ 'hero-desktop.jpg' | asset_url }}" media="(min-width: 1200px)">
+      <source srcset="{{ 'hero-tablet.jpg' | asset_url }}" media="(min-width: 768px)">
       <img
-        src="{{ '/u/hero/hero-mobile.jpg' | asset_url }}"
+        src="{{ 'hero-mobile.jpg' | asset_url }}"
         alt="Hero media picture"
         class="hero-media-img"
         width=""
@@ -12,7 +12,7 @@
       >
     </picture>
     <video
-      src="{{ '/u/hero/video.mp4' | asset_url }}"
+      src="{{ 'hero-video.mp4' | asset_url }}"
       class="hero-media-video"
       autoplay
       muted
@@ -29,13 +29,13 @@
     </div>
     <div class="hero-content-actions">
       <a
-        href=""
+        href="/pages/about-us"
         class="button button--hoverable button--primary button--primary-on-bg button--default"
       >
         <span class="button-text">About Us</span>
       </a>
       <a
-        href=""
+        href="/pages/spotlight"
         class="button button--hoverable button--secondary button--default"
       >
         <span class="button-text">Spotlight</span>
