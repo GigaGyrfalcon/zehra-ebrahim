@@ -194,52 +194,31 @@
           <div class="footer-navigation-column">
             <h4 class="footer-navigation-column-title">Quick Links</h4>
             <div class="footer-navigation-list">
-              <a href="" class="footer-navigation-link">
-                <span class="footer-navigation-link-text">Home</span>
-              </a>
-              <a href="" class="footer-navigation-link">
-                <span class="footer-navigation-link-text">Spotlight</span>
-              </a>
-              <a href="" class="footer-navigation-link">
-                <span class="footer-navigation-link-text">Shop by Furniture</span>
-              </a>
-              <a href="" class="footer-navigation-link">
-                <span class="footer-navigation-link-text">Shop by Function</span>
-              </a>
-              <a href="" class="footer-navigation-link">
-                <span class="footer-navigation-link-text">About Us</span>
-              </a>
-              <a href="" class="footer-navigation-link">
-                <span class="footer-navigation-link-text">Contact Us</span>
-              </a>
+              {%- for link in linklists['quick-links'].links -%}
+                <a href="{{ link.url }}" class="footer-navigation-link">
+                  <span class="footer-navigation-link-text">{{ link.title }}</span>
+                </a>
+              {%- endfor -%}
             </div>
           </div>
           <div class="footer-navigation-column">
             <h4 class="footer-navigation-column-title">Help</h4>
             <div class="footer-navigation-list">
-              <a href="" class="footer-navigation-link">
-                <span class="footer-navigation-link-text">FAQs</span>
-              </a>
-              <a href="" class="footer-navigation-link">
-                <span class="footer-navigation-link-text">My Account</span>
-              </a>
+              {%- for link in linklists.help.links -%}
+                <a href="{{ link.url }}" class="footer-navigation-link">
+                  <span class="footer-navigation-link-text">{{ link.title }}</span>
+                </a>
+              {%- endfor -%}
             </div>
           </div>
           <div class="footer-navigation-column">
             <h4 class="footer-navigation-column-title">Customer Service</h4>
             <div class="footer-navigation-list">
-              <a href="" class="footer-navigation-link">
-                <span class="footer-navigation-link-text">Terms &amp; Conditions</span>
-              </a>
-              <a href="" class="footer-navigation-link">
-                <span class="footer-navigation-link-text">Privacy Policy</span>
-              </a>
-              <a href="" class="footer-navigation-link">
-                <span class="footer-navigation-link-text">Return &amp; Exchange</span>
-              </a>
-              <a href="" class="footer-navigation-link">
-                <span class="footer-navigation-link-text">Delivery Information</span>
-              </a>
+              {%- for link in linklists['customer-service'].links -%}
+                <a href="{{ link.url }}" class="footer-navigation-link">
+                  <span class="footer-navigation-link-text">{{ link.title }}</span>
+                </a>
+              {%- endfor -%}
             </div>
           </div>
         </div>
