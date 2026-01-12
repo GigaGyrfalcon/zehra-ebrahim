@@ -204,7 +204,7 @@
           <div class="footer-navigation-column">
             <h4 class="footer-navigation-column-title">Help</h4>
             <div class="footer-navigation-list">
-              {%- for link in linklists.help.links -%}
+              {%- for link in linklists['help'].links -%}
                 <a href="{{ link.url }}" class="footer-navigation-link">
                   <span class="footer-navigation-link-text">{{ link.title }}</span>
                 </a>
