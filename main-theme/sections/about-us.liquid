@@ -3,16 +3,7 @@
     <div class="section-content">
       <div class="section-head">
         <div class="page-head">
-          <div class="breadcrumbs">
-            <div class="breadcrumbs-content">
-              <a href="{{ routes.root_url }}" class="breadcrumbs-item">
-                <span class="breadcrumbs-item-text">Home</span>
-              </a>
-              <a href="{{ request.path }}" class="breadcrumbs-item breadcrumbs-item--active">
-                <span class="breadcrumbs-item-text">About Us</span>
-              </a>
-            </div>
-          </div>
+          {% render 'breadcrumbs' %}
           <div class="page-head-info">
             <h2 class="page-title">About Zahra Ebrahim</h2>
             <div class="page-head-text">
