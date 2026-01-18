@@ -10,12 +10,12 @@
 {
   "layout": "custom",
   "sections": {
-    "faq": {
-      "type": "faq",
+    "faqs": {
+      "type": "faqs",
       "settings": {}
     }
   },
   "order": [
-    "faq"
+    "faqs"
   ]
 }
