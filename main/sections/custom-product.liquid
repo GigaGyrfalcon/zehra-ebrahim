@@ -152,14 +152,7 @@
               <div class="product-detail-info-item-results">
                 <div class="product-detail-info-item-results-content">
                   <div class="product-detail-info-item-results-text">
-                    <p>
-                      Clean with a soft damp cloth. Use Clear Furniture Polish occasionally to maintain the wood's
-                      natural finish.
-                    </p>
-                    <p>
-                      A water-based coating makes the surface resistant to scratches, abrasions and chemical agents
-                      making this tray easy to maintain.
-                    </p>
+                    {{ product.metafields.custom.care | metafield_tag  }}
                   </div>
                 </div>
               </div>
@@ -174,7 +167,7 @@
               <div class="product-detail-info-item-results">
                 <div class="product-detail-info-item-results-content">
                   <div class="product-detail-technical-details">
-                    {{ product.description }}
+                    {{ product.metafields.custom.technical_details | metafield_tag  }}
                   </div>
                 </div>
               </div>
