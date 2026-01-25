@@ -7,19 +7,16 @@
             <a href="{{ routes.root_url }}" class="breadcrumbs-item">
               <span class="breadcrumbs-item-text">Home</span>
             </a>
-            <a href="{{ pages['shop-by-furniture'].url }}" class="breadcrumbs-item">
-              <span class="breadcrumbs-item-text">{{ pages['shop-by-furniture'].title }}</span>
-            </a>
-            <a href="{{ collection.url }}" class="breadcrumbs-item breadcrumbs-item--active">
-              <span class="breadcrumbs-item-text">{{ collection.title }}</span>
+            <a href="{{ page.url }}" class="breadcrumbs-item breadcrumbs-item--active">
+              <span class="breadcrumbs-item-text">{{ page.title }}</span>
             </a>
           </div>
         </div>
 
         <div class="page-head-info">
-          <h1 class="page-title">{{ collection.title }}</h1>
+          <h1 class="page-title">{{ page.title }}</h1>
           <div class="page-head-text">
-            <p>{{ collection.content }}</p>
+            <p>{{ page.content }}</p>
           </div>
         </div>
       </div>
@@ -84,7 +81,7 @@
           </div>
           <div class="products-filters-list">
             <div class="products-filters-item">
-              <a href="/pages/shop-by-furniture" class="products-filters-trigger">
+              <a href="{{ page.url }}" class="products-filters-trigger">
                 <span class="products-filters-trigger-text"
                   >All Products ({{ collections['shop-by-furniture'].products.size }})</span
                 >
@@ -133,7 +130,7 @@
       </aside>
       <div class="products-list-wrapper">
         <div class="products-list-head">
-          <h2 class="products-list-title">{{ collection.title }}</h2>
+          <h2 class="products-list-title">All Products</h2>
           <div class="products-list-actions">
             <a
               href=""
@@ -175,7 +172,7 @@
         </div>
         <div class="products-list-body">
           <div class="products-list">
-            {% for product in collection.products %}
+            {% for product in collections['shop-by-furniture'].products %}
               {% render 'product-card', product: product %}
             {% else %}
               <p>No products found in this collection.</p>
