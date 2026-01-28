@@ -152,7 +152,7 @@
               <div class="product-detail-info-item-results">
                 <div class="product-detail-info-item-results-content">
                   <div class="product-detail-info-item-results-text">
-                    {{ product.metafields.custom.care | metafield_tag  }}
+                    {{ product.metafields.custom.care | metafield_tag }}
                   </div>
                 </div>
               </div>
@@ -167,7 +167,7 @@
               <div class="product-detail-info-item-results">
                 <div class="product-detail-info-item-results-content">
                   <div class="product-detail-technical-details">
-                    {{ product.metafields.custom.technical_details | metafield_tag  }}
+                    {{ product.metafields.custom.technical_details | metafield_tag }}
                   </div>
                 </div>
               </div>
@@ -195,208 +195,22 @@
   </div>
 </section>
 
-{% comment %}
-  <section class="section">
-    <div class="container">
-      <div class="section-content">
-        <div class="section-head">
-          <h2 class="section-title">Explore Other Serving Trolleys</h2>
-        </div>
-        <div class="section-body">
-          <div class="similar-products">
-            <a href="" class="product-card">
-              <div class="product-card-media">
-                <img class="product-card-img" src="m/u/products/1.jpg" alt="Aztec - 2 Tiered Trolley (flat pack)">
-                <div class="product-card-actions">
-                  <div class="product-card-action">
-                    <svg class="product-card-action-icon product-card-action-icon--heart">
-                      <use href="{{ 'icons.svg' | asset_url }}#symbol-heart"></use>
-                    </svg>
-                  </div>
-                  <div class="product-card-action">
-                    <svg class="product-card-action-icon product-card-action-icon--magnifier">
-                      <use href="{{ 'icons.svg' | asset_url }}#symbol-magnifier"></use>
-                    </svg>
-                  </div>
-                  <div class="product-card-action">
-                    <svg class="product-card-action-icon product-card-action-icon--cart">
-                      <use href="{{ 'icons.svg' | asset_url }}#symbol-cart"></use>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div class="product-card-info">
-                <div class="product-card-rating product-card-rating--4-stars">
-                  <svg class="product-card-rating-star">
-                    <use href="{{ 'icons.svg' | asset_url }}#symbol-star"></use>
-                  </svg>
-
-                  <svg class="product-card-rating-star">
-                    <use href="{{ 'icons.svg' | asset_url }}#symbol-star"></use>
-                  </svg>
-
-                  <svg class="product-card-rating-star">
-                    <use href="{{ 'icons.svg' | asset_url }}#symbol-star"></use>
-                  </svg>
-
-                  <svg class="product-card-rating-star">
-                    <use href="{{ 'icons.svg' | asset_url }}#symbol-star"></use>
-                  </svg>
-
-                  <svg class="product-card-rating-star">
-                    <use href="{{ 'icons.svg' | asset_url }}#symbol-star"></use>
-                  </svg>
-                </div>
-                <h3 class="product-card-title">Aztec - 2 Tiered Trolley (flat pack)</h3>
-              </div>
-            </a>
-
-            <a href="" class="product-card">
-              <div class="product-card-media">
-                <img class="product-card-img" src="m/u/products/2.jpg" alt="Piyasi Chirya - Chip n Dip">
-                <div class="product-card-actions">
-                  <div class="product-card-action">
-                    <svg class="product-card-action-icon product-card-action-icon--heart">
-                      <use href="{{ 'icons.svg' | asset_url }}#symbol-heart"></use>
-                    </svg>
-                  </div>
-                  <div class="product-card-action">
-                    <svg class="product-card-action-icon product-card-action-icon--magnifier">
-                      <use href="{{ 'icons.svg' | asset_url }}#symbol-magnifier"></use>
-                    </svg>
-                  </div>
-                  <div class="product-card-action">
-                    <svg class="product-card-action-icon product-card-action-icon--cart">
-                      <use href="{{ 'icons.svg' | asset_url }}#symbol-cart"></use>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div class="product-card-info">
-                <div class="product-card-rating product-card-rating--3-stars">
-                  <svg class="product-card-rating-star">
-                    <use href="{{ 'icons.svg' | asset_url }}#symbol-star"></use>
-                  </svg>
-
-                  <svg class="product-card-rating-star">
-                    <use href="{{ 'icons.svg' | asset_url }}#symbol-star"></use>
-                  </svg>
-
-                  <svg class="product-card-rating-star">
-                    <use href="{{ 'icons.svg' | asset_url }}#symbol-star"></use>
-                  </svg>
-
-                  <svg class="product-card-rating-star">
-                    <use href="{{ 'icons.svg' | asset_url }}#symbol-star"></use>
-                  </svg>
-
-                  <svg class="product-card-rating-star">
-                    <use href="{{ 'icons.svg' | asset_url }}#symbol-star"></use>
-                  </svg>
-                </div>
-                <h3 class="product-card-title">Piyasi Chirya - Chip n Dip</h3>
-              </div>
-            </a>
-
-            <a href="" class="product-card">
-              <div class="product-card-media">
-                <img class="product-card-img" src="m/u/products/3.jpg" alt="Zen Garden - Tray">
-                <div class="product-card-actions">
-                  <div class="product-card-action">
-                    <svg class="product-card-action-icon product-card-action-icon--heart">
-                      <use href="{{ 'icons.svg' | asset_url }}#symbol-heart"></use>
-                    </svg>
-                  </div>
-                  <div class="product-card-action">
-                    <svg class="product-card-action-icon product-card-action-icon--magnifier">
-                      <use href="{{ 'icons.svg' | asset_url }}#symbol-magnifier"></use>
-                    </svg>
-                  </div>
-                  <div class="product-card-action">
-                    <svg class="product-card-action-icon product-card-action-icon--cart">
-                      <use href="{{ 'icons.svg' | asset_url }}#symbol-cart"></use>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div class="product-card-info">
-                <div class="product-card-rating product-card-rating--4-stars">
-                  <svg class="product-card-rating-star">
-                    <use href="{{ 'icons.svg' | asset_url }}#symbol-star"></use>
-                  </svg>
-
-                  <svg class="product-card-rating-star">
-                    <use href="{{ 'icons.svg' | asset_url }}#symbol-star"></use>
-                  </svg>
-
-                  <svg class="product-card-rating-star">
-                    <use href="{{ 'icons.svg' | asset_url }}#symbol-star"></use>
-                  </svg>
-
-                  <svg class="product-card-rating-star">
-                    <use href="{{ 'icons.svg' | asset_url }}#symbol-star"></use>
-                  </svg>
-
-                  <svg class="product-card-rating-star">
-                    <use href="{{ 'icons.svg' | asset_url }}#symbol-star"></use>
-                  </svg>
-                </div>
-                <h3 class="product-card-title">Zen Garden - Tray</h3>
-              </div>
-            </a>
-
-            <a href="" class="product-card">
-              <div class="product-card-media">
-                <img class="product-card-img" src="m/u/products/4.jpg" alt="Peetal ka Piyala - Chip n Dip">
-                <div class="product-card-actions">
-                  <div class="product-card-action">
-                    <svg class="product-card-action-icon product-card-action-icon--heart">
-                      <use href="{{ 'icons.svg' | asset_url }}#symbol-heart"></use>
-                    </svg>
-                  </div>
-                  <div class="product-card-action">
-                    <svg class="product-card-action-icon product-card-action-icon--magnifier">
-                      <use href="{{ 'icons.svg' | asset_url }}#symbol-magnifier"></use>
-                    </svg>
-                  </div>
-                  <div class="product-card-action">
-                    <svg class="product-card-action-icon product-card-action-icon--cart">
-                      <use href="{{ 'icons.svg' | asset_url }}#symbol-cart"></use>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div class="product-card-info">
-                <div class="product-card-rating product-card-rating--3-stars">
-                  <svg class="product-card-rating-star">
-                    <use href="{{ 'icons.svg' | asset_url }}#symbol-star"></use>
-                  </svg>
-
-                  <svg class="product-card-rating-star">
-                    <use href="{{ 'icons.svg' | asset_url }}#symbol-star"></use>
-                  </svg>
-
-                  <svg class="product-card-rating-star">
-                    <use href="{{ 'icons.svg' | asset_url }}#symbol-star"></use>
-                  </svg>
-
-                  <svg class="product-card-rating-star">
-                    <use href="{{ 'icons.svg' | asset_url }}#symbol-star"></use>
-                  </svg>
-
-                  <svg class="product-card-rating-star">
-                    <use href="{{ 'icons.svg' | asset_url }}#symbol-star"></use>
-                  </svg>
-                </div>
-                <h3 class="product-card-title">Peetal ka Piyala - Chip n Dip</h3>
-              </div>
-            </a>
-          </div>
+<section class="section">
+  <div class="container">
+    <div class="section-content">
+      <div class="section-head">
+        <h2 class="section-title">Explore Similar Products</h2>
+      </div>
+      <div class="section-body">
+        <div class="similar-products">
+          {% for similar_product in product.metafields.custom.similar_products.value %}
+            {% render 'product-card', product: similar_product %}
+          {% endfor %}
         </div>
       </div>
     </div>
-  </section>
-{% endcomment %}
+  </div>
+</section>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {

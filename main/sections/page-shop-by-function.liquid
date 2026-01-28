@@ -1,0 +1,208 @@
+<section class="section section--pb-0">
+  <div class="container">
+    <div class="section-content">
+      <div class="section-head">
+        <div class="page-head">
+          {% render 'breadcrumbs' %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% assign product_groups = page.metafields.custom.group_by_function.value %}
+
+{% if product_groups %}
+  {% for group in product_groups %}
+    {% assign group_index = forloop.index %}
+    {% assign mod_result = forloop.index0 | modulo: 2 %}
+    {% assign section_class = 'section' %}
+    {% if group_index == 1 %}
+      {% assign section_class = 'section section--pbs-0' %}
+    {% elsif mod_result == 1 %}
+      {% assign section_class = 'section section--solid-bg' %}
+    {% endif %}
+
+    <section class="{{ section_class }}">
+      <div class="container">
+        <div class="section-content">
+          <div class="section-head">
+            <div class="page-head">
+              <div class="page-head-info">
+                <h2 class="page-title">{{ group.title.value }}</h2>
+              </div>
+            </div>
+          </div>
+          <div class="section-body">
+            {% if group.gallery.value and group.gallery.value.size > 0 %}
+              <div class="subsection-slider" id="subsection-slider-{{ group_index }}">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    {% for image in group.gallery.value %}
+                      <div class="swiper-slide">
+                        <div class="subsection-card">
+                          <img
+                            class="subsection-card-img"
+                            src="{{ image | image_url: width: 800 }}"
+                            alt="{{ group.title.value }}"
+                            loading="lazy"
+                            width="800"
+                            height="600"
+                          >
+                        </div>
+                      </div>
+                    {% endfor %}
+                  </div>
+                  <div class="slider-controls">
+                    <div class="slider-control slider-control--prev">
+                      <svg class="slider-control-icon">
+                        <use href="{{ 'icons.svg' | asset_url }}#symbol-arrow"></use>
+                      </svg>
+                    </div>
+                    <div class="slider-control slider-control--next">
+                      <svg class="slider-control-icon">
+                        <use href="{{ 'icons.svg' | asset_url }}#symbol-arrow"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+
+            <div class="subsection-section">
+              <div class="subsection-section-content">
+                <div class="subsection-section-head">
+                  <h3 class="subsection-section-title">Products in this look?</h3>
+                  {% if group.description %}
+                    <div class="subsection-section-description">
+                      {{ group.description | metafield_tag }}
+                    </div>
+                  {% endif %}
+                </div>
+                {% if group.products.value and group.products.value.size > 0 %}
+                  <div class="subsection-section-body">
+                    <div class="subsection-products-slider" id="subsection-products-slider-{{ group_index }}">
+                      <div class="swiper">
+                        <div class="swiper-wrapper">
+                          {% for product in group.products.value %}
+                            <div class="swiper-slide">
+                              <a href="{{ product.url }}" class="product-card">
+                                <div class="product-card-media">
+                                  {% if product.featured_image %}
+                                    <img
+                                      class="product-card-img"
+                                      src="{{ product.featured_image | image_url: width: 400 }}"
+                                      alt="{{ product.title | escape }}"
+                                      loading="lazy"
+                                      width="400"
+                                      height="400"
+                                    >
+                                  {% endif %}
+                                  <div class="product-card-actions">
+                                    <div class="product-card-action">
+                                      <svg class="product-card-action-icon product-card-action-icon--heart">
+                                        <use href="{{ 'icons.svg' | asset_url }}#symbol-heart"></use>
+                                      </svg>
+                                    </div>
+                                    <div class="product-card-action">
+                                      <svg class="product-card-action-icon product-card-action-icon--magnifier">
+                                        <use href="{{ 'icons.svg' | asset_url }}#symbol-magnifier"></use>
+                                      </svg>
+                                    </div>
+                                    <div class="product-card-action">
+                                      <svg class="product-card-action-icon product-card-action-icon--cart">
+                                        <use href="{{ 'icons.svg' | asset_url }}#symbol-cart"></use>
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="product-card-info">
+                                  {% comment %} Display product rating if available {% endcomment %}
+                                  <div class="product-card-rating product-card-rating--4-stars">
+                                    {% for i in (1..5) %}
+                                      <svg class="product-card-rating-star">
+                                        <use href="{{ 'icons.svg' | asset_url }}#symbol-star"></use>
+                                      </svg>
+                                    {% endfor %}
+                                  </div>
+                                  <h3 class="product-card-title">{{ product.title }}</h3>
+                                </div>
+                              </a>
+                            </div>
+                          {% endfor %}
+                        </div>
+                        <div class="slider-controls">
+                          <div class="slider-control slider-control--prev">
+                            <svg class="slider-control-icon">
+                              <use href="{{ 'icons.svg' | asset_url }}#symbol-arrow"></use>
+                            </svg>
+                          </div>
+                          <div class="slider-control slider-control--next">
+                            <svg class="slider-control-icon">
+                              <use href="{{ 'icons.svg' | asset_url }}#symbol-arrow"></use>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endfor %}
+{% endif %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof Swiper !== 'undefined') {
+      {% if product_groups %}
+        {% for group in product_groups %}
+          {% assign group_index = forloop.index %}
+
+          const subsectionSlider{{ group_index }} = new Swiper('#subsection-slider-{{ group_index }} .swiper', {
+            slidesPerView: 'auto',
+            spaceBetween: 10,
+            navigation: {
+              nextEl: '#subsection-slider-{{ group_index }} .slider-control--next',
+              prevEl: '#subsection-slider-{{ group_index }} .slider-control--prev',
+            },
+            breakpoints: {
+              1470: {
+                spaceBetween: 16,
+              },
+            },
+          });
+
+          const subsectionProductsSlider{{ group_index }} = new Swiper('#subsection-products-slider-{{ group_index }} .swiper', {
+            slidesPerView: 2,
+            spaceBetween: 16,
+            navigation: {
+              nextEl: '#subsection-products-slider-{{ group_index }} .slider-control--next',
+              prevEl: '#subsection-products-slider-{{ group_index }} .slider-control--prev',
+            },
+            breakpoints: {
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 16,
+              },
+              1200: {
+                slidesPerView: 4,
+                spaceBetween: 10,
+              },
+              1470: {
+                slidesPerView: 4,
+                spaceBetween: 16,
+              },
+            },
+          });
+        {% endfor %}
+      {% endif %}
+    } else {
+      console.error('Swiper library is not loaded');
+    }
+  });
+</script>
