@@ -202,11 +202,15 @@
         <h2 class="section-title">Explore Similar Products</h2>
       </div>
       <div class="section-body">
-        <div class="similar-products">
-          {% for similar_product in product.metafields.custom.similar_products.value %}
-            {% render 'product-card', product: similar_product %}
-          {% endfor %}
-        </div>
+        {% if product.metafields.custom.similar_products.value.size > 0 %}
+          <div class="similar-products">
+            {% for similar_product in product.metafields.custom.similar_products.value %}
+              {% render 'product-card', product: similar_product %}
+            {% endfor %}
+          </div>
+        {% else %}
+          <p>No similar products available at this time.</p>
+        {% endif %}
       </div>
     </div>
   </div>
