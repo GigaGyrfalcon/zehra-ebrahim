@@ -81,7 +81,6 @@
                               <h3 class="mega-menu-column-title">{{ childlink.title }}</h3>
                               {%- if childlink.links.size > 0 -%}
                                 <div class="mega-menu-column-content">
-                                  <a href="{{ childlink.url }}" class="mega-menu-column-link">All</a>
                                   {%- for grandchildlink in childlink.links -%}
                                     <a href="{{ grandchildlink.url }}" class="mega-menu-column-link">
                                       {{- grandchildlink.title -}}
