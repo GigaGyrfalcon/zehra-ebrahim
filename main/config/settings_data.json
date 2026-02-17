@@ -138,27 +138,122 @@
         "settings": {
           "color_scheme": "scheme-1"
         }
+      },
+      "custom-header": {
+        "type": "custom-header",
+        "settings": {}
+      },
+      "client-feedback": {
+        "type": "client-feedback",
+        "settings": {}
+      },
+      "hero-media": {
+        "type": "hero-media",
+        "settings": {}
+      },
+      "product-categories": {
+        "type": "product-categories",
+        "settings": {}
+      },
+      "spaces": {
+        "type": "spaces",
+        "settings": {}
+      },
+      "explore-the-look": {
+        "type": "explore-the-look",
+        "settings": {}
+      },
+      "spotlights": {
+        "type": "spotlights",
+        "settings": {}
+      },
+      "handcrafted": {
+        "type": "handcrafted",
+        "settings": {}
+      },
+      "filigree-jewellery-box": {
+        "type": "filigree-jewellery-box",
+        "settings": {}
+      },
+      "testimonials": {
+        "type": "testimonials",
+        "settings": {}
+      },
+      "giftables": {
+        "type": "giftables",
+        "settings": {}
+      },
+      "custom-footer": {
+        "type": "custom-footer",
+        "settings": {}
+      }
+    },
+    "content_for_index": [],
+    "blocks": {
+      "9693171294570118353": {
+        "type": "shopify://apps/quoli-reviews-ugc/blocks/quoli-global-style/baf7b241-e443-4879-b3d4-360440b03895",
+        "disabled": false,
+        "settings": {
+          "show_product_link": true,
+          "show_helpful_button": true,
+          "attributes": true
+        }
+      },
+      "13608318707149203697": {
+        "type": "shopify://apps/quoli-reviews-ugc/blocks/quoli-sidebar-widget/baf7b241-e443-4879-b3d4-360440b03895",
+        "disabled": true,
+        "settings": {
+          "background_color": "#ffffff",
+          "button_color": "#000000",
+          "default_sorting": "Most Recent",
+          "reviews_per_page": "20",
+          "show_filter": true
+        }
+      },
+      "1656567832380245646": {
+        "type": "shopify://apps/quoli-reviews-ugc/blocks/quoli-popup-widget/baf7b241-e443-4879-b3d4-360440b03895",
+        "disabled": true,
+        "settings": {
+          "popup_widget_position": "blc_popup",
+          "display_ratings": "4",
+          "initial_delay": 5,
+          "auto_timer": 5,
+          "display_time": 5,
+          "display_count": 20,
+          "mobile_enable": "true",
+          "homepage_checkbox": true,
+          "product_page": true,
+          "cart_page": true,
+          "other_pages": true,
+          "show_media": true,
+          "show_border": false,
+          "border_radius": 0,
+          "border_color": "#ffffff",
+          "background_color": "#ffffff",
+          "text_color": "#000000",
+          "star_color": "#fdcc0d"
+        }
       }
     },
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#FFFFFF",
+          "background": "#ffffff",
           "background_gradient": "",
           "text": "#121212",
           "button": "#121212",
-          "button_label": "#FFFFFF",
+          "button_label": "#ffffff",
           "secondary_button_label": "#121212",
           "shadow": "#121212"
         }
       },
       "scheme-2": {
         "settings": {
-          "background": "#F3F3F3",
+          "background": "#f3f3f3",
           "background_gradient": "",
           "text": "#121212",
           "button": "#121212",
-          "button_label": "#F3F3F3",
+          "button_label": "#f3f3f3",
           "secondary_button_label": "#121212",
           "shadow": "#121212"
         }
@@ -167,10 +262,10 @@
         "settings": {
           "background": "#242833",
           "background_gradient": "",
-          "text": "#FFFFFF",
-          "button": "#FFFFFF",
+          "text": "#ffffff",
+          "button": "#ffffff",
           "button_label": "#000000",
-          "secondary_button_label": "#FFFFFF",
+          "secondary_button_label": "#ffffff",
           "shadow": "#121212"
         }
       },
@@ -178,21 +273,21 @@
         "settings": {
           "background": "#121212",
           "background_gradient": "",
-          "text": "#FFFFFF",
-          "button": "#FFFFFF",
+          "text": "#ffffff",
+          "button": "#ffffff",
           "button_label": "#121212",
-          "secondary_button_label": "#FFFFFF",
+          "secondary_button_label": "#ffffff",
           "shadow": "#121212"
         }
       },
       "scheme-5": {
         "settings": {
-          "background": "#334FB4",
+          "background": "#334fb4",
           "background_gradient": "",
-          "text": "#FFFFFF",
-          "button": "#FFFFFF",
-          "button_label": "#334FB4",
-          "secondary_button_label": "#FFFFFF",
+          "text": "#ffffff",
+          "button": "#ffffff",
+          "button_label": "#334fb4",
+          "secondary_button_label": "#ffffff",
           "shadow": "#121212"
         }
       }
