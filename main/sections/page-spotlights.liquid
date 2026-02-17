@@ -5,260 +5,196 @@
         <div class="page-head">
           {% render 'breadcrumbs' %}
           <div class="page-head-info">
-            <h2 class="page-title">Spotlight</h2>
-            <div class="page-head-text">
-              <p>Discover our iconic furniture and interior solutions designed for landmark spaces across Pakistan.</p>
+            <h2 class="page-title">{{ section.settings.hero_title }}</h2>
+            {% if section.settings.hero_description != blank %}
+              <div class="page-head-text">
+                <p>{{ section.settings.hero_description }}</p>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% if section.settings.hero_image != blank or section.settings.hero_video_url != blank %}
+        <div class="section-body">
+          <div class="spotlight-hero">
+            <div class="spotlight-hero-media {% if section.settings.hero_video_url != blank %}spotlight-hero-media--video{% endif %}">
+              {% if section.settings.hero_image != blank %}
+                <img
+                  class="spotlight-hero-media-img"
+                  src="{{ section.settings.hero_image | image_url: width: 1920 }}"
+                  alt="{{ section.settings.hero_image.alt | default: section.settings.hero_title }}"
+                  width="{{ section.settings.hero_image.width }}"
+                  height="{{ section.settings.hero_image.height }}"
+                  loading="lazy"
+                >
+              {% endif %}
+              {% if section.settings.hero_video_url != blank %}
+                <a href="{{ section.settings.hero_video_url }}" class="spotlight-hero-media-action">
+                  <svg class="spotlight-hero-media-action-icon">
+                    <use href="{{ 'icons.svg' | asset_url }}#symbol-play"></use>
+                  </svg>
+                </a>
+              {% endif %}
             </div>
           </div>
         </div>
-      </div>
-      <div class="section-body">
-        <div class="spotlight-hero">
-          <div class="spotlight-hero-media spotlight-hero-media--video">
-            <img
-              class="spotlight-hero-media-img"
-              src="{{ 'spotlight-hero.jpg' | asset_url }}"
-              alt="Spotlight"
-              width=""
-              height=""
-            >
-            <a href="" class="spotlight-hero-media-action">
-              <svg class="spotlight-hero-media-action-icon">
-                <use href="{{ 'icons.svg' | asset_url }}#symbol-play"></use>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
+      {% endif %}
     </div>
   </div>
 </section>
 
 {% render 'moving-line', moving_line_class: 'section--pbe-0' %}
 
-<section class="section section--half-bleed" id="spotlights">
-  <div class="section-content">
-    <div class="section-head section-head--fw">
-      <h2 class="section-title">Our Project Showcase</h2>
-      <div class="section-actions">
-        <div class="slider-controls slider-controls--visible-desktop">
-          <a href="" class="slider-control slider-control--prev">
-            <svg class="slider-control-icon">
-              <use href="{{ 'icons.svg' | asset_url }}#symbol-arrow"></use>
-            </svg>
-          </a>
-          <a href="" class="slider-control slider-control--next">
-            <svg class="slider-control-icon">
-              <use href="{{ 'icons.svg' | asset_url }}#symbol-arrow"></use>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="section-body">
-      <div class="spotlights-slider">
-        <div class="swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <a href="" class="spotlight-card">
-                <div class="spotlight-card-media">
-                  <img
-                    class="spotlight-card-img"
-                    src="{{ 'spotlight-1.jpg' | asset_url }}"
-                    alt="INGRAINED: Wood in a Cross-Section of Time, Koel Gallery"
-                    width=""
-                    height=""
-                  >
-                </div>
-                <div class="spotlight-card-info">
-                  <h3 class="spotlight-card-title">INGRAINED: Wood in a Cross-Section of Time, Koel Gallery</h3>
-                </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="" class="spotlight-card">
-                <div class="spotlight-card-media">
-                  <img
-                    class="spotlight-card-img"
-                    src="{{ 'spotlight-2.jpg' | asset_url }}"
-                    alt="Shatranj Kay Khiladi: Chessboard Table, Jhuley Lal—Crafting the Contemporary at The Mohatta Palace Museum, Karachi"
-                    width=""
-                    height=""
-                  >
-                </div>
-                <div class="spotlight-card-info">
-                  <h3 class="spotlight-card-title">
-                    Shatranj Kay Khiladi: Chessboard Table, Jhuley Lal—Crafting the Contemporary at The Mohatta Palace
-                    Museum, Karachi
-                  </h3>
-                </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="" class="spotlight-card">
-                <div class="spotlight-card-media">
-                  <img
-                    class="spotlight-card-img"
-                    src="{{ 'spotlight-3.jpg' | asset_url }}"
-                    alt="Rotunda—Aiwan e Sadar (Presidential Palace), Islamabad"
-                    width=""
-                    height=""
-                  >
-                </div>
-                <div class="spotlight-card-info">
-                  <h3 class="spotlight-card-title">Rotunda—Aiwan e Sadar (Presidential Palace), Islamabad</h3>
-                </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="" class="spotlight-card">
-                <div class="spotlight-card-media">
-                  <img
-                    class="spotlight-card-img"
-                    src="{{ 'spotlight-4.jpg' | asset_url }}"
-                    alt="Pakistan Pavillion, Dubai Expo 2020"
-                    width=""
-                    height=""
-                  >
-                </div>
-                <div class="spotlight-card-info">
-                  <h3 class="spotlight-card-title">Pakistan Pavillion, Dubai Expo 2020</h3>
-                </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="" class="spotlight-card">
-                <div class="spotlight-card-media">
-                  <img
-                    class="spotlight-card-img"
-                    src="{{ 'spotlight-1.jpg' | asset_url }}"
-                    alt="State Lounge and CIP Lounge, Islamabad International Airport"
-                    width=""
-                    height=""
-                  >
-                </div>
-                <div class="spotlight-card-info">
-                  <h3 class="spotlight-card-title">State Lounge and CIP Lounge, Islamabad International Airport</h3>
-                </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="" class="spotlight-card">
-                <div class="spotlight-card-media">
-                  <img
-                    class="spotlight-card-img"
-                    src="{{ 'spotlight-2.jpg' | asset_url }}"
-                    alt="Shatranj Kay Khiladi: Chessboard Table, Jhuley Lal—Crafting the Contemporary at The Mohatta Palace Museum, Karachi"
-                    width=""
-                    height=""
-                  >
-                </div>
-                <div class="spotlight-card-info">
-                  <h3 class="spotlight-card-title">
-                    Shatranj Kay Khiladi: Chessboard Table, Jhuley Lal—Crafting the Contemporary at The Mohatta Palace
-                    Museum, Karachi
-                  </h3>
-                </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="" class="spotlight-card">
-                <div class="spotlight-card-media">
-                  <img
-                    class="spotlight-card-img"
-                    src="{{ 'spotlight-3.jpg' | asset_url }}"
-                    alt="Rotunda—Aiwan e Sadar (Presidential Palace), Islamabad"
-                    width=""
-                    height=""
-                  >
-                </div>
-                <div class="spotlight-card-info">
-                  <h3 class="spotlight-card-title">Rotunda—Aiwan e Sadar (Presidential Palace), Islamabad</h3>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="slider-controls slider-controls--visible-mobile">
-        <div class="slider-control slider-control--prev">
-          <svg class="slider-control-icon">
-            <use href="{{ 'icons.svg' | asset_url }}#symbol-arrow"></use>
-          </svg>
-        </div>
-        <div class="slider-control slider-control--next">
-          <svg class="slider-control-icon">
-            <use href="{{ 'icons.svg' | asset_url }}#symbol-arrow"></use>
-          </svg>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section--pb-0 section--w-bg animate-on-scroll">
-  <div class="container">
+{% if section.blocks.size > 0 %}
+  <section class="section section--half-bleed" id="spotlights">
     <div class="section-content">
-      <div class="section-head animatable-part">
-        <h2 class="section-title">Round Sofa with 9 Cushions</h2>
+      <div class="section-head section-head--fw">
+        <h2 class="section-title">{{ section.settings.showcase_title }}</h2>
         <div class="section-actions">
-          <div class="section-action">
-            <a href="" class="button button--primary button--primary-on-bg button--default button--hoverable">
-              <span class="button-text">buy now</span>
+          <div class="slider-controls slider-controls--visible-desktop">
+            <a href="" class="slider-control slider-control--prev">
+              <svg class="slider-control-icon">
+                <use href="{{ 'icons.svg' | asset_url }}#symbol-arrow"></use>
+              </svg>
+            </a>
+            <a href="" class="slider-control slider-control--next">
+              <svg class="slider-control-icon">
+                <use href="{{ 'icons.svg' | asset_url }}#symbol-arrow"></use>
+              </svg>
             </a>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="section-bg">
-    <picture class="section-bg-media">
-      <source srcset="{{ 'section-bg-3-desktop.jpg' | asset_url }}" media="(min-width: 992px)">
-      <img
-        src="{{ 'section-bg-3-mobile.jpg' | asset_url }}"
-        alt="Section background media"
-        class="section-bg-img"
-        width=""
-        height=""
-      >
-    </picture>
-  </div>
-</section>
-
-<section class="section section--inverted animate-on-scroll">
-  <div class="container">
-    <div class="section-content animatable-part section-content--horizontal">
-      <div class="section-head">
-        <h2 class="section-title">Designing for Iconic Spaces</h2>
-        <p class="section-description">
-          Our work extends beyond homes and offices. From airports to cultural landmarks, each project in the Spotlight
-          series tells a story of design tailored to its environment.
-          <br>
-          With a blend of craftsmanship and functionality, we've created furniture that not only complements the space
-          but also becomes part of its legacy.
-        </p>
-      </div>
       <div class="section-body">
-        <div class="two-column-images">
-          <img
-            class="two-column-images-img"
-            src="{{ 'two-column-5.jpg' | asset_url }}"
-            alt=""
-            width=""
-            height=""
-          >
-          <img
-            class="two-column-images-img"
-            src="{{ 'two-column-6.jpg' | asset_url }}"
-            alt=""
-            width=""
-            height=""
-          >
+        <div class="spotlights-slider">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              {% for block in section.blocks %}
+                {% case block.type %}
+                  {% when 'spotlight_card' %}
+                    <div class="swiper-slide" {{ block.shopify_attributes }}>
+                      <a href="{{ block.settings.link | default: '#' }}" class="spotlight-card">
+                        {% if block.settings.image != blank %}
+                          <div class="spotlight-card-media">
+                            <img
+                              class="spotlight-card-img"
+                              src="{{ block.settings.image | image_url: width: 500 }}"
+                              alt="{{ block.settings.image.alt | default: block.settings.title }}"
+                              width=""
+                              height=""
+                              loading="lazy"
+                            >
+                          </div>
+                        {% endif %}
+                        {% if block.settings.title != blank %}
+                          <div class="spotlight-card-info">
+                            <h3 class="spotlight-card-title">{{ block.settings.title }}</h3>
+                          </div>
+                        {% endif %}
+                      </a>
+                    </div>
+                {% endcase %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="slider-controls slider-controls--visible-mobile">
+          <div class="slider-control slider-control--prev">
+            <svg class="slider-control-icon">
+              <use href="{{ 'icons.svg' | asset_url }}#symbol-arrow"></use>
+            </svg>
+          </div>
+          <div class="slider-control slider-control--next">
+            <svg class="slider-control-icon">
+              <use href="{{ 'icons.svg' | asset_url }}#symbol-arrow"></use>
+            </svg>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+{% endif %}
+
+{% if section.settings.show_cta_section %}
+  <section class="section section--pb-0 section--w-bg animate-on-scroll">
+    <div class="container">
+      <div class="section-content">
+        <div class="section-head animatable-part">
+          <h2 class="section-title">{{ section.settings.cta_title }}</h2>
+          {% if section.settings.cta_button_text != blank and section.settings.cta_button_link != blank %}
+            <div class="section-actions">
+              <div class="section-action">
+                <a href="{{ section.settings.cta_button_link }}" class="button button--primary button--primary-on-bg button--default button--hoverable">
+                  <span class="button-text">{{ section.settings.cta_button_text }}</span>
+                </a>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% if section.settings.cta_background_image != blank %}
+      <div class="section-bg">
+        <picture class="section-bg-media">
+          {% if section.settings.cta_background_image_desktop != blank %}
+            <source srcset="{{ section.settings.cta_background_image_desktop | image_url: width: 1920 }}" media="(min-width: 992px)">
+          {% endif %}
+          <img
+            src="{{ section.settings.cta_background_image | image_url: width: 768 }}"
+            alt="{{ section.settings.cta_background_image.alt | default: 'Section background' }}"
+            class="section-bg-img"
+            width="{{ section.settings.cta_background_image.width }}"
+            height="{{ section.settings.cta_background_image.height }}"
+            loading="lazy"
+          >
+        </picture>
+      </div>
+    {% endif %}
+  </section>
+{% endif %}
+
+{% if section.settings.show_info_section %}
+  <section class="section section--inverted animate-on-scroll">
+    <div class="container">
+      <div class="section-content animatable-part section-content--horizontal">
+        <div class="section-head">
+          <h2 class="section-title">{{ section.settings.info_title }}</h2>
+          {% if section.settings.info_description != blank %}
+            <div class="section-description">
+              {{ section.settings.info_description }}
+            </div>
+          {% endif %}
+        </div>
+        {% if section.settings.info_image_1 != blank or section.settings.info_image_2 != blank %}
+          <div class="section-body">
+            <div class="two-column-images">
+              {% if section.settings.info_image_1 != blank %}
+                <img
+                  class="two-column-images-img"
+                  src="{{ section.settings.info_image_1 | image_url: width: 500 }}"
+                  alt="{{ section.settings.info_image_1.alt | default: section.settings.info_title }}"
+                  width=""
+                  height=""
+                  loading="lazy"
+                >
+              {% endif %}
+              {% if section.settings.info_image_2 != blank %}
+                <img
+                  class="two-column-images-img"
+                  src="{{ section.settings.info_image_2 | image_url: width: 500 }}"
+                  alt="{{ section.settings.info_image_2.alt | default: section.settings.info_title }}"
+                  width=""
+                  height=""
+                  loading="lazy"
+                >
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endif %}
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
@@ -276,3 +212,160 @@
     }
   });
 </script>
+
+{% schema %}
+{
+  "name": "Spotlight Page",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero Section"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Hero Title",
+      "default": "Spotlight"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_description",
+      "label": "Hero Description",
+      "default": "Discover our iconic furniture and interior solutions designed for landmark spaces across Pakistan."
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "url",
+      "id": "hero_video_url",
+      "label": "Video URL (optional)",
+      "info": "Add a video link to make the hero image clickable"
+    },
+    {
+      "type": "header",
+      "content": "Showcase Section"
+    },
+    {
+      "type": "text",
+      "id": "showcase_title",
+      "label": "Showcase Title",
+      "default": "Our Project Showcase"
+    },
+    {
+      "type": "header",
+      "content": "Call to Action Section"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cta_section",
+      "label": "Show CTA Section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cta_title",
+      "label": "CTA Title",
+      "default": "Round Sofa with 9 Cushions"
+    },
+    {
+      "type": "text",
+      "id": "cta_button_text",
+      "label": "Button Text",
+      "default": "buy now"
+    },
+    {
+      "type": "url",
+      "id": "cta_button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "cta_background_image",
+      "label": "Background Image (Mobile)",
+      "info": "Recommended size: 768px width"
+    },
+    {
+      "type": "image_picker",
+      "id": "cta_background_image_desktop",
+      "label": "Background Image (Desktop)",
+      "info": "Recommended size: 1920px width"
+    },
+    {
+      "type": "header",
+      "content": "Info Section"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_info_section",
+      "label": "Show Info Section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "info_title",
+      "label": "Info Title",
+      "default": "Designing for Iconic Spaces"
+    },
+    {
+      "type": "html",
+      "id": "info_description",
+      "label": "Info Description",
+      "default": "<p>Our work extends beyond homes and offices. From airports to cultural landmarks, each project in the Spotlight series tells a story of design tailored to its environment.<br>With a blend of craftsmanship and functionality, we've created furniture that not only complements the space but also becomes part of its legacy.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "info_image_1",
+      "label": "Info Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "info_image_2",
+      "label": "Info Image 2"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "spotlight_card",
+      "name": "Spotlight Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Card Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Card Title",
+          "default": "Project Title"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link",
+          "info": "Link to spotlight detail page"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Spotlight Page",
+      "blocks": [
+        {
+          "type": "spotlight_card"
+        },
+        {
+          "type": "spotlight_card"
+        },
+        {
+          "type": "spotlight_card"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

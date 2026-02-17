@@ -12,8 +12,68 @@
   "sections": {
     "page-spotlights": {
       "type": "page-spotlights",
-      "settings": {}
+      "blocks": {
+        "spotlight_1": {
+          "type": "spotlight_card",
+          "settings": {
+            "image": "shopify://shop_images/1_f4fad095-c28b-4ef5-92c1-557b6db7eb2f.jpg",
+            "title": "INGRAINED: Wood in a Cross-Section of Time, Koel Gallery",
+            "link": ""
+          }
+        },
+        "spotlight_2": {
+          "type": "spotlight_card",
+          "settings": {
+            "title": "Shatranj Kay Khiladi: Chessboard Table, Jhuley Lal—Crafting the Contemporary at The Mohatta Palace Museum, Karachi",
+            "link": ""
+          }
+        },
+        "spotlight_3": {
+          "type": "spotlight_card",
+          "settings": {
+            "title": "Rotunda—Aiwan e Sadar (Presidential Palace), Islamabad",
+            "link": ""
+          }
+        },
+        "spotlight_4": {
+          "type": "spotlight_card",
+          "settings": {
+            "title": "Pakistan Pavillion, Dubai Expo 2020",
+            "link": ""
+          }
+        },
+        "spotlight_5": {
+          "type": "spotlight_card",
+          "settings": {
+            "title": "State Lounge and CIP Lounge, Islamabad International Airport",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "spotlight_1",
+        "spotlight_2",
+        "spotlight_3",
+        "spotlight_4",
+        "spotlight_5"
+      ],
+      "settings": {
+        "hero_title": "Spotlight",
+        "hero_description": "Discover our iconic furniture and interior solutions designed for landmark spaces across Pakistan.",
+        "hero_image": "shopify://shop_images/spotlights-hero-2.jpg",
+        "hero_video_url": "",
+        "showcase_title": "Our Project Showcase",
+        "show_cta_section": true,
+        "cta_title": "Round Sofa with 9 Cushions",
+        "cta_button_text": "buy now",
+        "cta_button_link": "",
+        "show_info_section": true,
+        "info_title": "Designing for Iconic Spaces",
+        "info_description": "<p>Our work extends beyond homes and offices. From airports to cultural landmarks, each project in the Spotlight series tells a story of design tailored to its environment.<br>With a blend of craftsmanship and functionality, we've created furniture that not only complements the space but also becomes part of its legacy.</p>"
+      }
     }
   },
-  "order": ["page-spotlights"]
+  "order": [
+    "page-spotlights"
+  ]
 }
