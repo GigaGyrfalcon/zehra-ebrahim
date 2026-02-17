@@ -17,129 +17,337 @@
             </div>
           </div>
           <div class="page-head-info">
-            <h2 class="page-title">INGRAINED: Wood in a Cross-Section of Time, Koel Gallery</h2>
+            <h2 class="page-title">{{ section.settings.page_title | default: page.title }}</h2>
           </div>
         </div>
       </div>
 
       <div class="section-body">
-        <div class="spotlight-hero">
-          <div class="spotlight-hero-media">
-            <img
-              class="spotlight-hero-media-img"
-              src="{{ 'spotlights-hero-2.jpg' | asset_url }}"
-              alt="Spotlight"
-              height=""
-              width=""
-            >
-          </div>
-        </div>
-        <div class="subsection-section">
-          <div class="subsection-section-content">
-            <div class="subsection-section-head">
-              <h3 class="subsection-section-title">Exhibition — Koel Gallery Karachi</h3>
-              <div class="subsection-section-description">
-                <p>
-                  Wood has been my muse for two decades. This exhibition is a love letter to the trees that have carried
-                  our stories far longer than we have walked among them.
-                </p>
-                <p>
-                  At the generous invitation of Noor Jehan Bilgrami at Koel Gallery, curating this show alongside my
-                  dear friend Naila Mahmood was a treasured experience. It taught me, moved me, and changed how I think
-                  about my own practice. Ingrained is a celebration of wood and a tribute to the incredible
-                  participating artists whose imagination and hands have brought it alive.
-                </p>
-              </div>
-            </div>
-            <div class="subsection-section-body">
-              <div class="individual-spotlight-gallery">
-                <div class="individual-spotlight-gallery-item">
-                  <img
-                    class="individual-spotlight-gallery-img"
-                    src="{{ 'individual-spotlight-1.jpg' | asset_url }}"
-                    alt="Spotlight 1"
-                    height=""
-                    width=""
-                  >
-                </div>
-                <div class="individual-spotlight-gallery-item">
-                  <img
-                    class="individual-spotlight-gallery-img"
-                    src="{{ 'individual-spotlight-2.jpg' | asset_url }}"
-                    alt="Spotlight 1"
-                    height=""
-                    width=""
-                  >
-                </div>
-                <div class="individual-spotlight-gallery-item">
-                  <img
-                    class="individual-spotlight-gallery-img"
-                    src="{{ 'individual-spotlight-3.jpg' | asset_url }}"
-                    alt="Spotlight 1"
-                    height=""
-                    width=""
-                  >
-                </div>
-              </div>
+        {% if section.settings.hero_image != blank %}
+          <div class="spotlight-hero">
+            <div class="spotlight-hero-media">
+              <img
+                class="spotlight-hero-media-img"
+                src="{{ section.settings.hero_image | image_url: width: 1920 }}"
+                alt="{{ section.settings.hero_image.alt | default: section.settings.page_title | default: page.title }}"
+                height=""
+                width=""
+                loading="lazy"
+              >
             </div>
           </div>
-        </div>
-        <div class="subsection-section">
-          <div class="subsection-section-content">
-            <div
-              class="subsection-section-head subsection-section-head--center"
-            >
-              <h3 class="subsection-section-title">Curatorial Statement - An Invitation To Listen To The Wood</h3>
+        {% endif %}
+
+        {% if section.settings.show_description_section %}
+          <div class="subsection-section">
+            <div class="subsection-section-content">
+              <div class="subsection-section-head">
+                {% if section.settings.description_title != blank %}
+                  <h3 class="subsection-section-title">{{ section.settings.description_title }}</h3>
+                {% endif %}
+                {% if section.settings.description_text != blank %}
+                  <div class="subsection-section-description">
+                    {{ section.settings.description_text }}
+                  </div>
+                {% endif %}
+              </div>
+
+              {% assign gallery_blocks = section.blocks | where: 'type', 'gallery_image' %}
+              {% if gallery_blocks.size > 0 %}
+                <div class="subsection-section-body">
+                  <div class="individual-spotlight-gallery">
+                    {% for block in gallery_blocks %}
+                      {% if block.settings.image != blank %}
+                        <div class="individual-spotlight-gallery-item" {{ block.shopify_attributes }}>
+                          <img
+                            class="individual-spotlight-gallery-img"
+                            src="{{ block.settings.image | image_url: width: 500 }}"
+                            alt="{{ block.settings.image.alt | default: block.settings.caption }}"
+                            height=""
+                            width=""
+                            loading="lazy"
+                          >
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endif %}
             </div>
-            <div class="subsection-section-body">
-              <div class="individual-spotlight-highlights">
-                <div class="individual-spotlight-highlight">
-                  <h3 class="individual-spotlight-highlight-title">Living Witness</h3>
-                  <div class="individual-spotlight-highlight-text">
-                    <p>
-                      As living witnesses, trees mirror our personal and collective histories. The exhibition celebrates
-                      how they hold the weight of national identities, cultural memory, and the struggle over land and
-                      ecology. As we read wood, we in essence enter a dialogue with time — layered, resilient, and
-                      profoundly alive.
-                    </p>
-                  </div>
+          </div>
+        {% endif %}
+
+        {% assign highlight_blocks = section.blocks | where: 'type', 'highlight' %}
+        {% if section.settings.show_highlights_section and highlight_blocks.size > 0 %}
+          <div class="subsection-section">
+            <div class="subsection-section-content">
+              {% if section.settings.highlights_title != blank %}
+                <div class="subsection-section-head subsection-section-head--center">
+                  <h3 class="subsection-section-title">{{ section.settings.highlights_title }}</h3>
                 </div>
-                <div class="individual-spotlight-highlight">
-                  <h3 class="individual-spotlight-highlight-title">Tethered To Trees</h3>
-                  <div class="individual-spotlight-highlight-text">
-                    <p>
-                      The exhibition explores the intricate bond between humans and trees — a bond we have too often
-                      betrayed, felling forests without reverence and denying the sanctity with which they hold our
-                      ecosystems, our histories, and our very existence in balance.
-                    </p>
-                  </div>
-                </div>
-                <div class="individual-spotlight-highlight">
-                  <h3 class="individual-spotlight-highlight-title">Rooted In Time</h3>
-                  <div class="individual-spotlight-highlight-text">
-                    <p>
-                      In the architecture of wood, time quietly reveals itself. Trees carry the memory of growth,
-                      rupture, and renewal within their bodies. The exhibition explores how trees are more than
-                      material; they are metaphors of rootedness and resilience, of belonging and displacement, of
-                      innovation and legacy.
-                    </p>
-                  </div>
-                </div>
-                <div class="individual-spotlight-highlight">
-                  <h3 class="individual-spotlight-highlight-title">The Subject & The Medium</h3>
-                  <div class="individual-spotlight-highlight-text">
-                    <p>
-                      A vessel of texture, grain, and warmth, inviting touch and transformation in the artisans hands.
-                      As they carve, join, turn and finish, they read the wood's memory, responding with awareness and
-                      understanding.
-                    </p>
-                  </div>
+              {% endif %}
+              <div class="subsection-section-body">
+                <div class="individual-spotlight-highlights">
+                  {% for block in highlight_blocks %}
+                    <div class="individual-spotlight-highlight" {{ block.shopify_attributes }}>
+                      {% if block.settings.title != blank %}
+                        <h3 class="individual-spotlight-highlight-title">{{ block.settings.title }}</h3>
+                      {% endif %}
+                      {% if block.settings.text != blank %}
+                        <div class="individual-spotlight-highlight-text">
+                          {{ block.settings.text }}
+                        </div>
+                      {% endif %}
+                    </div>
+                  {% endfor %}
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        {% endif %}
       </div>
     </div>
   </div>
 </section>
+
+{% if section.settings.show_hotspot_section %}
+  <section class="section section--pb-0 section--w-bg-content-overlay-desktop animate-on-scroll">
+    <div class="container">
+      <div class="section-content">
+        <div class="section-head animatable-part">
+          {% if section.settings.hotspot_title != blank %}
+            <h2 class="section-title">{{ section.settings.hotspot_title }}</h2>
+          {% endif %}
+          {% if section.settings.hotspot_description != blank %}
+            <p class="section-description">
+              {{ section.settings.hotspot_description }}
+            </p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="section-bg">
+      {% assign hotspot_blocks = section.blocks | where: 'type', '@app' %}
+      {% if hotspot_blocks.size > 0 %}
+        <div class="section-bg-media">
+          {% for block in hotspot_blocks %}
+            {% render block %}
+          {% endfor %}
+        </div>
+      {% elsif section.settings.hotspot_background_image != blank
+        or section.settings.hotspot_background_image_desktop != blank
+      %}
+        <picture class="section-bg-media">
+          {% if section.settings.hotspot_background_image_desktop != blank %}
+            <source
+              srcset="{{ section.settings.hotspot_background_image_desktop | image_url: width: 1920 }}"
+              media="(min-width: 992px)"
+            >
+          {% endif %}
+          <img
+            src="{{ section.settings.hotspot_background_image | image_url: width: 768 }}"
+            alt="{{ section.settings.hotspot_background_image.alt | default: 'Hotspot background' }}"
+            class="section-bg-img"
+            width=""
+            height=""
+            loading="lazy"
+          >
+        </picture>
+      {% endif %}
+    </div>
+  </section>
+{% endif %}
+
+{% if section.settings.show_footer_text %}
+  <section class="section">
+    <div class="container">
+      <div class="section-content">
+        <div class="section-body">
+          <div class="individual-spotlight-description">
+            {{ section.settings.footer_text }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Individual Spotlight",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Page Header"
+    },
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Page Title",
+      "info": "Leave empty to use the page's title"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "header",
+      "content": "Description Section"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description_section",
+      "label": "Show Description Section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "description_title",
+      "label": "Section Title",
+      "default": "Exhibition — Koel Gallery Karachi"
+    },
+    {
+      "type": "html",
+      "id": "description_text",
+      "label": "Description Text",
+      "default": "<p>Add your description here.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Highlights Section"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_highlights_section",
+      "label": "Show Highlights Section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "highlights_title",
+      "label": "Highlights Section Title",
+      "default": "Curatorial Statement"
+    },
+    {
+      "type": "header",
+      "content": "Hotspot Section"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_hotspot_section",
+      "label": "Show Hotspot Section",
+      "default": false,
+      "info": "Add the Hotspot Images app block below or use background images"
+    },
+    {
+      "type": "text",
+      "id": "hotspot_title",
+      "label": "Hotspot Section Title",
+      "default": "Look that speaks"
+    },
+    {
+      "type": "textarea",
+      "id": "hotspot_description",
+      "label": "Hotspot Section Description",
+      "default": "See how our designs come together in real spaces click the hotspots to shop each piece."
+    },
+    {
+      "type": "image_picker",
+      "id": "hotspot_background_image",
+      "label": "Background Image (Mobile)",
+      "info": "Used if no app block is added"
+    },
+    {
+      "type": "image_picker",
+      "id": "hotspot_background_image_desktop",
+      "label": "Background Image (Desktop)",
+      "info": "Used if no app block is added"
+    },
+    {
+      "type": "header",
+      "content": "Footer Text Section"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_footer_text",
+      "label": "Show Footer Text",
+      "default": false
+    },
+    {
+      "type": "html",
+      "id": "footer_text",
+      "label": "Footer Text",
+      "default": "<p>Add additional information, credits, participating artists, or any closing notes here.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "gallery_image",
+      "name": "Gallery Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Image Caption (Optional)",
+          "info": "Used as alt text if image alt is not set"
+        }
+      ]
+    },
+    {
+      "type": "highlight",
+      "name": "Highlight Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Highlight Title"
+        },
+        {
+          "type": "html",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Add your highlight text here.</p>"
+        }
+      ]
+    },
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Individual Spotlight",
+      "blocks": [
+        {
+          "type": "gallery_image"
+        },
+        {
+          "type": "gallery_image"
+        },
+        {
+          "type": "gallery_image"
+        },
+        {
+          "type": "highlight"
+        },
+        {
+          "type": "highlight"
+        },
+        {
+          "type": "highlight"
+        },
+        {
+          "type": "highlight"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -12,12 +12,54 @@
   "sections": {
     "main": {
       "type": "page-hotspot",
-      "settings": {}
-    },
-    "177073952153781a37": {
-      "type": "apps",
       "blocks": {
-        "hotspot_images_hotspot_image_En7QwE": {
+        "gallery_1": {
+          "type": "gallery_image",
+          "settings": {
+            "caption": ""
+          }
+        },
+        "gallery_2": {
+          "type": "gallery_image",
+          "settings": {
+            "caption": ""
+          }
+        },
+        "gallery_3": {
+          "type": "gallery_image",
+          "settings": {
+            "caption": ""
+          }
+        },
+        "highlight_1": {
+          "type": "highlight",
+          "settings": {
+            "title": "Living Witness",
+            "text": "<p>As living witnesses, trees mirror our personal and collective histories. The exhibition celebrates how they hold the weight of national identities, cultural memory, and the struggle over land and ecology.</p>"
+          }
+        },
+        "highlight_2": {
+          "type": "highlight",
+          "settings": {
+            "title": "Tethered To Trees",
+            "text": "<p>The exhibition explores the intricate bond between humans and trees — a bond we have too often betrayed, felling forests without reverence.</p>"
+          }
+        },
+        "highlight_3": {
+          "type": "highlight",
+          "settings": {
+            "title": "Rooted In Time",
+            "text": "<p>In the architecture of wood, time quietly reveals itself. Trees carry the memory of growth, rupture, and renewal within their bodies.</p>"
+          }
+        },
+        "highlight_4": {
+          "type": "highlight",
+          "settings": {
+            "title": "The Subject & The Medium",
+            "text": "<p>A vessel of texture, grain, and warmth, inviting touch and transformation in the artisans hands.</p>"
+          }
+        },
+        "hotspot_app_block": {
           "type": "shopify://apps/hotspot-images/blocks/hotspot_image/37f0faa9-fe0a-4f9e-adb1-54d3c9531a2f",
           "settings": {
             "image_id": "2309"
@@ -25,15 +67,29 @@
         }
       },
       "block_order": [
-        "hotspot_images_hotspot_image_En7QwE"
+        "gallery_1",
+        "gallery_2",
+        "gallery_3",
+        "highlight_1",
+        "highlight_2",
+        "highlight_3",
+        "highlight_4",
+        "hotspot_app_block"
       ],
       "settings": {
-        "include_margins": true
+        "page_title": "",
+        "show_description_section": true,
+        "description_title": "Exhibition — Koel Gallery Karachi",
+        "description_text": "<p>Wood has been my muse for two decades. This exhibition is a love letter to the trees that have carried our stories far longer than we have walked among them.</p><p>At the generous invitation of Noor Jehan Bilgrami at Koel Gallery, curating this show alongside my dear friend Naila Mahmood was a treasured experience.</p>",
+        "show_highlights_section": true,
+        "highlights_title": "Curatorial Statement - An Invitation To Listen To The Wood",
+        "show_hotspot_section": true,
+        "hotspot_title": "Look that speaks",
+        "hotspot_description": "See how our designs come together in real spaces click the hotspots to shop each piece.",
+        "show_footer_text": true,
+        "footer_text": "<p>Participating artists: Sohail Abdullah, Khadija-tul-Kubra-Architects, Open Door–Workshop, Sibt-e-Hassan Azad, Nida Bangash, Arshad Faruqui, Ustad Hanif Khan, Raasmia Haque, Sarosh Hebatzai, Madiha Hyder, Junaid ul Islam, Fraz Mateen, Zoral Naik, Anushka Rustomil, Usman Saeed, Asif Sinan, and Raka Studio</p>"
       }
     }
   },
-  "order": [
-    "main",
-    "177073952153781a37"
-  ]
+  "order": ["main"]
 }
