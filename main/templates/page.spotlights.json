@@ -67,6 +67,8 @@
         "cta_title": "Round Sofa with 9 Cushions",
         "cta_button_text": "buy now",
         "cta_button_link": "",
+        "cta_background_image": "shopify://shop_images/3-mobile.jpg",
+        "cta_background_image_desktop": "shopify://shop_images/3-desktop.jpg",
         "show_info_section": true,
         "info_title": "Designing for Iconic Spaces",
         "info_description": "<p>Our work extends beyond homes and offices. From airports to cultural landmarks, each project in the Spotlight series tells a story of design tailored to its environment.<br>With a blend of craftsmanship and functionality, we've created furniture that not only complements the space but also becomes part of its legacy.</p>"

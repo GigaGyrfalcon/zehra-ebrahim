@@ -1,21 +1,68 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "layout": "home",
   "sections": {
     "client_feedback": {
       "type": "client-feedback",
+      "blocks": {
+        "quote_cjfH7R": {
+          "type": "quote",
+          "settings": {
+            "quote": "\"A room should never allow the eye to settle in one place. It should smile at you and create fantasy.\" — Juan Montoya"
+          }
+        },
+        "quote_x4a7MG": {
+          "type": "quote",
+          "settings": {
+            "quote": "\"In our homes, as in our lives we are happiest when we make room for the things that speak to our souls.\" — Sibella Court"
+          }
+        }
+      },
+      "block_order": [
+        "quote_cjfH7R",
+        "quote_x4a7MG"
+      ],
       "settings": {}
     },
     "hero_media": {
       "type": "hero-media",
-      "settings": {}
+      "settings": {
+        "title": "Crafting Contemporary Heirlooms",
+        "description": "Rooted in storytelling, Zahra Ebrahim is a celebration of craftsmanship and timeless design.",
+        "hero_image_mobile": "shopify://shop_images/hero-mobile.jpg",
+        "hero_image_tablet": "shopify://shop_images/hero-tablet.jpg",
+        "hero_image_desktop": "shopify://shop_images/hero-desktop.jpg",
+        "show_video": true,
+        "video_url": "",
+        "button_1_text": "About Us",
+        "button_1_link": "shopify://pages/about-us",
+        "button_2_text": "Spotlight",
+        "button_2_link": "shopify://pages/spotlight"
+      }
     },
     "product_categories": {
       "type": "product-categories",
-      "settings": {}
+      "settings": {
+        "title": "From Gatherings to Quiet Moments, Explore Possibilities for Everyday Luxury",
+        "button_text": "Shop All",
+        "button_link": ""
+      }
     },
     "spaces": {
       "type": "spaces",
-      "settings": {}
+      "settings": {
+        "title": "Create Spaces That Celebrate How You Live",
+        "button_text": "Shop Now",
+        "button_url": ""
+      }
     },
     "moving_line_1": {
       "type": "moving-line",
@@ -25,31 +72,54 @@
     },
     "explore_the_look": {
       "type": "explore-the-look",
-      "settings": {}
+      "settings": {
+        "title": "Explore the Look",
+        "description": "See how our designs come together in real spaces — click the hotspots to shop each piece."
+      }
     },
     "spotlights": {
       "type": "spotlights",
-      "settings": {}
+      "settings": {
+        "title": "Spotlight"
+      }
     },
     "moving_line_2": {
       "type": "moving-line",
-      "settings": {}
+      "settings": {
+        "css_class": ""
+      }
     },
     "handcrafted": {
       "type": "handcrafted",
-      "settings": {}
+      "settings": {
+        "title": "Handcrafted in Pakistan, Loved Everywhere",
+        "description": "For over 15 years, our skilled artisans — many with us for over a decade — have created timeless pieces with dedication, precision, and pride.",
+        "button_text": "about us",
+        "button_url": ""
+      }
     },
     "filigree_jewellery_box": {
       "type": "filigree-jewellery-box",
-      "settings": {}
+      "settings": {
+        "title": "Filigree Jewellery box",
+        "button_text": "buy now",
+        "button_url": ""
+      }
     },
     "testimonials": {
       "type": "testimonials",
-      "settings": {}
+      "settings": {
+        "title": "What Our Customers Say"
+      }
     },
     "giftables": {
       "type": "giftables",
-      "settings": {}
+      "settings": {
+        "title": "Giftables - Because the best gifts are made to last.",
+        "description": "Discover a curated selection of small yet timeless creations — perfect for gifting your loved ones or celebrating life's special moments. From handcrafted trays to elegant décor accents, each piece reflects the same craftsmanship and attention to detail that defines Zahra Ebrahim.",
+        "button_text": "Shop Giftables",
+        "button_url": ""
+      }
     }
   },
   "order": [

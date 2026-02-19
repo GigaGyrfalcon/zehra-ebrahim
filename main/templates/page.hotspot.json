@@ -16,18 +16,21 @@
         "gallery_1": {
           "type": "gallery_image",
           "settings": {
+            "image": "shopify://shop_images/individual-spotlight-1.jpg",
             "caption": ""
           }
         },
         "gallery_2": {
           "type": "gallery_image",
           "settings": {
+            "image": "shopify://shop_images/individual-spotlight-2.jpg",
             "caption": ""
           }
         },
         "gallery_3": {
           "type": "gallery_image",
           "settings": {
+            "image": "shopify://shop_images/individual-spotlight-3.jpg",
             "caption": ""
           }
         },
@@ -77,7 +80,8 @@
         "hotspot_app_block"
       ],
       "settings": {
-        "page_title": "",
+        "page_title": "INGRAINED: Wood in a Cross-Section of Time, Koel Gallery",
+        "hero_image": "shopify://shop_images/spotlights-hero-2.jpg",
         "show_description_section": true,
         "description_title": "Exhibition — Koel Gallery Karachi",
         "description_text": "<p>Wood has been my muse for two decades. This exhibition is a love letter to the trees that have carried our stories far longer than we have walked among them.</p><p>At the generous invitation of Noor Jehan Bilgrami at Koel Gallery, curating this show alongside my dear friend Naila Mahmood was a treasured experience.</p>",
@@ -91,5 +95,7 @@
       }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }
