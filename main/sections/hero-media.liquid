@@ -18,15 +18,8 @@
         >
       {% endif %}
     </picture>
-    {% if section.settings.show_video and section.settings.video_url != blank %}
-      <video
-        src="{{ section.settings.video_url }}"
-        class="hero-media-video"
-        autoplay
-        muted
-        loop
-        playsinline
-      ></video>
+    {% if section.settings.show_video and section.settings.video != blank %}
+      <video src="{{ section.settings.video.sources[0].url }}" class="hero-media-video" autoplay muted loop playsinline></video>
     {% endif %}
   </div>
   <div class="hero-content animatable-part">
@@ -118,10 +111,10 @@
       "default": true
     },
     {
-      "type": "text",
-      "id": "video_url",
-      "label": "Video URL",
-      "info": "Enter asset file name (e.g., hero-video.mp4) or full URL"
+      "type": "video",
+      "id": "video",
+      "label": "Video File",
+      "info": "Upload a video file. Supports MP4, MOV, and other video formats."
     },
     {
       "type": "header",

@@ -41,7 +41,7 @@
         "hero_image_tablet": "shopify://shop_images/hero-tablet.jpg",
         "hero_image_desktop": "shopify://shop_images/hero-desktop.jpg",
         "show_video": true,
-        "video_url": "",
+        "video": "shopify://files/videos/video.mp4",
         "button_1_text": "About Us",
         "button_1_link": "shopify://pages/about-us",
         "button_2_text": "Spotlight",
