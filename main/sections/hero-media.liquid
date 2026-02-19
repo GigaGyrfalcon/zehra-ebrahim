@@ -1,45 +1,159 @@
 <section class="hero animate-on-scroll">
   <div class="hero-media">
     <picture class="hero-media-picture">
-      <source srcset="{{ 'hero-desktop.jpg' | asset_url }}" media="(min-width: 1200px)">
-      <source srcset="{{ 'hero-tablet.jpg' | asset_url }}" media="(min-width: 768px)">
-      <img
-        src="{{ 'hero-mobile.jpg' | asset_url }}"
-        alt="Hero media picture"
-        class="hero-media-img"
-        width=""
-        height=""
-      >
+      {% if section.settings.hero_image_desktop != blank %}
+        <source srcset="{{ section.settings.hero_image_desktop | image_url: width: 1920 }}" media="(min-width: 1200px)">
+      {% endif %}
+      {% if section.settings.hero_image_tablet != blank %}
+        <source srcset="{{ section.settings.hero_image_tablet | image_url: width: 1200 }}" media="(min-width: 768px)">
+      {% endif %}
+      {% if section.settings.hero_image_mobile != blank %}
+        <img
+          src="{{ section.settings.hero_image_mobile | image_url: width: 768 }}"
+          alt="{{ section.settings.hero_image_mobile.alt | default: section.settings.title }}"
+          class="hero-media-img"
+          width=""
+          height=""
+          loading="eager"
+        >
+      {% endif %}
     </picture>
-    <video
-      src="{{ 'hero-video.mp4' | asset_url }}"
-      class="hero-media-video"
-      autoplay
-      muted
-      loop
-      playsinline
-    ></video>
+    {% if section.settings.show_video and section.settings.video_url != blank %}
+      <video
+        src="{{ section.settings.video_url }}"
+        class="hero-media-video"
+        autoplay
+        muted
+        loop
+        playsinline
+      ></video>
+    {% endif %}
   </div>
   <div class="hero-content animatable-part">
     <div class="hero-content-text">
-      <h1 class="hero-content-title">Crafting Contemporary Heirlooms</h1>
-      <p class="hero-content-description">
-        Rooted in storytelling, Zahra Ebrahim is a celebration of craftsmanship and timeless design.
-      </p>
+      {% if section.settings.title != blank %}
+        <h1 class="hero-content-title">{{ section.settings.title }}</h1>
+      {% endif %}
+      {% if section.settings.description != blank %}
+        <p class="hero-content-description">
+          {{ section.settings.description }}
+        </p>
+      {% endif %}
     </div>
-    <div class="hero-content-actions">
-      <a
-        href="/pages/about-us"
-        class="button button--hoverable button--primary button--primary-on-bg button--default"
-      >
-        <span class="button-text">About Us</span>
-      </a>
-      <a
-        href="/pages/spotlight"
-        class="button button--hoverable button--secondary button--default"
-      >
-        <span class="button-text">Spotlight</span>
-      </a>
-    </div>
+    {% if section.settings.button_1_text != blank or section.settings.button_2_text != blank %}
+      <div class="hero-content-actions">
+        {% if section.settings.button_1_text != blank and section.settings.button_1_link != blank %}
+          <a
+            href="{{ section.settings.button_1_link }}"
+            class="button button--hoverable button--primary button--primary-on-bg button--default"
+          >
+            <span class="button-text">{{ section.settings.button_1_text }}</span>
+          </a>
+        {% endif %}
+        {% if section.settings.button_2_text != blank and section.settings.button_2_link != blank %}
+          <a
+            href="{{ section.settings.button_2_link }}"
+            class="button button--hoverable button--secondary button--default"
+          >
+            <span class="button-text">{{ section.settings.button_2_text }}</span>
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
   </div>
 </section>
+
+{% schema %}
+{
+  "name": "Hero Media",
+  "tag": "section",
+  "class": "hero-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Crafting Contemporary Heirlooms"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Rooted in storytelling, Zahra Ebrahim is a celebration of craftsmanship and timeless design."
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image_mobile",
+      "label": "Mobile Image",
+      "info": "Recommended: 768px width"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image_tablet",
+      "label": "Tablet Image",
+      "info": "Recommended: 1200px width"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image_desktop",
+      "label": "Desktop Image",
+      "info": "Recommended: 1920px width"
+    },
+    {
+      "type": "header",
+      "content": "Video"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_video",
+      "label": "Show Video",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "Video URL",
+      "info": "Enter asset file name (e.g., hero-video.mp4) or full URL"
+    },
+    {
+      "type": "header",
+      "content": "Buttons"
+    },
+    {
+      "type": "text",
+      "id": "button_1_text",
+      "label": "Button 1 Text",
+      "default": "About Us"
+    },
+    {
+      "type": "url",
+      "id": "button_1_link",
+      "label": "Button 1 Link"
+    },
+    {
+      "type": "text",
+      "id": "button_2_text",
+      "label": "Button 2 Text",
+      "default": "Spotlight"
+    },
+    {
+      "type": "url",
+      "id": "button_2_link",
+      "label": "Button 2 Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Media"
+    }
+  ]
+}
+{% endschema %}

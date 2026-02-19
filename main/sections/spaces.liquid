@@ -5,66 +5,55 @@
         <div class="spaces-slider-media">
           <div class="swiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="space-card">
-                  <div class="space-card-media">
-                    <img
-                      class="space-card-img"
-                      src="{{ 'space-lounge.jpg' | asset_url }}"
-                      alt="Lounge"
-                      width=""
-                      height=""
-                    >
+              {% for block in section.blocks %}
+                <div class="swiper-slide" {{ block.shopify_attributes }}>
+                  <div class="space-card">
+                    <div class="space-card-media">
+                      {% if block.settings.image != blank %}
+                        <img
+                          class="space-card-img"
+                          src="{{ block.settings.image | image_url: width: 1200 }}"
+                          alt="{{ block.settings.title | escape }}"
+                          loading="lazy"
+                          width=""
+                          height=""
+                        >
+                      {% endif %}
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="space-card">
-                  <div class="space-card-media">
-                    <img
-                      class="space-card-img"
-                      src="{{ 'space-lounge.jpg' | asset_url }}"
-                      alt="Dining Room"
-                      width=""
-                      height=""
-                    >
-                  </div>
-                </div>
-              </div>
+              {% endfor %}
             </div>
           </div>
         </div>
       </div>
       <div class="section-head">
-        <h2 class="section-title">Create Spaces That Celebrate How You Live</h2>
+        <h2 class="section-title">{{ section.settings.title }}</h2>
         <div class="spaces-slider">
           <div class="swiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="space-card">
-                  <div class="space-card-info">
-                    <h3 class="space-card-title">Lounge</h3>
+              {% for block in section.blocks %}
+                <div class="swiper-slide" {{ block.shopify_attributes }}>
+                  <div class="space-card">
+                    <div class="space-card-info">
+                      <h3 class="space-card-title">{{ block.settings.title }}</h3>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="space-card">
-                  <div class="space-card-info">
-                    <h3 class="space-card-title">Dining Room</h3>
-                  </div>
-                </div>
-              </div>
+              {% endfor %}
             </div>
           </div>
         </div>
-        <div class="spaces-action">
-          <a
-            href=""
-            class="button button--primary button--default button--hoverable"
-          >
-            <span class="button-text">Shop Now</span>
-          </a>
-        </div>
+        {% if section.settings.button_text != blank %}
+          <div class="spaces-action">
+            <a
+              href="{{ section.settings.button_url }}"
+              class="button button--primary button--default button--hoverable"
+            >
+              <span class="button-text">{{ section.settings.button_text }}</span>
+            </a>
+          </div>
+        {% endif %}
         <div class="section-actions">
           <div class="slider-controls">
             <a href="" class="slider-control slider-control--prev">
@@ -110,3 +99,70 @@
     }
   });
 </script>
+
+{% schema %}
+{
+  "name": "Spaces",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Create Spaces That Celebrate How You Live"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "space",
+      "name": "Space",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Space title",
+          "default": "Space"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Space image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Spaces",
+      "settings": {
+        "title": "Create Spaces That Celebrate How You Live",
+        "button_text": "Shop Now"
+      },
+      "blocks": [
+        {
+          "type": "space",
+          "settings": {
+            "title": "Lounge"
+          }
+        },
+        {
+          "type": "space",
+          "settings": {
+            "title": "Dining Room"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

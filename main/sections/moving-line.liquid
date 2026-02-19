@@ -1,0 +1,20 @@
+{% render 'moving-line', moving_line_class: section.settings.css_class %}
+
+{% schema %}
+{
+  "name": "Moving Line",
+  "settings": [
+    {
+      "type": "text",
+      "id": "css_class",
+      "label": "CSS class",
+      "info": "Optional CSS class for styling (e.g., section--pbs-0)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Moving Line"
+    }
+  ]
+}
+{% endschema %}

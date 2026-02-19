@@ -4,26 +4,91 @@
   <div class="container">
     <div class="section-content">
       <div class="section-head animatable-part">
-        <h2 class="section-title">Explore the Look</h2>
+        <h2 class="section-title">{{ section.settings.title }}</h2>
         <p class="section-description">
-          See how our designs come together in real spaces — click the hotspots to shop each piece.
+          {{ section.settings.description }}
         </p>
       </div>
     </div>
   </div>
   <div class="section-bg">
-    <picture class="section-bg-media">
-      <source
-        srcset="{{ 'section-bg-1-desktop.jpg' | asset_url }}"
-        media="(min-width: 992px)"
-      >
-      <img
-        src="{{ 'section-bg-1-mobile.jpg' | asset_url }}"
-        alt="Section background media"
-        class="section-bg-img"
-        height=""
-        width=""
-      >
-    </picture>
+    <div class="section-bg-media">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when '@app' %}
+            {% render block %}
+          {% when 'hotspot' %}
+            <picture class="section-bg-media">
+              {% if block.settings.image_desktop != blank %}
+                <source
+                  srcset="{{ block.settings.image_desktop | image_url: width: 1920 }}"
+                  media="(min-width: 992px)"
+                >
+              {% endif %}
+              {% if block.settings.image_mobile != blank %}
+                <img
+                  src="{{ block.settings.image_mobile | image_url: width: 768 }}"
+                  alt="{{ block.settings.image_mobile.alt | escape }}"
+                  class="section-bg-img"
+                  loading="lazy"
+                  width=""
+                  height=""
+                >
+              {% endif %}
+            </picture>
+        {% endcase %}
+      {% endfor %}
+    </div>
   </div>
 </section>
+
+{% schema %}
+{
+  "name": "Explore the Look",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Explore the Look"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "See how our designs come together in real spaces — click the hotspots to shop each piece."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "hotspot",
+      "name": "Hotspot Background",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_desktop",
+          "label": "Desktop image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Mobile image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Explore the Look",
+      "settings": {
+        "title": "Explore the Look",
+        "description": "See how our designs come together in real spaces — click the hotspots to shop each piece."
+      }
+    }
+  ]
+}
+{% endschema %}

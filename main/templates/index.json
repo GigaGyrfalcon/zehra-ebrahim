@@ -1,52 +1,69 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "layout": "home",
   "sections": {
-    "1770739039718bc7e9": {
-      "type": "apps",
-      "blocks": {
-        "hotspot_images_hotspot_image_cHJkhc": {
-          "type": "shopify://apps/hotspot-images/blocks/hotspot_image/37f0faa9-fe0a-4f9e-adb1-54d3c9531a2f",
-          "settings": {
-            "image_id": ""
-          }
-        }
-      },
-      "block_order": [
-        "hotspot_images_hotspot_image_cHJkhc"
-      ],
+    "client_feedback": {
+      "type": "client-feedback",
+      "settings": {}
+    },
+    "hero_media": {
+      "type": "hero-media",
+      "settings": {}
+    },
+    "product_categories": {
+      "type": "product-categories",
+      "settings": {}
+    },
+    "spaces": {
+      "type": "spaces",
+      "settings": {}
+    },
+    "moving_line_1": {
+      "type": "moving-line",
       "settings": {
-        "include_margins": true
+        "css_class": "section--pbs-0"
       }
     },
-    "1770739786a5734def": {
-      "type": "apps",
-      "blocks": {
-        "hotspot_images_hotspot_image_Y6fFDa": {
-          "type": "shopify://apps/hotspot-images/blocks/hotspot_image/37f0faa9-fe0a-4f9e-adb1-54d3c9531a2f",
-          "settings": {
-            "image_id": ""
-          }
-        }
-      },
-      "block_order": [
-        "hotspot_images_hotspot_image_Y6fFDa"
-      ],
-      "settings": {
-        "include_margins": true
-      }
+    "explore_the_look": {
+      "type": "explore-the-look",
+      "settings": {}
+    },
+    "spotlights": {
+      "type": "spotlights",
+      "settings": {}
+    },
+    "moving_line_2": {
+      "type": "moving-line",
+      "settings": {}
+    },
+    "handcrafted": {
+      "type": "handcrafted",
+      "settings": {}
+    },
+    "filigree_jewellery_box": {
+      "type": "filigree-jewellery-box",
+      "settings": {}
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "settings": {}
+    },
+    "giftables": {
+      "type": "giftables",
+      "settings": {}
     }
   },
   "order": [
-    "1770739039718bc7e9",
-    "1770739786a5734def"
+    "client_feedback",
+    "hero_media",
+    "product_categories",
+    "spaces",
+    "moving_line_1",
+    "explore_the_look",
+    "spotlights",
+    "moving_line_2",
+    "handcrafted",
+    "filigree_jewellery_box",
+    "testimonials",
+    "giftables"
   ]
 }

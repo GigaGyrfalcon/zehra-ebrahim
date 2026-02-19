@@ -2,33 +2,84 @@
   <div class="container">
     <div class="section-content">
       <div class="section-head animatable-part">
-        <h2 class="section-title">Filigree Jewellery box</h2>
-        <div class="section-actions">
-          <div class="section-action">
-            <a
-              href=""
-              class="button button--primary button--primary-on-bg button--default button--hoverable"
-            >
-              <span class="button-text">buy now</span>
-            </a>
+        <h2 class="section-title">{{ section.settings.title }}</h2>
+        {% if section.settings.button_text != blank %}
+          <div class="section-actions">
+            <div class="section-action">
+              <a
+                href="{{ section.settings.button_url }}"
+                class="button button--primary button--primary-on-bg button--default button--hoverable"
+              >
+                <span class="button-text">{{ section.settings.button_text }}</span>
+              </a>
+            </div>
           </div>
-        </div>
+        {% endif %}
       </div>
     </div>
   </div>
   <div class="section-bg">
     <picture class="section-bg-media">
-      <source
-        srcset="{{ 'section-bg-2-desktop.jpg' | asset_url }}"
-        media="(min-width: 992px)"
-      >
-      <img
-        src="{{ 'section-bg-2-mobile.jpg' | asset_url }}"
-        alt="Section background media"
-        class="section-bg-img"
-        height=""
-        width=""
-      >
+      {% if section.settings.image_desktop != blank %}
+        <source
+          srcset="{{ section.settings.image_desktop | image_url: width: 1920 }}"
+          media="(min-width: 992px)"
+        >
+      {% endif %}
+      {% if section.settings.image_mobile != blank %}
+        <img
+          src="{{ section.settings.image_mobile | image_url: width: 768 }}"
+          alt="{{ section.settings.image_mobile.alt | escape }}"
+          class="section-bg-img"
+          loading="lazy"
+          width=""
+          height=""
+        >
+      {% endif %}
     </picture>
   </div>
 </section>
+
+{% schema %}
+{
+  "name": "Filigree Jewellery Box",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Filigree Jewellery box"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "buy now"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Mobile image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Filigree Jewellery Box",
+      "settings": {
+        "title": "Filigree Jewellery box",
+        "button_text": "buy now"
+      }
+    }
+  ]
+}
+{% endschema %}

@@ -11,35 +11,13 @@
       </a>
       <div class="swiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="client-feedback-item">
-              <p>
-                "In our homes, as in our lives we are happiest when we make room for the things that speak to our
-                souls." — Sibella Court
-              </p>
+          {% for block in section.blocks %}
+            <div class="swiper-slide" {{ block.shopify_attributes }}>
+              <div class="client-feedback-item">
+                <p>{{ block.settings.quote }}</p>
+              </div>
             </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="client-feedback-item">
-              <p>
-                Luxury to me is not about buying expensive things; it is about living in a way where you appreciate
-                things." — Oscar de la Renta
-              </p>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="client-feedback-item">
-              <p>
-                "A room should never allow the eye to settle in one place. It should smile at you and create fantasy." —
-                Juan Montoya
-              </p>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="client-feedback-item">
-              <p>"The best rooms have something to say about the people who live in them." — David Hicks</p>
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </div>
       <a
@@ -74,3 +52,53 @@
     }
   });
 </script>
+
+{% schema %}
+{
+  "name": "Client Feedback",
+  "blocks": [
+    {
+      "type": "quote",
+      "name": "Quote",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Client Feedback",
+      "blocks": [
+        {
+          "type": "quote",
+          "settings": {
+            "quote": "\"In our homes, as in our lives we are happiest when we make room for the things that speak to our souls.\" — Sibella Court"
+          }
+        },
+        {
+          "type": "quote",
+          "settings": {
+            "quote": "\"Luxury to me is not about buying expensive things; it is about living in a way where you appreciate things.\" — Oscar de la Renta"
+          }
+        },
+        {
+          "type": "quote",
+          "settings": {
+            "quote": "\"A room should never allow the eye to settle in one place. It should smile at you and create fantasy.\" — Juan Montoya"
+          }
+        },
+        {
+          "type": "quote",
+          "settings": {
+            "quote": "\"The best rooms have something to say about the people who live in them.\" — David Hicks"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -4,16 +4,20 @@
 >
   <div class="section-content section-content--horizontal">
     <div class="section-head section-head--vertical">
-      <h2 class="section-title">From Gatherings to Quiet Moments, Explore Possibilities for Everyday Luxury</h2>
+      {% if section.settings.title != blank %}
+        <h2 class="section-title">{{ section.settings.title }}</h2>
+      {% endif %}
       <div class="section-actions">
-        <div class="section-action">
-          <a
-            href=""
-            class="button button--primary button--default button--hoverable"
-          >
-            <span class="button-text">Shop All</span>
-          </a>
-        </div>
+        {% if section.settings.button_text != blank and section.settings.button_link != blank %}
+          <div class="section-action">
+            <a
+              href="{{ section.settings.button_link }}"
+              class="button button--primary button--default button--hoverable"
+            >
+              <span class="button-text">{{ section.settings.button_text }}</span>
+            </a>
+          </div>
+        {% endif %}
         <div class="slider-controls slider-controls--visible-desktop">
           <a href="" class="slider-control slider-control--prev">
             <svg class="slider-control-icon">
@@ -28,186 +32,51 @@
         </div>
       </div>
     </div>
-    <div class="section-body">
-      <div class="product-categories-slider">
-        <div class="swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <a href="" class="product-category-card">
-                <div class="product-category-card-media">
-                  <img
-                    class="product-category-card-img"
-                    src="{{ 'product-category-1.jpg' | asset_url }}"
-                    alt="Serve-ware"
-                    width=""
-                    height=""
-                  >
+    {% if section.blocks.size > 0 %}
+      <div class="section-body">
+        <div class="product-categories-slider">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              {% for block in section.blocks %}
+                <div class="swiper-slide" {{ block.shopify_attributes }}>
+                  <a href="{{ block.settings.link | default: '#' }}" class="product-category-card">
+                    {% if block.settings.image != blank %}
+                      <div class="product-category-card-media">
+                        <img
+                          class="product-category-card-img"
+                          src="{{ block.settings.image | image_url: width: 600 }}"
+                          alt="{{ block.settings.image.alt | default: block.settings.title }}"
+                          width=""
+                          height=""
+                          loading="lazy"
+                        >
+                      </div>
+                    {% endif %}
+                    {% if block.settings.title != blank %}
+                      <div class="product-category-card-info">
+                        <h3 class="product-category-card-title">{{ block.settings.title }}</h3>
+                      </div>
+                    {% endif %}
+                  </a>
                 </div>
-                <div class="product-category-card-info">
-                  <h3 class="product-category-card-title">Serve-ware</h3>
-                </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="" class="product-category-card">
-                <div class="product-category-card-media">
-                  <img
-                    class="product-category-card-img"
-                    src="{{ 'product-category-2.jpg' | asset_url }}"
-                    alt="Seating"
-                    width=""
-                    height=""
-                  >
-                </div>
-                <div class="product-category-card-info">
-                  <h3 class="product-category-card-title">Seating</h3>
-                </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="" class="product-category-card">
-                <div class="product-category-card-media">
-                  <img
-                    class="product-category-card-img"
-                    src="{{ 'product-category-3.jpg' | asset_url }}"
-                    alt="Tables"
-                    width=""
-                    height=""
-                  >
-                </div>
-                <div class="product-category-card-info">
-                  <h3 class="product-category-card-title">Tables</h3>
-                </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="" class="product-category-card">
-                <div class="product-category-card-media">
-                  <img
-                    class="product-category-card-img"
-                    src="{{ 'product-category-4.jpg' | asset_url }}"
-                    alt="Accents and decor"
-                    width=""
-                    height=""
-                  >
-                </div>
-                <div class="product-category-card-info">
-                  <h3 class="product-category-card-title">Accents and decor</h3>
-                </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="" class="product-category-card">
-                <div class="product-category-card-media">
-                  <img
-                    class="product-category-card-img"
-                    src="{{ 'product-category-5.jpg' | asset_url }}"
-                    alt="Storage"
-                    width=""
-                    height=""
-                  >
-                </div>
-                <div class="product-category-card-info">
-                  <h3 class="product-category-card-title">Storage</h3>
-                </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="" class="product-category-card">
-                <div class="product-category-card-media">
-                  <img
-                    class="product-category-card-img"
-                    src="{{ 'product-category-6.jpg' | asset_url }}"
-                    alt="Beds and bedroom"
-                    width=""
-                    height=""
-                  >
-                </div>
-                <div class="product-category-card-info">
-                  <h3 class="product-category-card-title">Beds and bedroom</h3>
-                </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="" class="product-category-card">
-                <div class="product-category-card-media">
-                  <img
-                    class="product-category-card-img"
-                    src="{{ 'product-category-7.jpg' | asset_url }}"
-                    alt="Outdoor"
-                    width=""
-                    height=""
-                  >
-                </div>
-                <div class="product-category-card-info">
-                  <h3 class="product-category-card-title">Outdoor</h3>
-                </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="" class="product-category-card">
-                <div class="product-category-card-media">
-                  <img
-                    class="product-category-card-img"
-                    src="{{ 'product-category-8.jpg' | asset_url }}"
-                    alt="Office and study"
-                    width=""
-                    height=""
-                  >
-                </div>
-                <div class="product-category-card-info">
-                  <h3 class="product-category-card-title">Office and study</h3>
-                </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="" class="product-category-card">
-                <div class="product-category-card-media">
-                  <img
-                    class="product-category-card-img"
-                    src="{{ 'product-category-9.jpg' | asset_url }}"
-                    alt="Swings"
-                    width=""
-                    height=""
-                  >
-                </div>
-                <div class="product-category-card-info">
-                  <h3 class="product-category-card-title">Swings</h3>
-                </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="" class="product-category-card">
-                <div class="product-category-card-media">
-                  <img
-                    class="product-category-card-img"
-                    src="{{ 'product-category-10.jpg' | asset_url }}"
-                    alt="Media"
-                    width=""
-                    height=""
-                  >
-                </div>
-                <div class="product-category-card-info">
-                  <h3 class="product-category-card-title">Media</h3>
-                </div>
-              </a>
+              {% endfor %}
             </div>
           </div>
         </div>
-      </div>
-      <div class="slider-controls slider-controls--visible-mobile">
-        <div class="slider-control slider-control--prev">
-          <svg class="slider-control-icon">
-            <use href="{{ 'icons.svg' | asset_url }}#symbol-arrow"></use>
-          </svg>
+        <div class="slider-controls slider-controls--visible-mobile">
+          <div class="slider-control slider-control--prev">
+            <svg class="slider-control-icon">
+              <use href="{{ 'icons.svg' | asset_url }}#symbol-arrow"></use>
+            </svg>
+          </div>
+          <div class="slider-control slider-control--next">
+            <svg class="slider-control-icon">
+              <use href="{{ 'icons.svg' | asset_url }}#symbol-arrow"></use>
+            </svg>
+          </div>
         </div>
-        <div class="slider-control slider-control--next">
-          <svg class="slider-control-icon">
-            <use href="{{ 'icons.svg' | asset_url }}#symbol-arrow"></use>
-          </svg>
-        </div>
       </div>
-    </div>
+    {% endif %}
   </div>
 </section>
 
@@ -227,3 +96,79 @@
     }
   });
 </script>
+
+{% schema %}
+{
+  "name": "Product Categories",
+  "tag": "section",
+  "class": "product-categories-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "From Gatherings to Quiet Moments, Explore Possibilities for Everyday Luxury"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop All"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Product Category",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Category Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Category Title",
+          "default": "Category Name"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Category Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Categories",
+      "blocks": [
+        {
+          "type": "category",
+          "settings": {
+            "title": "Serve-ware"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "title": "Seating"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "title": "Tables"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

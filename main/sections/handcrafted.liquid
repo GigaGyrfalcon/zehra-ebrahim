@@ -2,40 +2,98 @@
   <div class="container">
     <div class="section-content animatable-part section-content--horizontal">
       <div class="section-head">
-        <h2 class="section-title">Handcrafted in Pakistan, Loved Everywhere</h2>
+        <h2 class="section-title">{{ section.settings.title }}</h2>
         <p class="section-description">
-          For over 15 years, our skilled artisans — many with us for over a decade — have created timeless pieces with
-          dedication, precision, and pride.
+          {{ section.settings.description }}
         </p>
-        <div class="section-actions">
-          <div class="section-action">
-            <a
-              href=""
-              class="button button--primary button--default button--hoverable"
-            >
-              <span class="button-text">about us</span>
-            </a>
+        {% if section.settings.button_text != blank %}
+          <div class="section-actions">
+            <div class="section-action">
+              <a
+                href="{{ section.settings.button_url }}"
+                class="button button--primary button--default button--hoverable"
+              >
+                <span class="button-text">{{ section.settings.button_text }}</span>
+              </a>
+            </div>
           </div>
-        </div>
+        {% endif %}
       </div>
       <div class="section-body">
         <div class="two-column-images">
-          <img
-            class="two-column-images-img"
-            src="{{ 'two-column-1.jpg' | asset_url }}"
-            alt=""
-            height=""
-            width=""
-          >
-          <img
-            class="two-column-images-img"
-            src="{{ 'two-column-2.jpg' | asset_url }}"
-            alt=""
-            height=""
-            width=""
-          >
+          {% if section.settings.image_1 != blank %}
+            <img
+              class="two-column-images-img"
+              src="{{ section.settings.image_1 | image_url: width: 800 }}"
+              alt="{{ section.settings.image_1.alt | escape }}"
+              loading="lazy"
+              width=""
+              height=""
+            >
+          {% endif %}
+          {% if section.settings.image_2 != blank %}
+            <img
+              class="two-column-images-img"
+              src="{{ section.settings.image_2 | image_url: width: 800 }}"
+              alt="{{ section.settings.image_2.alt | escape }}"
+              loading="lazy"
+              width=""
+              height=""
+            >
+          {% endif %}
         </div>
       </div>
     </div>
   </div>
 </section>
+
+{% schema %}
+{
+  "name": "Handcrafted",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Handcrafted in Pakistan, Loved Everywhere"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "For over 15 years, our skilled artisans — many with us for over a decade — have created timeless pieces with dedication, precision, and pride."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "about us"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Left image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Right image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Handcrafted",
+      "settings": {
+        "title": "Handcrafted in Pakistan, Loved Everywhere",
+        "description": "For over 15 years, our skilled artisans — many with us for over a decade — have created timeless pieces with dedication, precision, and pride.",
+        "button_text": "about us"
+      }
+    }
+  ]
+}
+{% endschema %}
