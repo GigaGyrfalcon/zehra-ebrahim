@@ -265,20 +265,44 @@
 
 .product-detail-technical-details {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 100%;
+    //grid-template-columns: repeat(2, 1fr);
     column-gap: 3rem;
     row-gap: 2rem;
     padding-block: 1.8rem;
     padding-inline: 1.8rem;
     background-color: var(--color-soft-beige);
     border-radius: .5rem;
-    @media (min-width: 768px) {
-        column-gap: 4rem;
+    // @media (min-width: 768px) {
+    //     column-gap: 4rem;
+    // }
+    // @media (min-width: 1470px) {
+    //     padding-block: 3rem;
+    //     padding-inline: 2rem;
+    //     grid-template-columns: repeat(3, 1fr);
+    // }
+}
+
+.product-detail-technical-details-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    h4 {
+        font-size: var(--fs-subheading);
+        line-height: var(--lh-subheading);
+        font-weight: var(--fw-medium);
+        color: var(--color-rich-charcoal);
+        margin: 0;
+        &:not(:first-child) {
+            margin-block-start: 1.5rem;
+        }
     }
-    @media (min-width: 1470px) {
-        padding-block: 3rem;
-        padding-inline: 2rem;
-        grid-template-columns: repeat(3, 1fr);
+    p {
+        position: relative;
+        font-size: var(--fs-base);
+        line-height: var(--lh-base);
+        color: var(--color-rich-charcoal-alpha-70);
+        margin: 0;
     }
 }
 
@@ -330,19 +354,19 @@
 }
 
 .similar-products {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 1.6rem;
-    row-gap: 2.5rem;
-    @media (min-width: 768px) {
-        grid-template-columns: repeat(3, 1fr);
-        row-gap: 4.5rem;
-    }
-    @media (min-width: 1200px) {
-        grid-template-columns: repeat(4, 1fr);
-        column-gap: 1rem;
-    }
-    @media (min-width: 1470px) {
-        column-gap: 1.6rem;
-    }
+    // display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    // column-gap: 1.6rem;
+    // row-gap: 2.5rem;
+    // @media (min-width: 768px) {
+    //     grid-template-columns: repeat(3, 1fr);
+    //     row-gap: 4.5rem;
+    // }
+    // @media (min-width: 1200px) {
+    //     grid-template-columns: repeat(4, 1fr);
+    //     column-gap: 1rem;
+    // }
+    // @media (min-width: 1470px) {
+    //     column-gap: 1.6rem;
+    // }
 }

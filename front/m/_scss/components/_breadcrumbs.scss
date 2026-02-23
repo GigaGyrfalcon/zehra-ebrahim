@@ -1,3 +1,12 @@
+.breadcrumbs {
+    .page-head--isolated-breadcrumbs & {
+        margin-block-end: 1.6rem;
+        @media (min-width: 1470px) {
+            margin-block-end: 3rem;
+        }
+    }
+}
+
 .breadcrumbs-content {
     display: flex;
     justify-content: flex-start;

@@ -69,3 +69,32 @@
     color: rgb(from var(--color-rich-charcoal) r g b / .70);
     margin: 0;
 }
+
+.page-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.page-text h3 {
+    color: var(--color-deep-clay);
+    font-size: var(--fs-h5);
+    font-family: var(--font-heading);
+    line-height: var(--lh-h5);
+    margin: 0;
+    &:not(:first-child) {
+        margin-block-start: 1rem;
+    }
+}
+
+.page-text p {
+    color: var(--color-rich-charcoal-alpha-70);
+    font-size: var(--fs-base);
+    line-height: var(--lh-base);
+    margin: 0;
+}
+
+.page-text strong {
+    font-weight: var(--fw-regular);
+    color: var(--color-rich-charcoal);
+}
