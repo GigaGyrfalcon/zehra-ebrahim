@@ -50,6 +50,100 @@
     },
     "product_categories": {
       "type": "product-categories",
+      "blocks": {
+        "category_N9DnpH": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/product-category-1.jpg",
+            "title": "Serve-ware",
+            "link": "shopify://collections/serve-ware"
+          }
+        },
+        "category_TKigEe": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/product-category-2.jpg",
+            "title": "Seating",
+            "link": "shopify://collections/seating"
+          }
+        },
+        "category_Bj3Dbj": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/product-category-3.jpg",
+            "title": "Tables",
+            "link": "shopify://collections/tables"
+          }
+        },
+        "category_QicDMn": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/product-category-4.jpg",
+            "title": "Accents and decor",
+            "link": "shopify://collections/accents-and-decor"
+          }
+        },
+        "category_PJC8mp": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/product-category-5.jpg",
+            "title": "Storage",
+            "link": "shopify://collections/storage"
+          }
+        },
+        "category_8xDe6U": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/product-category-6.jpg",
+            "title": "Beds and bedroom",
+            "link": "shopify://collections/beds-and-bedroom"
+          }
+        },
+        "category_QPdLjn": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/product-category-7.jpg",
+            "title": "Outdoor",
+            "link": "shopify://collections/outdoor"
+          }
+        },
+        "category_bbFhDm": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/product-category-8.jpg",
+            "title": "Office and study",
+            "link": "shopify://collections/office-and-study"
+          }
+        },
+        "category_Hff6ci": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/product-category-9.jpg",
+            "title": "Swings",
+            "link": "shopify://collections/swings"
+          }
+        },
+        "category_JBbU9e": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/product-category-10.jpg",
+            "title": "Media",
+            "link": "shopify://collections/media"
+          }
+        }
+      },
+      "block_order": [
+        "category_N9DnpH",
+        "category_TKigEe",
+        "category_Bj3Dbj",
+        "category_QicDMn",
+        "category_PJC8mp",
+        "category_8xDe6U",
+        "category_QPdLjn",
+        "category_bbFhDm",
+        "category_Hff6ci",
+        "category_JBbU9e"
+      ],
       "settings": {
         "title": "From Gatherings to Quiet Moments, Explore Possibilities for Everyday Luxury",
         "button_text": "Shop All",
@@ -58,10 +152,32 @@
     },
     "spaces": {
       "type": "spaces",
+      "blocks": {
+        "space_dJeiWx": {
+          "type": "space",
+          "settings": {
+            "title": "Lounge",
+            "image": "shopify://shop_images/space-lounge.jpg",
+            "button_text": "Shop now",
+            "button_url": "shopify://pages/lounge"
+          }
+        },
+        "space_BHtdKJ": {
+          "type": "space",
+          "settings": {
+            "title": "Dining Room",
+            "image": "shopify://shop_images/space-lounge.jpg",
+            "button_text": "Shop now",
+            "button_url": "shopify://pages/dining-room"
+          }
+        }
+      },
+      "block_order": [
+        "space_dJeiWx",
+        "space_BHtdKJ"
+      ],
       "settings": {
-        "title": "Create Spaces That Celebrate How You Live",
-        "button_text": "Shop Now",
-        "button_url": ""
+        "title": "Create Spaces That Celebrate How You Live"
       }
     },
     "moving_line_1": {

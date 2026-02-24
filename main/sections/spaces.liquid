@@ -37,6 +37,19 @@
                   <div class="space-card">
                     <div class="space-card-info">
                       <h3 class="space-card-title">{{ block.settings.title }}</h3>
+                      {% if block.settings.description != blank %}
+                        <p class="space-card-description">{{ block.settings.description }}</p>
+                      {% endif %}
+                      {% if block.settings.button_text != blank %}
+                        <div class="space-card-action">
+                          <a
+                            href="{{ block.settings.button_url }}"
+                            class="button button--primary button--default button--hoverable"
+                          >
+                            <span class="button-text">{{ block.settings.button_text }}</span>
+                          </a>
+                        </div>
+                      {% endif %}
                     </div>
                   </div>
                 </div>
@@ -44,16 +57,6 @@
             </div>
           </div>
         </div>
-        {% if section.settings.button_text != blank %}
-          <div class="spaces-action">
-            <a
-              href="{{ section.settings.button_url }}"
-              class="button button--primary button--default button--hoverable"
-            >
-              <span class="button-text">{{ section.settings.button_text }}</span>
-            </a>
-          </div>
-        {% endif %}
         <div class="section-actions">
           <div class="slider-controls">
             <a href="" class="slider-control slider-control--prev">
@@ -109,17 +112,6 @@
       "id": "title",
       "label": "Title",
       "default": "Create Spaces That Celebrate How You Live"
-    },
-    {
-      "type": "text",
-      "id": "button_text",
-      "label": "Button text",
-      "default": "Shop Now"
-    },
-    {
-      "type": "url",
-      "id": "button_url",
-      "label": "Button URL"
     }
   ],
   "blocks": [
@@ -137,6 +129,16 @@
           "type": "image_picker",
           "id": "image",
           "label": "Space image"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL"
         }
       ]
     }
@@ -144,21 +146,19 @@
   "presets": [
     {
       "name": "Spaces",
-      "settings": {
-        "title": "Create Spaces That Celebrate How You Live",
-        "button_text": "Shop Now"
-      },
       "blocks": [
         {
           "type": "space",
           "settings": {
-            "title": "Lounge"
+            "title": "Lounge",
+            "button_text": "Shop now"
           }
         },
         {
           "type": "space",
           "settings": {
-            "title": "Dining Room"
+            "title": "Dining Room",
+            "button_text": "Shop now"
           }
         }
       ]
