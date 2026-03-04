@@ -211,7 +211,9 @@
         "title": "Handcrafted in Pakistan, Loved Everywhere",
         "description": "For over 15 years, our skilled artisans — many with us for over a decade — have created timeless pieces with dedication, precision, and pride.",
         "button_text": "about us",
-        "button_url": ""
+        "button_url": "#some-link",
+        "image_1": "shopify://shop_images/1_e847be8d-a9e7-4c23-9dc5-d81a5c5fc583.jpg",
+        "image_2": "shopify://shop_images/2_864fa0cc-70a1-40cb-80ec-88bed607fb55.jpg"
       }
     },
     "filigree_jewellery_box": {
@@ -219,11 +221,67 @@
       "settings": {
         "title": "Filigree Jewellery box",
         "button_text": "buy now",
-        "button_url": ""
+        "button_url": "shopify://collections/giftables",
+        "image_desktop": "shopify://shop_images/2-desktop.jpg",
+        "image_mobile": "shopify://shop_images/2-mobile.jpg"
       }
     },
     "testimonials": {
       "type": "testimonials",
+      "blocks": {
+        "testimonial_ifkRBh": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Working with Zahra Ebrahim and her team was an absolute delight.",
+            "text": "Their attention to detail and the way they brought our vision to life at the CIP Lounge was beyond expectations. Every corner reflects thought and craftsmanship.",
+            "author_name": "Mr. Ahmad",
+            "author_position": "Airport Lounge Project"
+          }
+        },
+        "testimonial_HacK6d": {
+          "type": "testimonial",
+          "settings": {
+            "title": "I've been collecting pieces from Zahra for years, & every single one feels timeless.",
+            "text": "The quality is unmatched and the designs never fail to spark conversation in my home",
+            "author_name": "Sara Khan",
+            "author_position": "Residential Client"
+          }
+        },
+        "testimonial_fxK7zU": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Amazing long-standing craftsmen. Much Love <3",
+            "text": "What sets Zahra Ebrahim apart is the human touch — not just in the furniture, but in the way they treat their long-standing craftsmen. You can feel the story and love behind every creation.",
+            "author_name": "Ali Raza",
+            "author_position": "Corporate Client"
+          }
+        },
+        "testimonial_jV8qcq": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Working with Zahra Ebrahim and her team was an absolute delight.",
+            "text": "Their attention to detail and the way they brought our vision to life at the CIP Lounge was beyond expectations. Every corner reflects thought and craftsmanship.",
+            "author_name": "Mr. Ahmad",
+            "author_position": "Airport Lounge Project"
+          }
+        },
+        "testimonial_EFqAhz": {
+          "type": "testimonial",
+          "settings": {
+            "title": "I've been collecting pieces from Zahra for years, & every single one feels timeless.",
+            "text": "The quality is unmatched and the designs never fail to spark conversation in my home",
+            "author_name": "Sara Khan",
+            "author_position": "Residential Client"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_ifkRBh",
+        "testimonial_HacK6d",
+        "testimonial_fxK7zU",
+        "testimonial_jV8qcq",
+        "testimonial_EFqAhz"
+      ],
       "settings": {
         "title": "What Our Customers Say"
       }
@@ -234,7 +292,9 @@
         "title": "Giftables - Because the best gifts are made to last.",
         "description": "Discover a curated selection of small yet timeless creations — perfect for gifting your loved ones or celebrating life's special moments. From handcrafted trays to elegant décor accents, each piece reflects the same craftsmanship and attention to detail that defines Zahra Ebrahim.",
         "button_text": "Shop Giftables",
-        "button_url": ""
+        "button_url": "shopify://collections/giftables",
+        "image_1": "shopify://shop_images/3_d39884f4-ea2f-4c35-a3c6-e76ea355f782.jpg",
+        "image_2": "shopify://shop_images/4_d5e3afc8-f5fe-453f-b29c-b1b52c648925.jpg"
       }
     }
   },
