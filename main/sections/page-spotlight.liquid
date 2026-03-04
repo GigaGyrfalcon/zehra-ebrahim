@@ -110,43 +110,43 @@
   </div>
 </section>
 
-{% if section.settings.show_hotspot_section %}
-  <section class="section section--pb-0 section--w-bg-content-overlay-desktop animate-on-scroll">
+{% if section.settings.show_spotlight_section %}
+  <section class="section section--solid-bg section--pb-0 section--content-gap-bg">
     <div class="container">
       <div class="section-content">
-        <div class="section-head animatable-part">
-          {% if section.settings.hotspot_title != blank %}
-            <h2 class="section-title">{{ section.settings.hotspot_title }}</h2>
+        <div class="section-head">
+          {% if section.settings.spotlight_title != blank %}
+            <h2 class="section-title">{{ section.settings.spotlight_title }}</h2>
           {% endif %}
-          {% if section.settings.hotspot_description != blank %}
+          {% if section.settings.spotlight_description != blank %}
             <p class="section-description">
-              {{ section.settings.hotspot_description }}
+              {{ section.settings.spotlight_description }}
             </p>
           {% endif %}
         </div>
       </div>
     </div>
-    <div class="section-bg">
-      {% assign hotspot_blocks = section.blocks | where: 'type', '@app' %}
-      {% if hotspot_blocks.size > 0 %}
+    <div class="section-bg section-bg-z-index-0">
+      {% assign spotlight_blocks = section.blocks | where: 'type', '@app' %}
+      {% if spotlight_blocks.size > 0 %}
         <div class="section-bg-media">
-          {% for block in hotspot_blocks %}
+          {% for block in spotlight_blocks %}
             {% render block %}
           {% endfor %}
         </div>
-      {% elsif section.settings.hotspot_background_image != blank
-        or section.settings.hotspot_background_image_desktop != blank
+      {% elsif section.settings.spotlight_background_image != blank
+        or section.settings.spotlight_background_image_desktop != blank
       %}
         <picture class="section-bg-media">
-          {% if section.settings.hotspot_background_image_desktop != blank %}
+          {% if section.settings.spotlight_background_image_desktop != blank %}
             <source
-              srcset="{{ section.settings.hotspot_background_image_desktop | image_url: width: 1920 }}"
+              srcset="{{ section.settings.spotlight_background_image_desktop | image_url: width: 1920 }}"
               media="(min-width: 992px)"
             >
           {% endif %}
           <img
-            src="{{ section.settings.hotspot_background_image | image_url: width: 768 }}"
-            alt="{{ section.settings.hotspot_background_image.alt | default: 'Hotspot background' }}"
+            src="{{ section.settings.spotlight_background_image | image_url: width: 768 }}"
+            alt="{{ section.settings.spotlight_background_image.alt | default: 'Spotlight background' }}"
             class="section-bg-img"
             width=""
             height=""
@@ -231,36 +231,36 @@
     },
     {
       "type": "header",
-      "content": "Hotspot Section"
+      "content": "Spotlight Section"
     },
     {
       "type": "checkbox",
-      "id": "show_hotspot_section",
-      "label": "Show Hotspot Section",
+      "id": "show_spotlight_section",
+      "label": "Show Spotlight Section",
       "default": false,
       "info": "Add the Hotspot Images app block below or use background images"
     },
     {
       "type": "text",
-      "id": "hotspot_title",
-      "label": "Hotspot Section Title",
+      "id": "spotlight_title",
+      "label": "Spotlight Section Title",
       "default": "Look that speaks"
     },
     {
       "type": "textarea",
-      "id": "hotspot_description",
-      "label": "Hotspot Section Description",
-      "default": "See how our designs come together in real spaces click the hotspots to shop each piece."
+      "id": "spotlight_description",
+      "label": "Spotlight Section Description",
+      "default": "See how our designs come together in real spaces click the spotlights to shop each piece."
     },
     {
       "type": "image_picker",
-      "id": "hotspot_background_image",
+      "id": "spotlight_background_image",
       "label": "Background Image (Mobile)",
       "info": "Used if no app block is added"
     },
     {
       "type": "image_picker",
-      "id": "hotspot_background_image_desktop",
+      "id": "spotlight_background_image_desktop",
       "label": "Background Image (Desktop)",
       "info": "Used if no app block is added"
     },

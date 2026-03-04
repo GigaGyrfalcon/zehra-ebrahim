@@ -67,7 +67,7 @@ gulp.task('html', function () {
           commentStart: '<#',
           commentEnd: '#>',
         },
-      })
+      }),
     )
     .pipe(gulp.dest('./'));
 });
@@ -113,7 +113,7 @@ gulp.task('js.post', function () {
             },
           ],
         ],
-      })
+      }),
     )
     .pipe(gulpif(settings.build.prod, uglify()))
     .pipe(sourcemaps.write('./'))
@@ -134,19 +134,20 @@ gulp.task(
           prepend: '',
           append: '',
           replace: ['../fonts/', ''],
-        })
+        }),
       )
       .pipe(sourcemaps.init())
       .pipe(cleanCSS())
       .pipe(sourcemaps.write())
-      .pipe(gulp.dest('../main-theme/assets'));
-  }
+      .pipe(gulp.dest('../main/assets'))
+      .pipe(gulp.dest('./m/css'));
+  },
 );
 gulp.task(
   'js',
   gulp.series('js.pre', 'js.post', function (done) {
     done();
-  })
+  }),
 );
 gulp.task(
   'process',
@@ -157,8 +158,8 @@ gulp.task(
     'js',
     function (done) {
       done();
-    }
-  )
+    },
+  ),
 );
 gulp.task(
   'default',
@@ -167,7 +168,7 @@ gulp.task(
     gulp.watch('./m/_templates/**/*', gulp.series('html'));
     gulp.watch('./m/js/app/**/*', gulp.series('js'));
     done();
-  })
+  }),
 );
 gulp.task('util.enable-production-mode', function () {
   settings.build.prod = true;
@@ -192,10 +193,10 @@ gulp.task(
         },
         directoryListing: true,
         open: true,
-      })
+      }),
     );
     done();
-  })
+  }),
 );
 
 // Visual studio publishing pre-build tasks
@@ -203,5 +204,5 @@ gulp.task(
   'prod.publish',
   gulp.series('util.enable-production-mode', 'process', function (done) {
     done();
-  })
+  }),
 );

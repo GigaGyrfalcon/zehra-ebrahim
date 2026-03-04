@@ -17,7 +17,7 @@
         {% case block.type %}
           {% when '@app' %}
             {% render block %}
-          {% when 'hotspot' %}
+          {% when 'spotlight' %}
             <picture class="section-bg-media">
               {% if block.settings.image_desktop != blank %}
                 <source
@@ -56,7 +56,7 @@
       "type": "textarea",
       "id": "description",
       "label": "Description",
-      "default": "See how our designs come together in real spaces — click the hotspots to shop each piece."
+      "default": "See how our designs come together in real spaces — click the spotlights to shop each piece."
     }
   ],
   "blocks": [
@@ -64,8 +64,8 @@
       "type": "@app"
     },
     {
-      "type": "hotspot",
-      "name": "Hotspot Background",
+      "type": "spotlight",
+      "name": "Spotlight Background",
       "limit": 1,
       "settings": [
         {
@@ -86,7 +86,7 @@
       "name": "Explore the Look",
       "settings": {
         "title": "Explore the Look",
-        "description": "See how our designs come together in real spaces — click the hotspots to shop each piece."
+        "description": "See how our designs come together in real spaces — click the spotlights to shop each piece."
       }
     }
   ]

@@ -190,11 +190,60 @@
       "type": "explore-the-look",
       "settings": {
         "title": "Explore the Look",
-        "description": "See how our designs come together in real spaces — click the hotspots to shop each piece."
+        "description": "See how our designs come together in real spaces — click the spotlights to shop each piece."
       }
     },
     "spotlights": {
       "type": "spotlights",
+      "blocks": {
+        "spotlight_yy9UTy": {
+          "type": "spotlight",
+          "settings": {
+            "image": "shopify://shop_images/1_f87c9fcd-2127-4fed-9987-aa02c3d0f367.jpg",
+            "title": "INGRAINED: Wood in a Cross-Section of Time, Koel Gallery",
+            "link": "shopify://pages/spotlight-test-page"
+          }
+        },
+        "spotlight_7YRDBx": {
+          "type": "spotlight",
+          "settings": {
+            "image": "shopify://shop_images/2_07a4d767-43c8-4534-b4b4-f3726b012022.jpg",
+            "title": "Shatranj Kay Khiladi: Chessboard Table, Jhuley Lal—Crafting the Contemporary at The Mohatta Palace Museum, Karachi",
+            "link": "shopify://pages/spotlight-test-page-2"
+          }
+        },
+        "spotlight_3y4aLx": {
+          "type": "spotlight",
+          "settings": {
+            "image": "shopify://shop_images/3_60a8a6ea-300e-4a91-b9b9-78ea41082d28.jpg",
+            "title": "Rotunda—Aiwan e Sadar (Presidential Palace), Islamabad",
+            "link": "shopify://pages/spotlight-test-page-3"
+          }
+        },
+        "spotlight_3MM9di": {
+          "type": "spotlight",
+          "settings": {
+            "image": "shopify://shop_images/4_2c3967c4-fb38-44bd-a0f3-43dcbf899484.jpg",
+            "title": "Pakistan Pavillion, Dubai Expo 2020",
+            "link": "shopify://pages/spotlight-test-page"
+          }
+        },
+        "spotlight_TkjhpM": {
+          "type": "spotlight",
+          "settings": {
+            "image": "shopify://shop_images/1_f87c9fcd-2127-4fed-9987-aa02c3d0f367.jpg",
+            "title": "INGRAINED: Wood in a Cross-Section of Time, Koel Gallery",
+            "link": "shopify://pages/spotlight-test-page"
+          }
+        }
+      },
+      "block_order": [
+        "spotlight_yy9UTy",
+        "spotlight_7YRDBx",
+        "spotlight_3y4aLx",
+        "spotlight_3MM9di",
+        "spotlight_TkjhpM"
+      ],
       "settings": {
         "title": "Spotlight"
       }
