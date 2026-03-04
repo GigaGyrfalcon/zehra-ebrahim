@@ -151,7 +151,9 @@
               <div class="product-detail-info-item-results">
                 <div class="product-detail-info-item-results-content">
                   <div class="product-detail-technical-details">
-                    {{ product.metafields.custom.technical_details | metafield_tag }}
+                    <div class="product-detail-technical-details-text">
+                      {{ product.metafields.custom.technical_details | metafield_tag }}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -188,9 +190,27 @@
       <div class="section-body">
         {% if product.metafields.custom.similar_products.value.size > 0 %}
           <div class="similar-products">
-            {% for similar_product in product.metafields.custom.similar_products.value %}
-              {% render 'product-card', product: similar_product %}
-            {% endfor %}
+            <div class="similar-products-slider" id="similar-products-slider-1">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  {% for similar_product in product.metafields.custom.similar_products.value %}
+                    {% render 'product-card', product: similar_product %}
+                  {% endfor %}
+                </div>
+                <div class="slider-controls">
+                  <div class="slider-control slider-control--prev">
+                    <svg class="slider-control-icon">
+                      <use href="{{ 'icons.svg' | asset_url }}#symbol-arrow"></use>
+                    </svg>
+                  </div>
+                  <div class="slider-control slider-control--next">
+                    <svg class="slider-control-icon">
+                      <use href="{{ 'icons.svg' | asset_url }}#symbol-arrow"></use>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         {% else %}
           <p>No similar products available at this time.</p>
@@ -209,6 +229,28 @@
         pagination: {
           el: '.product-detail-slider .swiper-pagination',
           type: 'fraction',
+        },
+      });
+      new Swiper('#similar-products-slider-1 .swiper', {
+        slidesPerView: 2,
+        spaceBetween: 16,
+        navigation: {
+          nextEl: '#similar-products-slider-1 .slider-control--next',
+          prevEl: '#similar-products-slider-1 .slider-control--prev',
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 16,
+          },
+          1200: {
+            slidesPerView: 4,
+            spaceBetween: 10,
+          },
+          1470: {
+            slidesPerView: 4,
+            spaceBetween: 16,
+          },
         },
       });
     } else {

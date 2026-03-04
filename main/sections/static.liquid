@@ -5,12 +5,14 @@
         <div class="page-head page-head--align-start">
           {% render 'breadcrumbs' %}
           <div class="page-head-info">
-            <h2 class="page-title">{{  page.title }}</h2>
+            <h2 class="page-title">{{ page.title }}</h2>
           </div>
         </div>
       </div>
-      <div class="section-body static-page">
-        {{ page.content }}
+      <div class="section-body">
+        <div class="page-text">
+          {{ page.content }}
+        </div>
       </div>
     </div>
   </div>

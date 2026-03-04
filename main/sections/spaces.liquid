@@ -41,14 +41,12 @@
                         <p class="space-card-description">{{ block.settings.description }}</p>
                       {% endif %}
                       {% if block.settings.button_text != blank %}
-                        <div class="space-card-action">
-                          <a
-                            href="{{ block.settings.button_url }}"
-                            class="button button--primary button--default button--hoverable"
-                          >
-                            <span class="button-text">{{ block.settings.button_text }}</span>
-                          </a>
-                        </div>
+                        <a
+                          href="{{ block.settings.button_url }}"
+                          class="button button--primary button--default button--hoverable"
+                        >
+                          <span class="button-text">{{ block.settings.button_text }}</span>
+                        </a>
                       {% endif %}
                     </div>
                   </div>
