@@ -1,0 +1,79 @@
+<section
+  class="section section--solid-bg section--pb-0 section--content-gap-bg"
+>
+  <div class="container">
+    <div class="section-content">
+      <div class="section-head">
+        {% if section.settings.title != blank %}
+          <h2 class="section-title">{{ section.settings.title }}</h2>
+        {% endif %}
+        {% if section.settings.description != blank %}
+          <p class="section-description">
+            {{ section.settings.description }}
+          </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="section-bg section-bg-z-index-0">
+    {% assign spotlight_blocks = section.blocks | where: 'type', '@app' %}
+    {% if spotlight_blocks.size > 0 %}
+      <div class="section-bg-media">
+        {% for block in spotlight_blocks %}
+          {% render block %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hotspot",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Explore the Look"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "See how our designs come together in real spaces — click the spotlights to shop each piece."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "spotlight",
+      "name": "Spotlight Background",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_desktop",
+          "label": "Desktop image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Mobile image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hotspot",
+      "settings": {
+        "title": "Explore the Look",
+        "description": "See how our designs come together in real spaces — click the spotlights to shop each piece."
+      }
+    }
+  ]
+}
+{% endschema %}

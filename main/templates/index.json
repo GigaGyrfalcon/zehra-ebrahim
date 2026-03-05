@@ -26,10 +26,7 @@
           }
         }
       },
-      "block_order": [
-        "quote_cjfH7R",
-        "quote_x4a7MG"
-      ],
+      "block_order": ["quote_cjfH7R", "quote_x4a7MG"],
       "settings": {}
     },
     "hero_media": {
@@ -172,10 +169,7 @@
           }
         }
       },
-      "block_order": [
-        "space_dJeiWx",
-        "space_BHtdKJ"
-      ],
+      "block_order": ["space_dJeiWx", "space_BHtdKJ"],
       "settings": {
         "title": "Create Spaces That Celebrate How You Live"
       }
@@ -186,12 +180,9 @@
         "css_class": "section--pbs-0"
       }
     },
-    "explore_the_look": {
-      "type": "explore-the-look",
-      "settings": {
-        "title": "Explore the Look",
-        "description": "See how our designs come together in real spaces — click the spotlights to shop each piece."
-      }
+    "hotspot": {
+      "type": "hotspot",
+      "settings": {}
     },
     "spotlights": {
       "type": "spotlights",
@@ -353,7 +344,7 @@
     "product_categories",
     "spaces",
     "moving_line_1",
-    "explore_the_look",
+    "hotspot",
     "spotlights",
     "moving_line_2",
     "handcrafted",
