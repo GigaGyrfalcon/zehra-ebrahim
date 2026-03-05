@@ -134,25 +134,6 @@
             {% render block %}
           {% endfor %}
         </div>
-      {% elsif section.settings.spotlight_background_image != blank
-        or section.settings.spotlight_background_image_desktop != blank
-      %}
-        <picture class="section-bg-media">
-          {% if section.settings.spotlight_background_image_desktop != blank %}
-            <source
-              srcset="{{ section.settings.spotlight_background_image_desktop | image_url: width: 1920 }}"
-              media="(min-width: 992px)"
-            >
-          {% endif %}
-          <img
-            src="{{ section.settings.spotlight_background_image | image_url: width: 768 }}"
-            alt="{{ section.settings.spotlight_background_image.alt | default: 'Spotlight background' }}"
-            class="section-bg-img"
-            width=""
-            height=""
-            loading="lazy"
-          >
-        </picture>
       {% endif %}
     </div>
   </section>
@@ -231,38 +212,26 @@
     },
     {
       "type": "header",
-      "content": "Spotlight Section"
+      "content": "Hotspot Section"
     },
     {
       "type": "checkbox",
       "id": "show_spotlight_section",
-      "label": "Show Spotlight Section",
+      "label": "Show Hotspot Section",
       "default": false,
       "info": "Add the Hotspot Images app block below or use background images"
     },
     {
       "type": "text",
       "id": "spotlight_title",
-      "label": "Spotlight Section Title",
+      "label": "Hotspot Section Title",
       "default": "Look that speaks"
     },
     {
       "type": "textarea",
       "id": "spotlight_description",
-      "label": "Spotlight Section Description",
-      "default": "See how our designs come together in real spaces click the spotlights to shop each piece."
-    },
-    {
-      "type": "image_picker",
-      "id": "spotlight_background_image",
-      "label": "Background Image (Mobile)",
-      "info": "Used if no app block is added"
-    },
-    {
-      "type": "image_picker",
-      "id": "spotlight_background_image_desktop",
-      "label": "Background Image (Desktop)",
-      "info": "Used if no app block is added"
+      "label": "Hotspot Section Description",
+      "default": "See how our designs come together in real spaces click the hotspot to shop each piece."
     },
     {
       "type": "header",
