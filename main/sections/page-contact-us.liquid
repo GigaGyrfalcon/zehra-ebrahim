@@ -5,9 +5,9 @@
         <div class="page-head page-head--align-start">
           {% render 'breadcrumbs' %}
           <div class="page-head-info">
-            <h2 class="page-title">Contact Us</h2>
+            <h2 class="page-title">{{ section.settings.heading }}</h2>
             <div class="page-head-text">
-              <p>Get in touch with us for any enquiries and questions.</p>
+              <p>{{ section.settings.subheading }}</p>
             </div>
           </div>
         </div>
@@ -15,89 +15,162 @@
       <div class="section-body">
         <div class="contact">
           <div class="contact-item">
-            <form class="form">
+            {% form 'contact' %}
+              {% if form.posted_successfully? %}
+                <p style="margin-bottom: 1rem; padding: 0.75rem 1rem; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 4px; font-size: 1.6rem;">
+                  Thanks for contacting us. We'll get back to you as soon as possible.
+                </p>
+              {% endif %}
+              {% if form.errors %}
+                <ul style="margin-bottom: 1rem; padding: 0.75rem 1rem 0.75rem 2rem; background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; border-radius: 4px; font-size: 1.6rem;">
+                  {% for error in form.errors %}
+                    <li>{{ error | capitalize }}: {{ form.errors.messages[error] }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
               <div class="form-content">
                 <div class="form-group">
-                  <label class="form-label">Full Name <span class="form-label-required">*</span></label>
+                  <label class="form-label" for="ContactName"
+                    >Full Name <span class="form-label-required">*</span></label
+                  >
                   <div class="form-group-content">
-                    <input type="text" class="form-field" placeholder="Full Name">
+                    <input
+                      type="text"
+                      id="ContactName"
+                      name="contact[name]"
+                      class="form-field"
+                      placeholder="Full Name"
+                      value="{{ form.name }}"
+                      required
+                    >
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="form-label">Email Address <span class="form-label-required">*</span></label>
+                  <label class="form-label" for="ContactEmail"
+                    >Email Address <span class="form-label-required">*</span></label
+                  >
                   <div class="form-group-content">
-                    <input type="text" class="form-field" placeholder="Email Address">
+                    <input
+                      type="email"
+                      id="ContactEmail"
+                      name="contact[email]"
+                      class="form-field"
+                      placeholder="Email Address"
+                      value="{{ form.email }}"
+                      autocomplete="email"
+                      required
+                    >
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="form-label">Subject <span class="form-label-required">*</span></label>
+                  <label class="form-label" for="ContactSubject"
+                    >Subject <span class="form-label-required">*</span></label
+                  >
                   <div class="form-group-content">
-                    <input type="text" class="form-field" placeholder="Subject">
+                    <input
+                      type="text"
+                      id="ContactSubject"
+                      name="contact[subject]"
+                      class="form-field"
+                      placeholder="Subject"
+                      required
+                    >
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="form-label">Message <span class="form-label-required">*</span></label>
+                  <label class="form-label" for="ContactMessage"
+                    >Message <span class="form-label-required">*</span></label
+                  >
                   <div class="form-group-content">
                     <textarea
-                      name=""
-                      id=""
+                      id="ContactMessage"
+                      name="contact[body]"
                       class="form-field form-field--textarea"
                       placeholder="Write here..."
-                    ></textarea>
+                      required
+                    >{{ form.body }}</textarea>
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="form-actions">
-                    <a href="" class="button button--primary button--hoverable button--default">
+                    <button type="submit" class="button button--primary button--hoverable button--default">
                       <span class="button-text">Submit</span>
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
-            </form>
+            {% endform %}
           </div>
           <div class="contact-item">
             <div class="contact-info">
               <div class="contact-info-item">
-                <h6 class="contact-info-item-title">For Enquiries</h6>
+                <h6 class="contact-info-item-title">{{ section.settings.enquiries_title }}</h6>
                 <div class="contact-info-item-content">
-                  <a href="mailto:info@zahraebrahim.com" class="contact-info-item-text">info@zahraebrahim.com</a>
-                  <a href="tel:+923209000151" class="contact-info-item-text">+92 320 9000151</a>
-                  <a href="tel:+923209000152" class="contact-info-item-text">+92 320 9000152</a>
-                  <span class="contact-info-item-disclaimer">(Available on Call / WhatsApp)</span>
+                  {% if section.settings.email != blank %}
+                    <a href="mailto:{{ section.settings.email }}" class="contact-info-item-text">
+                      {{- section.settings.email -}}
+                    </a>
+                  {% endif %}
+                  {% if section.settings.phone_1 != blank %}
+                    <a href="tel:{{ section.settings.phone_1 | remove: ' ' }}" class="contact-info-item-text">
+                      {{- section.settings.phone_1 -}}
+                    </a>
+                  {% endif %}
+                  {% if section.settings.phone_2 != blank %}
+                    <a href="tel:{{ section.settings.phone_2 | remove: ' ' }}" class="contact-info-item-text">
+                      {{- section.settings.phone_2 -}}
+                    </a>
+                  {% endif %}
+                  {% if section.settings.phone_disclaimer != blank %}
+                    <span class="contact-info-item-disclaimer">{{ section.settings.phone_disclaimer }}</span>
+                  {% endif %}
                 </div>
               </div>
               <div class="contact-info-item">
-                <h6 class="contact-info-item-title">Timings</h6>
+                <h6 class="contact-info-item-title">{{ section.settings.timings_title }}</h6>
                 <div class="contact-info-item-content">
-                  <p class="contact-info-item-text">
-                    Monday to Saturday<br>
-                    10am - 5pm (PST)
-                  </p>
+                  <div class="contact-info-item-text">
+                    {{ section.settings.timings_text }}
+                  </div>
                 </div>
               </div>
               <div class="contact-info-item">
-                <h6 class="contact-info-item-title">Showroom Address</h6>
+                <h6 class="contact-info-item-title">{{ section.settings.address_title }}</h6>
                 <div class="contact-info-item-content">
-                  <p class="contact-info-item-text">Plot No. 1-D-24, Sector 30, Korangi Industrial Area</p>
+                  <p class="contact-info-item-text">{{ section.settings.address_text }}</p>
                 </div>
               </div>
               <div class="contact-info-item">
-                <h6 class="contact-info-item-title">Social Media</h6>
+                <h6 class="contact-info-item-title">{{ section.settings.social_title }}</h6>
                 <div class="contact-info-item-content">
-                  <a href="" class="contact-info-item-text">Facebook</a>
-                  <a href="" class="contact-info-item-text">Instagram</a>
+                  {% if section.settings.facebook_url != blank %}
+                    <a href="{{ section.settings.facebook_url }}" class="contact-info-item-text">Facebook</a>
+                  {% endif %}
+                  {% if section.settings.instagram_url != blank %}
+                    <a href="{{ section.settings.instagram_url }}" class="contact-info-item-text">Instagram</a>
+                  {% endif %}
                 </div>
               </div>
               <div class="contact-info-item contact-info-item--fw">
                 <div class="contact-info-item-media">
-                  <img
-                    src="{{ 'contact-1.jpg' | asset_url }}"
-                    alt=""
-                    class="contact-info-item-media-img"
-                    width=""
-                    height=""
-                  >
+                  {% if section.settings.contact_image != blank %}
+                    <img
+                      src="{{ section.settings.contact_image | image_url: width: 800 }}"
+                      alt="{{ section.settings.contact_image.alt | escape }}"
+                      class="contact-info-item-media-img"
+                      width="{{ section.settings.contact_image.width }}"
+                      height="{{ section.settings.contact_image.height }}"
+                      loading="lazy"
+                    >
+                  {% else %}
+                    <img
+                      src="{{ 'contact-1.jpg' | asset_url }}"
+                      alt=""
+                      class="contact-info-item-media-img"
+                      width=""
+                      height=""
+                    >
+                  {% endif %}
                 </div>
               </div>
             </div>
@@ -115,21 +188,174 @@
 
 <script>
   function initMap() {
-    // Set your location coordinates
-    const location = { lat: 24.8750182, lng: 67.0293958 };
-
-    // Create map
+    const location = { lat: {{ section.settings.map_lat }}, lng: {{ section.settings.map_lng }} };
     const map = new google.maps.Map(document.getElementById('map'), {
       zoom: 15,
       center: location,
     });
-
-    // Add marker
     const marker = new google.maps.Marker({
       position: location,
       map: map,
-      title: 'Zahra Ebrahim',
+      title: {{ section.settings.map_marker_title | json }},
     });
   }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+{% if section.settings.map_api_key != blank %}
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key={{ section.settings.map_api_key }}&callback=initMap"
+    async
+    defer
+  ></script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Contact Us",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Page Header"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Contact Us"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Get in touch with us for any enquiries and questions."
+    },
+    {
+      "type": "header",
+      "content": "For Enquiries"
+    },
+    {
+      "type": "text",
+      "id": "enquiries_title",
+      "label": "Section Title",
+      "default": "For Enquiries"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email Address",
+      "default": "info@zahraebrahim.com"
+    },
+    {
+      "type": "text",
+      "id": "phone_1",
+      "label": "Phone Number 1",
+      "default": "+92 320 9000151"
+    },
+    {
+      "type": "text",
+      "id": "phone_2",
+      "label": "Phone Number 2",
+      "default": "+92 320 9000152"
+    },
+    {
+      "type": "text",
+      "id": "phone_disclaimer",
+      "label": "Phone Disclaimer",
+      "default": "(Available on Call / WhatsApp)"
+    },
+    {
+      "type": "header",
+      "content": "Timings"
+    },
+    {
+      "type": "text",
+      "id": "timings_title",
+      "label": "Section Title",
+      "default": "Timings"
+    },
+    {
+      "type": "richtext",
+      "id": "timings_text",
+      "label": "Timings Text",
+      "default": "<p>Monday to Saturday<br>10am - 5pm (PST)</p>"
+    },
+    {
+      "type": "header",
+      "content": "Showroom Address"
+    },
+    {
+      "type": "text",
+      "id": "address_title",
+      "label": "Section Title",
+      "default": "Showroom Address"
+    },
+    {
+      "type": "text",
+      "id": "address_text",
+      "label": "Address",
+      "default": "Plot No. 1-D-24, Sector 30, Korangi Industrial Area"
+    },
+    {
+      "type": "header",
+      "content": "Social Media"
+    },
+    {
+      "type": "text",
+      "id": "social_title",
+      "label": "Section Title",
+      "default": "Social Media"
+    },
+    {
+      "type": "url",
+      "id": "facebook_url",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "header",
+      "content": "Contact Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "contact_image",
+      "label": "Contact Image"
+    },
+    {
+      "type": "header",
+      "content": "Map"
+    },
+    {
+      "type": "text",
+      "id": "map_lat",
+      "label": "Latitude",
+      "default": "24.8750182"
+    },
+    {
+      "type": "text",
+      "id": "map_lng",
+      "label": "Longitude",
+      "default": "67.0293958"
+    },
+    {
+      "type": "text",
+      "id": "map_marker_title",
+      "label": "Map Marker Title",
+      "default": "Zahra Ebrahim"
+    },
+    {
+      "type": "text",
+      "id": "map_api_key",
+      "label": "Google Maps API Key",
+      "info": "Enter your Google Maps API key"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact Us"
+    }
+  ]
+}
+{% endschema %}
