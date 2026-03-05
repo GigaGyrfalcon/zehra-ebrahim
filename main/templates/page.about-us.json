@@ -100,14 +100,13 @@
         "page_title": "About Zahra Ebrahim",
         "page_subtitle": "Where every design is a labour of love and each piece is a collaboration between the designer, craftsmen, and patron.",
         "hero_image": "shopify://shop_images/1_ccf265b3-9bfe-40b3-9ef3-6ccf0c63a91b.jpg",
-        "hero_video_url": "",
         "believe_title": "What We Believe",
         "believe_description": "<p>Good design is ethical design. Ethical to our consumers, our material, and our craftsmen. We value empathy for the end user through a focus on functionality, care, and attention to detail. We prioritise sourcing ethically harvested wood, leveraging alternative materials, and minimizing waste. We are also deeply committed to a safe, dignified, and creative workplace for our kaarigars.</p><p>The luxury we promise is rooted in our design philosophy. Interacting with furniture is intimate and tactile, which is why we prioritize how people connect with and experience spaces and objects. For us, good design is about creating environments where individuals can express themselves authentically.</p>",
         "made_title": "Proudly Made in Pakistan",
         "made_description": "It's about the people who bring them to life. Many of our artisans and craftsmen have been with us for decades, dedicating their lives to perfecting the art of furniture-making. Their skill, patience, and commitment are at the heart of everything we create.",
         "made_bg_image_desktop": "shopify://shop_images/3-desktop.jpg",
         "made_bg_image_mobile": "shopify://shop_images/3-mobile.jpg",
-        "made_bg_video": ""
+        "made_bg_video": "shopify://files/videos/video.mp4"
       }
     }
   },

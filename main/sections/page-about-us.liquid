@@ -27,7 +27,7 @@
               >
             {% endif %}
             {% if section.settings.hero_video_url != blank %}
-              <a href="{{ section.settings.hero_video_url }}" class="spotlight-hero-media-action">
+              <a href="{{ section.settings.hero_video_url.sources[0].url }}" class="spotlight-hero-media-action">
                 <svg class="spotlight-hero-media-action-icon">
                   <use href="{{ 'icons.svg' | asset_url }}#symbol-play"></use>
                 </svg>
@@ -167,7 +167,7 @@
     {% endif %}
     {% if section.settings.made_bg_video != blank %}
       <video
-        src="{{ section.settings.made_bg_video | asset_url }}"
+        src="{{ section.settings.made_bg_video.sources[0].url }}"
         class="section-bg-video"
         autoplay
         muted
@@ -251,9 +251,9 @@
       "label": "Hero Image"
     },
     {
-      "type": "url",
+      "type": "video",
       "id": "hero_video_url",
-      "label": "Hero Video URL"
+      "label": "Hero Video"
     },
     {
       "type": "header",
@@ -298,10 +298,9 @@
       "label": "Background Image (Mobile)"
     },
     {
-      "type": "text",
+      "type": "video",
       "id": "made_bg_video",
-      "label": "Background Video Asset Name",
-      "info": "Filename of the video uploaded to theme assets, e.g. section-bg-video.mp4"
+      "label": "Background Video"
     }
   ],
   "blocks": [
