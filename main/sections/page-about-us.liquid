@@ -1,0 +1,398 @@
+<section class="section section--pb-0">
+  <div class="container">
+    <div class="section-content">
+      <div class="section-head">
+        <div class="page-head">
+          {% render 'breadcrumbs' %}
+          <div class="page-head-info">
+            <h2 class="page-title">{{ section.settings.page_title | default: page.title }}</h2>
+            {% if section.settings.page_subtitle != blank %}
+              <div class="page-head-text">
+                <p>{{ section.settings.page_subtitle }}</p>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="spotlight-hero">
+          <div class="spotlight-hero-media spotlight-hero-media--video">
+            {% if section.settings.hero_image != blank %}
+              <img
+                class="spotlight-hero-media-img"
+                src="{{ section.settings.hero_image | image_url: width: 1920 }}"
+                alt="{{ section.settings.hero_image.alt | default: section.settings.page_title | default: page.title }}"
+                width=""
+                height=""
+              >
+            {% endif %}
+            {% if section.settings.hero_video_url != blank %}
+              <a href="{{ section.settings.hero_video_url }}" class="spotlight-hero-media-action">
+                <svg class="spotlight-hero-media-action-icon">
+                  <use href="{{ 'icons.svg' | asset_url }}#symbol-play"></use>
+                </svg>
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-content">
+      <div class="section-body">
+        <div class="subsection-section">
+          <div class="subsection-section-content">
+            <div class="subsection-section-head">
+              {% if section.settings.believe_title != blank %}
+                <h3 class="subsection-section-title">{{ section.settings.believe_title }}</h3>
+              {% endif %}
+              {% if section.settings.believe_description != blank %}
+                <div class="subsection-section-description">
+                  {{ section.settings.believe_description }}
+                </div>
+              {% endif %}
+            </div>
+            {% assign gallery_blocks = section.blocks | where: 'type', 'gallery_item' %}
+            {% if gallery_blocks.size > 0 %}
+              <div class="subsection-section-body">
+                <div class="about-us-gallery">
+                  {% for block in gallery_blocks %}
+                    <div class="about-us-gallery-item" {{ block.shopify_attributes }}>
+                      {% if block.settings.image != blank %}
+                        <div class="about-us-gallery-item-media">
+                          <img
+                            class="about-us-gallery-item-img"
+                            src="{{ block.settings.image | image_url: width: 800 }}"
+                            alt="{{ block.settings.image.alt | default: block.settings.title }}"
+                            width=""
+                            height=""
+                          >
+                        </div>
+                      {% endif %}
+                      {% if block.settings.title != blank %}
+                        <div class="about-us-gallery-item-info">
+                          <h4 class="about-us-gallery-title">{{ block.settings.title }}</h4>
+                        </div>
+                      {% endif %}
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--pbs-0">
+  <div class="container">
+    <div class="section-content">
+      <div class="section-body">
+        {% assign highlight_blocks = section.blocks | where: 'type', 'highlight' %}
+        {% if highlight_blocks.size > 0 %}
+          <div class="about-us-highlights">
+            {% for block in highlight_blocks %}
+              <div class="about-us-highlight" {{ block.shopify_attributes }}>
+                {% if block.settings.image != blank %}
+                  <div class="about-us-highlight-media">
+                    <img
+                      class="about-us-highlight-media-img"
+                      src="{{ block.settings.image | image_url: width: 800 }}"
+                      alt="{{ block.settings.image.alt | default: block.settings.title }}"
+                      width=""
+                      height=""
+                    >
+                  </div>
+                {% endif %}
+                <div class="about-us-highlight-info">
+                  <div class="about-us-highlight-info-head">
+                    {% if block.settings.title != blank %}
+                      <h4 class="about-us-highlight-title">{{ block.settings.title }}</h4>
+                    {% endif %}
+                    {% if block.settings.subtitle != blank %}
+                      <h6 class="about-us-highlight-subtitle">{{ block.settings.subtitle }}</h6>
+                    {% endif %}
+                  </div>
+                  {% if block.settings.text != blank %}
+                    <div class="about-us-highlight-text">
+                      {{ block.settings.text }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--pb-0 section--w-bg animate-on-scroll">
+  <div class="container">
+    <div class="section-content">
+      <div class="section-head animatable-part">
+        <h2 class="section-title">{{ section.settings.made_title }}</h2>
+        {% if section.settings.made_description != blank %}
+          <p class="section-description">
+            {{ section.settings.made_description }}
+          </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="section-bg">
+    {% if section.settings.made_bg_image_desktop != blank or section.settings.made_bg_image_mobile != blank %}
+      <picture class="section-bg-media">
+        {% if section.settings.made_bg_image_desktop != blank %}
+          <source
+            srcset="{{ section.settings.made_bg_image_desktop | image_url: width: 1920 }}"
+            media="(min-width: 992px)"
+          >
+        {% endif %}
+        <img
+          src="{{ section.settings.made_bg_image_mobile | default: section.settings.made_bg_image_desktop | image_url: width: 992 }}"
+          alt="Section background media"
+          class="section-bg-img"
+          width=""
+          height=""
+        >
+      </picture>
+    {% endif %}
+    {% if section.settings.made_bg_video != blank %}
+      <video
+        src="{{ section.settings.made_bg_video | asset_url }}"
+        class="section-bg-video"
+        autoplay
+        muted
+        loop
+        playsinline
+      ></video>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-content">
+      <div class="section-body">
+        {% assign team_blocks = section.blocks | where: 'type', 'team_member' %}
+        {% if team_blocks.size > 0 %}
+          <div class="team">
+            {% for block in team_blocks %}
+              <div class="team-card" {{ block.shopify_attributes }}>
+                {% if block.settings.image != blank %}
+                  <div class="team-card-media">
+                    <img
+                      class="team-card-img"
+                      src="{{ block.settings.image | image_url: width: 600 }}"
+                      alt="{{ block.settings.image.alt | default: block.settings.name }}"
+                      width=""
+                      height=""
+                    >
+                  </div>
+                {% endif %}
+                <div class="team-card-info">
+                  {% if block.settings.name != blank %}
+                    <h3 class="team-card-title">{{ block.settings.name }}</h3>
+                  {% endif %}
+                  {% if block.settings.role != blank %}
+                    <h6 class="team-card-subtitle">{{ block.settings.role }}</h6>
+                  {% endif %}
+                  {% if block.settings.text != blank %}
+                    <div class="team-card-text">
+                      {{ block.settings.text }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "About Us",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Page Header"
+    },
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Page Title",
+      "default": "About Zahra Ebrahim",
+      "info": "Leave empty to use the page's title"
+    },
+    {
+      "type": "textarea",
+      "id": "page_subtitle",
+      "label": "Page Subtitle",
+      "default": "Where every design is a labour of love and each piece is a collaboration between the designer, craftsmen, and patron."
+    },
+    {
+      "type": "header",
+      "content": "Hero"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "url",
+      "id": "hero_video_url",
+      "label": "Hero Video URL"
+    },
+    {
+      "type": "header",
+      "content": "What We Believe Section"
+    },
+    {
+      "type": "text",
+      "id": "believe_title",
+      "label": "Section Title",
+      "default": "What We Believe"
+    },
+    {
+      "type": "richtext",
+      "id": "believe_description",
+      "label": "Description",
+      "default": "<p>Good design is ethical design. Ethical to our consumers, our material, and our craftsmen. We value empathy for the end user through a focus on functionality, care, and attention to detail. We prioritise sourcing ethically harvested wood, leveraging alternative materials, and minimizing waste. We are also deeply committed to a safe, dignified, and creative workplace for our kaarigars.</p><p>The luxury we promise is rooted in our design philosophy. Interacting with furniture is intimate and tactile, which is why we prioritize how people connect with and experience spaces and objects. For us, good design is about creating environments where individuals can express themselves authentically.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Proudly Made in Pakistan Section"
+    },
+    {
+      "type": "text",
+      "id": "made_title",
+      "label": "Section Title",
+      "default": "Proudly Made in Pakistan"
+    },
+    {
+      "type": "textarea",
+      "id": "made_description",
+      "label": "Section Description",
+      "default": "It's about the people who bring them to life. Many of our artisans and craftsmen have been with us for decades, dedicating their lives to perfecting the art of furniture-making. Their skill, patience, and commitment are at the heart of everything we create."
+    },
+    {
+      "type": "image_picker",
+      "id": "made_bg_image_desktop",
+      "label": "Background Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "made_bg_image_mobile",
+      "label": "Background Image (Mobile)"
+    },
+    {
+      "type": "text",
+      "id": "made_bg_video",
+      "label": "Background Video Asset Name",
+      "info": "Filename of the video uploaded to theme assets, e.g. section-bg-video.mp4"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "gallery_item",
+      "name": "Gallery Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Gallery Title"
+        }
+      ]
+    },
+    {
+      "type": "highlight",
+      "name": "Highlight",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Our Team"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "info": "Optional, e.g. Founder and Principal"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Add your highlight text here.</p>"
+        }
+      ]
+    },
+    {
+      "type": "team_member",
+      "name": "Team Member",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Name"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Role",
+          "default": "Role"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Bio",
+          "default": "<p>Add team member bio here.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Us",
+      "blocks": [
+        { "type": "gallery_item" },
+        { "type": "gallery_item" },
+        { "type": "gallery_item" },
+        { "type": "highlight" },
+        { "type": "highlight" },
+        { "type": "team_member" }
+      ]
+    }
+  ]
+}
+{% endschema %}

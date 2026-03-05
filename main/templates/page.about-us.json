@@ -10,12 +10,108 @@
 {
   "layout": "custom",
   "sections": {
-    "about-us": {
-      "type": "about-us",
-      "settings": {}
+    "page-about-us": {
+      "type": "page-about-us",
+      "blocks": {
+        "highlight_FAcAV8": {
+          "type": "highlight",
+          "settings": {
+            "image": "shopify://shop_images/1_ab66e575-ec55-4627-9d20-066b89827ebe.jpg",
+            "title": "Our Team",
+            "subtitle": "Founder and Principal",
+            "text": "<p>In 2007 our journey began in Zahra's garage with a single carpenter. From at-home exhibitions to our first rented workshop in Kemari, we have steadily grown into a celebrated brand with a global reach. Today our team is made up of over 50 individuals, proudly operating out of a custom-built workshop in Korangi Industrial Area.</p><p>We take pride in fostering a community where our employees feel confident and actively participate in decision-making. We credit our growth to our investment in people and delight in each other's personal accomplishments — the mithai tastes all the sweeter when a team member brings in good news!</p>"
+          }
+        },
+        "highlight_xQ7dDL": {
+          "type": "highlight",
+          "settings": {
+            "image": "shopify://shop_images/2_d97a84c6-ebc6-46b2-bc40-f8538e659714.jpg",
+            "title": "Zahra Ebrahim",
+            "subtitle": "Founder and Principal",
+            "text": "<p>Our work can be experienced in some of the country's most prominent spaces — from Islamabad Airport to the Presidential House. Each project is a testament to our attention to detail and our passion for design excellence.</p>"
+          }
+        },
+        "team_member_e4CkX3": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify://shop_images/1_bc54dde8-3e04-42d3-a5dd-9b1c78e6c0a9.jpg",
+            "name": "Munir",
+            "role": "Supervisor",
+            "text": "<p>If you've stopped by our workshop, you've probably met Munir! He joined our polish team in 2008 and is now a supervisor. Munir admits that he finds polish-work easy, but managing people is<strong>\"the real hard work\"!</strong></p>"
+          }
+        },
+        "team_member_Qddx4g": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify://shop_images/2_cd771b68-4386-4563-acc9-32ae39af9452.jpg",
+            "name": "Munir",
+            "role": "Supervisor",
+            "text": "<p>If you've stopped by our workshop, you've probably met Munir! He joined our polish team in 2008 and is now a supervisor. Munir admits that he finds polish-work easy, but managing people is<strong>\"the real hard work\"!</strong></p>"
+          }
+        },
+        "team_member_W9CWRG": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify://shop_images/3_937859b2-c613-4218-984d-1b510b30d4f6.jpg",
+            "name": "Munir",
+            "role": "Supervisor",
+            "text": "<p>If you've stopped by our workshop, you've probably met Munir! He joined our polish team in 2008 and is now a supervisor. Munir admits that he finds polish-work easy, but managing people is<strong>\"the real hard work\"!</strong></p>"
+          }
+        },
+        "team_member_pJLAFg": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify://shop_images/2_cd771b68-4386-4563-acc9-32ae39af9452.jpg",
+            "name": "Munir",
+            "role": "Supervisor",
+            "text": "<p>If you've stopped by our workshop, you've probably met Munir! He joined our polish team in 2008 and is now a supervisor. Munir admits that he finds polish-work easy, but managing people is<strong>\"the real hard work\"!</strong></p>"
+          }
+        },
+        "team_member_tTQYNn": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify://shop_images/3_937859b2-c613-4218-984d-1b510b30d4f6.jpg",
+            "name": "Munir",
+            "role": "Supervisor",
+            "text": "<p>If you've stopped by our workshop, you've probably met Munir! He joined our polish team in 2008 and is now a supervisor. Munir admits that he finds polish-work easy, but managing people is<strong>\"the real hard work\"!</strong></p>"
+          }
+        },
+        "team_member_tkrXWt": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify://shop_images/1_bc54dde8-3e04-42d3-a5dd-9b1c78e6c0a9.jpg",
+            "name": "Munir",
+            "role": "Supervisor",
+            "text": "<p>If you've stopped by our workshop, you've probably met Munir! He joined our polish team in 2008 and is now a supervisor. Munir admits that he finds polish-work easy, but managing people is<strong>\"the real hard work\"!</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "highlight_FAcAV8",
+        "highlight_xQ7dDL",
+        "team_member_e4CkX3",
+        "team_member_Qddx4g",
+        "team_member_W9CWRG",
+        "team_member_pJLAFg",
+        "team_member_tTQYNn",
+        "team_member_tkrXWt"
+      ],
+      "settings": {
+        "page_title": "About Zahra Ebrahim",
+        "page_subtitle": "Where every design is a labour of love and each piece is a collaboration between the designer, craftsmen, and patron.",
+        "hero_image": "shopify://shop_images/1_ccf265b3-9bfe-40b3-9ef3-6ccf0c63a91b.jpg",
+        "hero_video_url": "",
+        "believe_title": "What We Believe",
+        "believe_description": "<p>Good design is ethical design. Ethical to our consumers, our material, and our craftsmen. We value empathy for the end user through a focus on functionality, care, and attention to detail. We prioritise sourcing ethically harvested wood, leveraging alternative materials, and minimizing waste. We are also deeply committed to a safe, dignified, and creative workplace for our kaarigars.</p><p>The luxury we promise is rooted in our design philosophy. Interacting with furniture is intimate and tactile, which is why we prioritize how people connect with and experience spaces and objects. For us, good design is about creating environments where individuals can express themselves authentically.</p>",
+        "made_title": "Proudly Made in Pakistan",
+        "made_description": "It's about the people who bring them to life. Many of our artisans and craftsmen have been with us for decades, dedicating their lives to perfecting the art of furniture-making. Their skill, patience, and commitment are at the heart of everything we create.",
+        "made_bg_image_desktop": "shopify://shop_images/3-desktop.jpg",
+        "made_bg_image_mobile": "shopify://shop_images/3-mobile.jpg",
+        "made_bg_video": ""
+      }
     }
   },
   "order": [
-    "about-us"
+    "page-about-us"
   ]
 }
